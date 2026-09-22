@@ -1,0 +1,38 @@
+name: Predictable Code
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        required: false
+        type: string
+        default: "verify"
+        description: "init = first-time setup, verify = PR verification, command = agent task"
+      pr_number:
+        required: false
+        type: string
+        default: ""
+      repository:
+        required: false
+        type: string
+        default: ""
+      comment:
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+  security-events: write
+
+jobs:
+  run:
+    uses: predictable-machines/predictable-code-runners/.github/workflows/proxy.yml@v1
+    with:
+      mode: ${{ inputs.mode }}
+      pr_number: ${{ inputs.pr_number }}
+      repository: ${{ inputs.repository }}
+      comment: ${{ inputs.comment }}
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

@@ -1,0 +1,42 @@
+# Predictable Code — auto-generated, do not edit
+
+# Onboarding state
+setup-progress.json
+
+# Compiled specs
+specs/.compiled/
+
+# Declarations cache
+declarations/
+
+# Session data
+sessions/
+
+# Claude plugin cache (fetched by `predictable claude`)
+claude-plugin/
+
+# Local run history
+history/
+
+# Agent credentials and engine state (never commit)
+opencode/
+
+# Stored fix patches
+fixes/
+
+# Local run logs and session pointer
+logs/
+last-session
+
+# Witness staging area (a copy of the project, rebuilt per run)
+verification/.property-check/contract-stage/
+
+# Lean build artifacts inside verification
+verification/.lake/
+verification/lake-packages/
+verification/build/
+*.olean
+*.ilean
+*.trace
+*.c.o
+*.c.o.export

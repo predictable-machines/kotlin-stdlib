@@ -1,0 +1,86 @@
+{"version": "2.1.0",
+ "runs":
+ [{"tool":
+   {"driver":
+    {"version": "0.1.0-cloud-ecb982387",
+     "rules":
+     [{"shortDescription":
+       {"text":
+        "A path provably reaches a throw, so the code can fail at runtime."},
+       "properties": {"tags": ["predictable-code", "correctness", "exception"]},
+       "id": "no_throw_refuted",
+       "help":
+       {"text":
+        "For some inputs the analyzed function reaches a throw: the solver produced concrete values that get there. Guard the failing condition, or document the exception as part of the contract."},
+       "fullDescription":
+       {"text":
+        "For some inputs the analyzed function reaches a throw: the solver produced concrete values that get there. Guard the failing condition, or document the exception as part of the contract."},
+       "defaultConfiguration": {"level": "warning", "enabled": true}},
+      {"shortDescription":
+       {"text":
+        "A called method may throw and the call is not guarded against it."},
+       "properties": {"tags": ["predictable-code", "correctness", "exception"]},
+       "id": "throw_potential",
+       "help":
+       {"text":
+        "The callee is declared to throw and this call site neither checks its precondition nor handles the exception, so the failure propagates."},
+       "fullDescription":
+       {"text":
+        "The callee is declared to throw and this call site neither checks its precondition nor handles the exception, so the failure propagates."},
+       "defaultConfiguration": {"level": "warning", "enabled": true}},
+      {"shortDescription":
+       {"text":
+        "A call may pass arguments that violate the called method's requirement."},
+       "properties": {"tags": ["predictable-code", "correctness", "contract"]},
+       "id": "precondition_violated",
+       "help":
+       {"text":
+        "The requirement comes from the callee's modelled contract. Constrain the arguments at this call site (or check them) so the requirement holds for every input that reaches it."},
+       "fullDescription":
+       {"text":
+        "The requirement comes from the callee's modelled contract. Constrain the arguments at this call site (or check them) so the requirement holds for every input that reaches it."},
+       "defaultConfiguration": {"level": "warning", "enabled": true}},
+      {"shortDescription":
+       {"text":
+        "A possibly-null value is used without a check the analysis could verify."},
+       "properties":
+       {"tags": ["predictable-code", "correctness", "nullability"]},
+       "id": "trusted_nullable",
+       "help":
+       {"text":
+        "The value can be null on some path and is dereferenced without a check the analysis could confirm, so the dereference is trusted rather than proven safe."},
+       "fullDescription":
+       {"text":
+        "The value can be null on some path and is dereferenced without a check the analysis could confirm, so the dereference is trusted rather than proven safe."},
+       "defaultConfiguration": {"level": "warning", "enabled": true}},
+      {"shortDescription":
+       {"text":
+        "No call site was found for this function, and it is not exported."},
+       "properties":
+       {"tags": ["predictable-code", "maintainability", "dead-code"]},
+       "id": "dead_code_unreachable",
+       "help":
+       {"text":
+        "No call site for this function was found in the analyzed program and it is not exported, so it may be unused. The call graph does not see calls made inside lambda bodies or `assert` expressions — check for those before removing it."},
+       "fullDescription":
+       {"text":
+        "No call site for this function was found in the analyzed program and it is not exported, so it may be unused. The call graph does not see calls made inside lambda bodies or `assert` expressions — check for those before removing it."},
+       "defaultConfiguration": {"level": "note", "enabled": true}},
+      {"shortDescription":
+       {"text":
+        "The solver exhausted its budget before deciding this obligation."},
+       "properties": {"tags": ["predictable-code", "coverage"]},
+       "id": "unknown",
+       "help":
+       {"text":
+        "The obligation is neither proven nor refuted: the solver hit its budget. Treat it as unverified rather than safe, and simplify the code or raise the timeout."},
+       "fullDescription":
+       {"text":
+        "The obligation is neither proven nor refuted: the solver hit its budget. Treat it as unverified rather than safe, and simplify the code or raise the timeout."},
+       "defaultConfiguration": {"level": "note", "enabled": true}}],
+     "name": "predictable-code",
+     "informationUri": "https://code.predictablemachines.com"}},
+   "results": [],
+   "automationDetails": {"id": "predictable-code/analysis"}}],
+ "$schema":
+ "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json"}

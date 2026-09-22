@@ -1,0 +1,28 @@
+{"unparsed": [],
+ "target":
+ {"scanRoots": [],
+  "root": "/home/runner/work/kotlin-stdlib/kotlin-stdlib",
+  "name": "",
+  "filesScanned": 0},
+ "stalled": [],
+ "schemaVersion": 1,
+ "runner": {"reason": null, "kind": "contract", "binary": null},
+ "proposals": [],
+ "obligations": [],
+ "notes":
+ ["witness: the TypeScript engine was not run — this project declares kt, and that engine reads .ts/.tsx only."],
+ "execution": [],
+ "emitRan": false,
+ "durationMs": 0,
+ "declined": [],
+ "counts":
+ {"violated": 0,
+  "unexercised": 0,
+  "stalled": 0,
+  "shipped": 0,
+  "held": 0,
+  "exercised": 0,
+  "detected": 0,
+  "declined": 0,
+  "broken": 0},
+ "broken": []}

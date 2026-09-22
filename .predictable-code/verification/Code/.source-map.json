@@ -1,0 +1,185 @@
+{"Code.com.javiersc.kotlin.test.iterableMatchersKt.assertSize":
+ {"startLine": 34,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/iterableMatchers.kt",
+  "endLine": 41},
+ "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertNotContains":
+ {"startLine": 26,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/iterableMatchers.kt",
+  "endLine": 32},
+ "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertCount":
+ {"startLine": 21,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/iterableMatchers.kt",
+  "endLine": 24},
+ "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertContainsExactly":
+ {"startLine": 13,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/iterableMatchers.kt",
+  "endLine": 19},
+ "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertContains":
+ {"startLine": 5,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/iterableMatchers.kt",
+  "endLine": 11},
+ "Code.com.javiersc.kotlin.test.genericMatchersKt.assertNull":
+ {"startLine": 15,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/genericMatchers.kt",
+  "endLine": 17},
+ "Code.com.javiersc.kotlin.test.genericMatchersKt.assertNotNull":
+ {"startLine": 10,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/genericMatchers.kt",
+  "endLine": 13},
+ "Code.com.javiersc.kotlin.test.genericMatchersKt.assertNotEquals":
+ {"startLine": 24,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/genericMatchers.kt",
+  "endLine": 27},
+ "Code.com.javiersc.kotlin.test.genericMatchersKt.assertIsNot_1":
+ {"startLine": 38,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/genericMatchers.kt",
+  "endLine": 41},
+ "Code.com.javiersc.kotlin.test.genericMatchersKt.assertIsNot":
+ {"startLine": 34,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/genericMatchers.kt",
+  "endLine": 36},
+ "Code.com.javiersc.kotlin.test.genericMatchersKt.assertIs":
+ {"startLine": 29,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/genericMatchers.kt",
+  "endLine": 32},
+ "Code.com.javiersc.kotlin.test.genericMatchersKt.assertEquals":
+ {"startLine": 19,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/genericMatchers.kt",
+  "endLine": 22},
+ "Code.com.javiersc.kotlin.test.fileMatchers.jvmKt.assertFile":
+ {"startLine": 11,
+  "sourceFile":
+  "kotlin-test/jvm/main/kotlin/com/javiersc/kotlin/test/fileMatchers.jvm.kt",
+  "endLine": 15},
+ "Code.com.javiersc.kotlin.test.fileMatchers.jvmKt.assertDirectory":
+ {"startLine": 5,
+  "sourceFile":
+  "kotlin-test/jvm/main/kotlin/com/javiersc/kotlin/test/fileMatchers.jvm.kt",
+  "endLine": 9},
+ "Code.com.javiersc.kotlin.test.failKt.fail":
+ {"startLine": 5,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/fail.kt",
+  "endLine": 5},
+ "Code.com.javiersc.kotlin.test.comparableMatchersKt.assertLessThan":
+ {"startLine": 9,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/comparableMatchers.kt",
+  "endLine": 13},
+ "Code.com.javiersc.kotlin.test.comparableMatchersKt.assertGreaterThan":
+ {"startLine": 3,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/comparableMatchers.kt",
+  "endLine": 7},
+ "Code.com.javiersc.kotlin.test.charSequenceMatchersKt.assertStartWith":
+ {"startLine": 3,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/charSequenceMatchers.kt",
+  "endLine": 6},
+ "Code.com.javiersc.kotlin.test.charSequenceMatchersKt.assertNotStartWith":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/charSequenceMatchers.kt",
+  "endLine": 14},
+ "Code.com.javiersc.kotlin.test.booleanMatchersKt.assertTrue":
+ {"startLine": 10,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/booleanMatchers.kt",
+  "endLine": 12},
+ "Code.com.javiersc.kotlin.test.booleanMatchersKt.assertFalse":
+ {"startLine": 6,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/booleanMatchers.kt",
+  "endLine": 8},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile should pass for file»":
+ {"startLine": 38,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 41},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile should fail with custom message»":
+ {"startLine": 50,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 54},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile should fail for directory»":
+ {"startLine": 44,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 47},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory should pass for directory»":
+ {"startLine": 17,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 20},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory should fail with custom message»":
+ {"startLine": 31,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 35},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory should fail for file»":
+ {"startLine": 23,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 28},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.tearDown":
+ {"startLine": 57,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 60},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.new":
+ {"startLine": 11,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 61},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.constructor":
+ {"startLine": 11,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 61},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.assertFile should pass for file":
+ {"startLine": 38,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 41},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.assertFile should fail with custom message":
+ {"startLine": 50,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 54},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.assertFile should fail for directory":
+ {"startLine": 44,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 47},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.assertDirectory should pass for directory":
+ {"startLine": 17,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 20},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.assertDirectory should fail with custom message":
+ {"startLine": 31,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 35},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest.assertDirectory should fail for file":
+ {"startLine": 23,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 28},
+ "Code.com.javiersc.kotlin.test.FileMatchersTest":
+ {"startLine": 11,
+  "sourceFile":
+  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "endLine": 61}}

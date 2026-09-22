@@ -1,0 +1,14 @@
+{"version": "1.2.0",
+ "packagesDir": ".lake/packages",
+ "packages":
+ [{"type": "path",
+   "scope": "",
+   "name": "predictable",
+   "manifestFile": "lake-manifest.json",
+   "inherited": false,
+   "dir":
+   "/home/runner/work/_temp/predictable-pkg/predictable-runtime-0.1.0-cloud-ecb982387-linux-x64/workspace",
+   "configFile": "lakefile.toml"}],
+ "name": "verification",
+ "lakeDir": ".lake",
+ "fixedToolchain": false}

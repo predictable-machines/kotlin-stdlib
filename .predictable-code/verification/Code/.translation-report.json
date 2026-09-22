@@ -1,0 +1,191 @@
+{"sourceFiles":
+ [{"translated": true,
+   "source": "build-logic/src/main/kotlin/GenerateIgnoreClassesTask.kt"},
+  {"translated": true,
+   "source": "build-logic/src/main/kotlin/ConventionPlugin.kt"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/android/main/kotlin/com/javiersc/kotlin/stdlib/Platform.android.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": true,
+   "source":
+   "kotlin-stdlib/android/unitTest/kotlin/com/javiersc/kotlin/stdlib/PlatformTest.android.kt"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/androidNativeArm32/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeArm32.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/androidNativeArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeArm64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/androidNativeX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeX64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/androidNativeX86/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeX86.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Boolean.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/UseContextParameters.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/CharSequence.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/List.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Identity.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source": "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/T.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNodeIterators.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/Validator.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/iosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.iosArm64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/iosSimulatorArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.iosSimulatorArm64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/iosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.iosX64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/js/main/kotlin/com/javiersc/kotlin/stdlib/Platform.js.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Platform.jvm.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/linuxArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.linuxArm64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/linuxX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.linuxX64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/macosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.macosArm64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/macosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.macosX64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/mingwX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.mingwX64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/tvosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.tvosArm64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/tvosSimulatorArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.tvosSimulatorArm64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/tvosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.tvosX64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/wasmJs/main/kotlin/com/javiersc/kotlin/stdlib/Platform.wasmJs.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/wasmWasi/main/kotlin/com/javiersc/kotlin/stdlib/Platform.wasmWasi.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/watchosArm32/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosArm32.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/watchosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosArm64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/watchosDeviceArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosDeviceArm64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/watchosSimulatorArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosSimulatorArm64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"},
+  {"translated": false,
+   "source":
+   "kotlin-stdlib/watchosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosX64.kt",
+   "reason": "not translated (Kotlin front-end emitted no IL for this file)"}]}

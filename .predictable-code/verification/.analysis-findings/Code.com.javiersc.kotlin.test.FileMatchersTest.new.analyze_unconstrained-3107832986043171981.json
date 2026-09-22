@@ -1,0 +1,1 @@
+{"complete":true,"diagnostics":[],"reason":"a value binding, not an operation: it has no body and nothing that could fail","runKey":"01a3dbb2e4ae42fd","status":"value","theorem":"Code.com.javiersc.kotlin.test.FileMatchersTest.new.analyze_unconstrained","uncheckedCauses":[],"uncheckedObligations":[],"unreflected":0,"verified":[]}

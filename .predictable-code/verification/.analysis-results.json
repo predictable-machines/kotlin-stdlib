@@ -1,0 +1,242 @@
+{"valueBindings": 1,
+ "vacuousClean": 23,
+ "uncheckedObligations": 0,
+ "unanalyzedCount": 6,
+ "unanalyzed": [],
+ "totalFunctions": 29,
+ "totalByType": 0,
+ "stubbedBodies": 0,
+ "sourceFilesTranslated": 3,
+ "sourceFilesTotal": 49,
+ "resultsPath":
+ "/home/runner/work/kotlin-stdlib/kotlin-stdlib/.predictable-code/verification/.analysis-results.json",
+ "results":
+ {"Code.com.javiersc.kotlin.test.iterableMatchersKt.assertSize":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertSize.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/iterableMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertNotContains":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertNotContains.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/iterableMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertCount":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertCount.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/iterableMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertContainsExactly":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertContainsExactly.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/iterableMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertContains":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertContains.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/iterableMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.genericMatchersKt.assertNull":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.genericMatchersKt.assertNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/genericMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.genericMatchersKt.assertNotNull":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.genericMatchersKt.assertNotNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/genericMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.genericMatchersKt.assertNotEquals":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.genericMatchersKt.assertNotEquals.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/genericMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.genericMatchersKt.assertIsNot_1":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.genericMatchersKt.assertIsNot_1.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/genericMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.genericMatchersKt.assertIsNot":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.genericMatchersKt.assertIsNot.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/genericMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.genericMatchersKt.assertIs":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.genericMatchersKt.assertIs.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/genericMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.genericMatchersKt.assertEquals":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.genericMatchersKt.assertEquals.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/genericMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.fileMatchers.jvmKt.assertFile":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.fileMatchers.jvmKt.assertFile.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/fileMatchers/jvm.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.fileMatchers.jvmKt.assertDirectory":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.fileMatchers.jvmKt.assertDirectory.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/fileMatchers/jvm.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.failKt.fail":
+  {"verdict": "clean",
+   "theorem": "Code.com.javiersc.kotlin.test.failKt.fail.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/fail.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.comparableMatchersKt.assertLessThan":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.comparableMatchersKt.assertLessThan.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/comparableMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.comparableMatchersKt.assertGreaterThan":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.comparableMatchersKt.assertGreaterThan.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/comparableMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.charSequenceMatchersKt.assertStartWith":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.charSequenceMatchersKt.assertStartWith.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/charSequenceMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.charSequenceMatchersKt.assertNotStartWith":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.charSequenceMatchersKt.assertNotStartWith.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/charSequenceMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.booleanMatchersKt.assertTrue":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.booleanMatchersKt.assertTrue.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/booleanMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.booleanMatchersKt.assertFalse":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.booleanMatchersKt.assertFalse.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/booleanMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile":
+  {"verdict": "unanalyzed",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/FileMatchersTest/jvm.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory":
+  {"verdict": "unanalyzed",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/FileMatchersTest/jvm.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.FileMatchersTest.tearDown":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.FileMatchersTest.tearDown.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/FileMatchersTest/jvm.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.FileMatchersTest.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.FileMatchersTest.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/FileMatchersTest/jvm.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.FileMatchersTest.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.FileMatchersTest.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/FileMatchersTest/jvm.lean",
+   "diagnostics": []}},
+ "quarantinedModules": [],
+ "potentialIssues": 0,
+ "partiallyAnalyzed": 0,
+ "outputPath":
+ "/home/runner/work/kotlin-stdlib/kotlin-stdlib/.predictable-code/verification/Analysis",
+ "outputIncomplete":
+ ["Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory.analyze_unconstrained (no findings sidecar)",
+  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory.analyze_unconstrained (no findings sidecar)",
+  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory.analyze_unconstrained (no findings sidecar)",
+  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile.analyze_unconstrained (no findings sidecar)",
+  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile.analyze_unconstrained (no findings sidecar)",
+  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile.analyze_unconstrained (no findings sidecar)"],
+ "notTranslatedFiles":
+ ["kotlin-stdlib/android/main/kotlin/com/javiersc/kotlin/stdlib/Platform.android.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/androidNativeArm32/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeArm32.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/androidNativeArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/androidNativeX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/androidNativeX86/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeX86.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Boolean.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/CharSequence.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Identity.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/List.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/T.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/UseContextParameters.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNodeIterators.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/Validator.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/iosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.iosArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/iosSimulatorArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.iosSimulatorArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/iosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.iosX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/js/main/kotlin/com/javiersc/kotlin/stdlib/Platform.js.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Platform.jvm.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/linuxArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.linuxArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/linuxX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.linuxX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/macosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.macosArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/macosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.macosX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/mingwX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.mingwX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/tvosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.tvosArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/tvosSimulatorArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.tvosSimulatorArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/tvosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.tvosX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/wasmJs/main/kotlin/com/javiersc/kotlin/stdlib/Platform.wasmJs.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/wasmWasi/main/kotlin/com/javiersc/kotlin/stdlib/Platform.wasmWasi.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/watchosArm32/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosArm32.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/watchosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/watchosDeviceArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosDeviceArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/watchosSimulatorArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosSimulatorArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
+  "kotlin-stdlib/watchosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosX64.kt (not translated (Kotlin front-end emitted no IL for this file))"],
+ "notCompiledModules": [],
+ "modulesTotal": 8,
+ "modulesCompiled": 8,
+ "generatedAt": "2026-09-22T10:44:02+00:00[UTC]",
+ "findingsUncalled": 0,
+ "findingsPotential": 0,
+ "findingsAffecting": 0,
+ "droppedHubDecls": [],
+ "clean": 23,
+ "callGraph": null,
+ "byContract": 0,
+ "buildSucceeded": false,
+ "analysisExcludedFiles": []}

@@ -1,0 +1,20 @@
+{"Code.com.javiersc.kotlin.test.iterableMatchersKt.assertSize":
+ ["Code.com.javiersc.kotlin.test.failKt.fail"],
+ "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertNotContains":
+ ["Code.com.javiersc.kotlin.test.failKt.fail"],
+ "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertCount":
+ ["Code.com.javiersc.kotlin.test.iterableMatchersKt.assertSize"],
+ "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertContainsExactly":
+ ["Code.com.javiersc.kotlin.test.genericMatchersKt.assertEquals"],
+ "Code.com.javiersc.kotlin.test.fileMatchers.jvmKt.assertFile":
+ ["Code.com.javiersc.kotlin.test.failKt.fail"],
+ "Code.com.javiersc.kotlin.test.fileMatchers.jvmKt.assertDirectory":
+ ["Code.com.javiersc.kotlin.test.failKt.fail"],
+ "Code.com.javiersc.kotlin.test.comparableMatchersKt.assertLessThan":
+ ["Code.com.javiersc.kotlin.test.failKt.fail"],
+ "Code.com.javiersc.kotlin.test.comparableMatchersKt.assertGreaterThan":
+ ["Code.com.javiersc.kotlin.test.failKt.fail"],
+ "Code.com.javiersc.kotlin.test.charSequenceMatchersKt.assertStartWith":
+ ["Code.com.javiersc.kotlin.test.failKt.fail"],
+ "Code.com.javiersc.kotlin.test.charSequenceMatchersKt.assertNotStartWith":
+ ["Code.com.javiersc.kotlin.test.failKt.fail"]}

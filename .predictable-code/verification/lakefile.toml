@@ -1,0 +1,25 @@
+name = "verification"
+version = "0.1.0"
+
+[[require]]
+name = "predictable"
+path = "/home/runner/work/_temp/predictable-pkg/predictable-runtime-0.1.0-cloud-ecb982387-linux-x64/workspace"
+
+[[lean_lib]]
+name = "Code"
+globs = ["Code.+"]
+
+[[lean_lib]]
+name = "CodeTesting"
+globs = ["CodeTesting.+"]
+
+[[lean_lib]]
+name = "Proofs"
+globs = ["Proofs.+"]
+leanOptions = { "warningAsError" = true }
+
+[[lean_lib]]
+name = "Analysis"
+globs = ["Analysis.+"]
+leanOptions = { "warningAsError" = false }
+moreLeanArgs = ["-M", "3584"]

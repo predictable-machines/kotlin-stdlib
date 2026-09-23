@@ -17,7 +17,7 @@
 # The stamp below is how the Control Center knows whether this repository is running a
 # current copy. It is compared as a NUMBER, never as a diff, so your own edits to this
 # file — a bigger `runner:`, a different `heap_mb` — are yours and are left alone.
-# predictable-workflow-version: 21
+# predictable-workflow-version: 23
 name: Predictable Code
 
 on:
@@ -294,12 +294,43 @@ jobs:
           # died at `predictable_typescript_direct binary not found next to
           # predictable` having translated nothing.
           #
-          # The package also carries the Lean toolchain, the pinned z3 and node, and the
-          # compiled artefacts a generated verification project imports, so there is no
-          # separate provisioning step: `make test-bundle-install` proves exactly this
-          # shape — unpacked where it was not built, system PATH only, analysing a real
-          # project.
-          fetch "platform=linux-x64&kind=runtime" "${RUNNER_TEMP}/predictable-runtime.tar.gz"
+          # WHAT THE PACKAGE CARRIES, AND WHAT IT DOES NOT. It carries what we BUILD: the
+          # binaries, the front ends, and the compiled artefacts a generated verification
+          # project imports. It does NOT carry the Lean toolchain, z3 or node — since
+          # #1863 those are fetched from their pinned URLs and checksums by the
+          # provisioning step below, which took the customer download from 1.2 GB to
+          # 229 MiB. `make test-bundle-install` proves the package half of that shape:
+          # unpacked where it was not built, system PATH only, analysing a real project.
+          #
+          # THIS PARAGRAPH USED TO SAY THE OPPOSITE — that the package carried the
+          # toolchain "so there is no separate provisioning step" — and that is exactly
+          # the premise `cfeb78159` acted on when it DELETED the provisioning step. The
+          # step's own comment below records what that cost: "without this the hosted run
+          # dies on its first command". The claim is corrected here rather than only
+          # there, because a reader who believes this one will delete that step again.
+          # THE PLATFORM IS DERIVED, NOT ASSUMED. This said `platform=linux-x64`, while the
+          # `runner` input above is one we INVITE the customer to change — its own description is
+          # "A large repository needs more memory than the standard runner has", and the
+          # out-of-memory summary this workflow prints tells them to do exactly that. Follow that
+          # advice onto a macOS runner and the job downloaded Linux binaries: the shape check below
+          # still PASSES, because `bin/predictable` exists and is executable, so the failure
+          # surfaced much later as an exec format error with nothing pointing back here.
+          #
+          # The same three cases `install.sh`'s `detect_platform` resolves, and the same refusal for
+          # anything else — a release publishes darwin-arm64, darwin-x64 and linux-x64 and nothing
+          # more, so an arm64 Linux runner is told so by name rather than handed an archive that
+          # cannot run.
+          case "$(uname -s)-$(uname -m)" in
+            Linux-x86_64)  PC_PLATFORM=linux-x64 ;;
+            Darwin-arm64)  PC_PLATFORM=darwin-arm64 ;;
+            Darwin-x86_64) PC_PLATFORM=darwin-x64 ;;
+            *)
+              echo "::error::no Predictable Code package is published for $(uname -s)/$(uname -m); this workflow's \`runner\` must be a linux-x64, darwin-arm64 or darwin-x64 machine"
+              exit 1
+              ;;
+          esac
+          echo "Installing the ${PC_PLATFORM} package on $(uname -s)/$(uname -m)."
+          fetch "platform=${PC_PLATFORM}&kind=runtime" "${RUNNER_TEMP}/predictable-runtime.tar.gz"
           # Read off the response we already have, rather than a second call that would
           # mint a signed URL nobody downloads.
           echo "tag=$(echo "${LAST_RESPONSE}" | jq -r '.tag')" >> "$GITHUB_OUTPUT"
@@ -319,8 +350,42 @@ jobs:
           }
 
           echo "predictable_home=$PC_HOME" >> "$GITHUB_OUTPUT"
-          echo "Installed the runtime package from ${RELEASE_TAG}"
 
+          # WHERE THE PLUGIN'S OWN WRAPPER LOOKS FOR THE CLI, which is not where we just
+          # put it — and until this line, on a runner, it never found it.
+          #
+          # MEASURED on the v21 run of this very workflow. The plugin ships a `bin/predictable`
+          # wrapper that every hook and the `sync` skill invoke, and it resolves
+          # `${CLAUDE_PLUGIN_DATA:-${PLUGIN_DATA:-$HOME/.predictable-code-runtime}}/runtime/bin/predictable`
+          # first, falling back to a `predictable` on PATH. On a runner NEITHER hits: we unpack
+          # to `$RUNNER_TEMP`, not `$HOME/.predictable-code-runtime`, and the package's own `bin`
+          # is deliberately kept off PATH (see the `--pinned` note below — putting it on PATH
+          # would let `resolveUserClaude` find our bundled agent under the user's name). So the
+          # wrapper printed `no runtime bundle in /home/runner/.predictable-code-runtime/runtime
+          # and no predictable on PATH` and exited 127, three times, in a run that went GREEN.
+          #
+          # WHAT THAT COST, and it is the whole point of loading the plugin at all: the
+          # SessionStart hook could not start the background sync, so the agent worked with no
+          # findings, no requirements and no way to check its own change. It said so plainly —
+          # "I started the sync, but it can't run in this environment" — and the run still
+          # settled successfully, because an agent declining is a legitimate outcome and
+          # nothing downstream could tell that one apart from a considered refusal.
+          #
+          # A SYMLINK AND A VARIABLE, rather than exporting PATH: the wrapper primes PATH,
+          # `LEAN_SYSROOT` and `LEAN_PATH` itself, exactly as `launcher.sh` does, and it does so
+          # INSIDE its own process — so the bundled agent never reaches the PATH this workflow's
+          # own `predictable claude` resolves against, and the rule above is kept.
+          ln -sfn "$PC_HOME" "$UNPACK/runtime"
+          echo "plugin_data=$UNPACK" >> "$GITHUB_OUTPUT"
+
+          # RESTORED TO THIS STEP, and the move out of it was the whole defect. This block
+          # reads `PC_COMMAND`, `OIDC` and `CONTROL_PLANE`: the first two are this step's own
+          # (`env:` above and a shell local), and step state does not cross steps — so from
+          # the provisioning step it ran under `set -euo pipefail` against an unset
+          # `PC_COMMAND` and exited 1 on the FIRST line it reached, for every command, not
+          # only `fix-agent`. It also wrote `plugin_dir` into a step with no `id:` while the
+          # consumer reads `steps.toolchain.outputs.plugin_dir`, so even a fixed environment
+          # would have handed the agent an empty plugin directory.
           # THE CLAUDE PLUGIN, and only for the verb that needs it.
           #
           # `predictable claude` normally provisions its plugin directory by shallow-
@@ -359,6 +424,31 @@ jobs:
             echo "plugin_dir=$PLUGIN_ROOT" >> "$GITHUB_OUTPUT"
             echo "Installed the Claude plugin"
           fi
+
+          echo "Installed the runtime package from ${RELEASE_TAG}"
+
+      # THE PACKAGE NO LONGER CARRIES THE TOOLCHAIN, so this step is back.
+      #
+      # It was removed in `cfeb78159` on the stated premise that the package carried `base`.
+      # That premise is gone: since #1863 the release ships what WE build and a provisioning
+      # record — `mise.toml`, `mise.lock`, `provision.sh` — and Lean, z3 and node are fetched
+      # here from their pinned URLs and checksums. The customer download went 1.2 GB to
+      # 229 MiB for the same reason. Without this the hosted run dies on its first command.
+      #
+      # IT ALSO PUTS THE AGENT BACK. `group_base` includes `aqua:anthropics/claude-code` and
+      # `links()` maps it to `bin/claude` — beside `bin/predictable`, which is exactly where
+      # `--pinned` looks (`resolvePinnedClaude` reads `(← IO.appPath).parent`). So the same
+      # step that fixes `sync` is what makes the agent fix resolvable again; without it
+      # `--pinned` selects a copy that stopped shipping with #1868.
+      #
+      # `base` ONLY — a language group is fetched the first time a project needs one, so a
+      # TypeScript repository does not pay for a JDK.
+      - name: Provision the pinned toolchain
+        env:
+          PC_HOME: ${{ steps.toolchain.outputs.predictable_home }}
+        run: |
+          set -euo pipefail
+          PREDICTABLE_HOME="$PC_HOME" "$PC_HOME/provision.sh" install base
 
       - name: Clear state written by a different build
         # SYNC ONLY. A fix reads the analysis that found the finding — clearing it would
@@ -402,6 +492,10 @@ jobs:
           # reads it instead of cloning, and an empty value simply means the CLI's own
           # default applies, which is right for the verbs that never launch an agent.
           PREDICTABLE_CLAUDE_PLUGIN_DIR: ${{ steps.toolchain.outputs.plugin_dir }}
+          # What makes the plugin's `bin/predictable` wrapper resolve — see the symlink in the
+          # toolchain step. Without it every hook in a dispatched agent fix exits 127 and the
+          # agent runs blind, in a job that still reports success.
+          PLUGIN_DATA: ${{ steps.toolchain.outputs.plugin_data }}
           # The same closed pair as the preflight above, and it must STAY the same pair:
           # a preflight that accepts a key the run step cannot see passes a check and then
           # spawns an agent with an empty key, which is the failure this file already
@@ -603,11 +697,15 @@ jobs:
             # that PATH cannot resolve, because the package's own `bin` is deliberately not
             # on PATH either.
             #
-            # On this machine the pinned copy is the ONLY Claude, it is the build this
-            # bundle is tested against, and it is already sitting at `bin/claude` in the
-            # package we just unpacked — verified in the shipped tarball: 224 MB, mode
-            # `-rwxr-xr-x`. `--pinned` selects exactly that, and errors plainly if a build
-            # ships none rather than falling back to a different agent than we asked for.
+            # On this machine the pinned copy is the ONLY Claude, and it is the build this
+            # release is tested against. It is NO LONGER IN THE TARBALL — #1868 stopped
+            # redistributing the agent CLIs, because nothing in Claude Code's terms grants us
+            # the right — so it arrives the way every other pinned tool now does: the
+            # `Provision the pinned toolchain` step above runs `provision.sh install base`,
+            # `group_base` names `aqua:anthropics/claude-code`, and `links()` puts it at
+            # `bin/claude` beside `bin/predictable`. That is precisely where `--pinned` looks,
+            # so the flag still selects it and still errors plainly if it is absent rather than
+            # falling back to a different agent than we asked for.
             #
             # `--stream-json` so the agent's own work arrives as ndjson, one message per
             # turn and per tool call, and is pushed by the same pump below.
@@ -744,8 +842,18 @@ jobs:
           # considered override, not a default, and it needs a machine that can hold it:
           # V8's RSS runs above its own old-space cap, so a cap near the machine's size
           # trades this clean error for the kernel killing the process.
+          # WHY THIS RUN COVERED LESS, WRITTEN ONCE AND RENDERED TWICE. The step summary below is
+          # read by somebody looking at THIS run; the pull request the next step opens outlives it
+          # and is what a reviewer sees. Both need the same answer, and computing it twice would be
+          # two producers of one fact — the shape this branch keeps finding. So it is extracted
+          # here, beside the data, and the propose step renders the file.
+          WHY_FILE="${RUNNER_TEMP}/pc-degraded-why.txt"
+          : > "$WHY_FILE"
+          HEAP_EXPLAINED=no
           if grep -q "exhausted its" "$RUN_JSON" 2>/dev/null; then
+            HEAP_EXPLAINED=yes
             BUDGET=$(grep -o "exhausted its [0-9]* MB" "$RUN_JSON" | head -1 | tr -cd '0-9')
+            printf 'The TypeScript front end exhausted its %s MB V8 old-space budget on this runner, so TypeScript is reported as not translated.\n' "${BUDGET:-derived}" > "$WHY_FILE"
             echo "::warning::the TypeScript front end ran out of memory (${BUDGET:-its} MB V8 old-space budget), so TypeScript is reported as not translated and this analysis covers less than the project"
             {
               echo "### TypeScript did not translate: the front end ran out of memory"
@@ -791,6 +899,62 @@ jobs:
           RESULT=$(jq -r '.result | keys[0] // empty' "$RESULT_JSON" 2>/dev/null || true)
           echo "result=${RESULT}" >> "$GITHUB_OUTPUT"
           echo "::notice::sync verdict: ${RESULT}"
+
+          # A DEGRADED VERDICT EXPLAINS ITSELF, WHATEVER DEGRADED IT.
+          #
+          # The block above lifts ONE cause — the tsc front end running out of memory —
+          # because its remedy is specific enough to be worth tailoring. Its own comment
+          # states the general rule it was only half applying: the reader's account of the
+          # run "says `degraded`, which is true and does not say WHY". Every OTHER way a
+          # run covers less than the project was still stated and not explained: a language
+          # whose toolchain would not install (`provisionLanguage` answers `unavailable`
+          # and that becomes the not-translated reason on THAT language's files alone), a
+          # front end that produced no IL for some files, files of no supported language,
+          # a Lean toolchain mismatch. The engine names each of them — `not translated
+          # (<reason>)` — and all of it goes to `$RUN_JSON`, where it is one progress line
+          # among hundreds inside a collapsed group on a run that ends GREEN.
+          #
+          # So `degraded` alone reads to a reader exactly as a clean bill with a word they
+          # skim past, which is the failure every honesty rule in this product exists to
+          # prevent — arriving through the reporting rather than through a verdict.
+          #
+          # IT LIFTS WHAT THE ENGINE SAID AND INVENTS NOTHING. Where the run left no
+          # readable reason the summary says so and points at this job's log, because
+          # "we could not tell you why" is an honest answer and a manufactured cause is
+          # not. Bounded to a handful of distinct lines: a summary that reprints a
+          # thousand per-file reasons is one nobody reads, and the count says how many
+          # were left for the log.
+          if [ "${RESULT}" = "degraded" ] && [ "${HEAP_EXPLAINED}" = "no" ]; then
+            REASONS=$(grep -o "not translated ([^)\\\"]*)" "$RUN_JSON" 2>/dev/null \
+              | sort | uniq -c | sort -rn | head -5 || true)
+            DISTINCT=$(grep -o "not translated ([^)\\\"]*)" "$RUN_JSON" 2>/dev/null \
+              | sort -u | wc -l | tr -d ' ' || true)
+            if [ -n "${REASONS}" ]; then
+              printf 'What the engine reported, most common first:\n\n```\n%s\n```\n' "${REASONS}" > "$WHY_FILE"
+            else
+              printf 'This run recorded no per-file reason that could be read back. The job log holds the full phase output, and `Code/.il/.report.json` names every file that did not translate.\n' > "$WHY_FILE"
+            fi
+            echo "::warning::this analysis covers less than the project (verdict: degraded) — see the job summary for what did not translate"
+            {
+              echo "### This analysis covers less than your project"
+              echo
+              echo "The run finished and its verdict is **degraded**, which means part of the project was not translated, so the analysis, the inferred requirements and the datasets this app reads all describe less than what is in the repository. **Nothing here says your code is wrong.**"
+              echo
+              if [ -n "${REASONS}" ]; then
+                echo "What the engine reported, most common first:"
+                echo
+                echo '```'
+                echo "${REASONS}"
+                echo '```'
+                if [ "${DISTINCT:-0}" -gt 5 ]; then
+                  echo
+                  echo "That is the 5 most common of **${DISTINCT}** distinct reasons; this job's log holds them all, and so does \`Code/.il/.report.json\` in the results."
+                fi
+              else
+                echo "This run recorded no per-file reason that could be read back here. The phase output in this job's log is the full account, and \`Code/.il/.report.json\` in the results names every file that did not translate."
+              fi
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
           # EMPTY IS UNREADABLE, and that is the whole point of this check. The previous
           # version tested only for the literal `unknown`, so a missing, null or
           # unparseable verdict — every realistic way this fails — walked straight past
@@ -1107,6 +1271,18 @@ jobs:
             echo
             echo "**Verdict: \`${VERDICT}\`** — \`degraded\` means only part of the project translated, and \`mechanical\` means the run stopped before the proving tail. Neither is a failure, and neither is a clean bill."
             echo
+            # AND WHY, WHEN IT COVERED LESS. The verdict alone sends a reviewer to the run log to
+            # find out what was missed — and the run log expires, while the pull request does not.
+            # The reasons were extracted once, by the analyse step, beside the data they come from.
+            WHY_FILE="${RUNNER_TEMP}/pc-degraded-why.txt"
+            if [ -s "$WHY_FILE" ]; then
+              echo "### Why this run covered less than the project"
+              echo
+              cat "$WHY_FILE"
+              echo
+              echo "**Nothing here says your code is wrong.**"
+              echo
+            fi
             echo "Only \`.predictable-code/\` and your specs directory are written — no source file is changed."
           } > /tmp/pc-body.md
 

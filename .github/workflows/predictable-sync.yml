@@ -17,7 +17,7 @@
 # The stamp below is how the Control Center knows whether this repository is running a
 # current copy. It is compared as a NUMBER, never as a diff, so your own edits to this
 # file — a bigger `runner:`, a different `heap_mb` — are yours and are left alone.
-# predictable-workflow-version: 23
+# predictable-workflow-version: 25
 name: Predictable Code
 
 on:
@@ -803,6 +803,34 @@ jobs:
               echo "\`${PC_COMMAND}\` was killed by **signal ${SIG}** (exit ${RUN_STATUS}). That is a crash of the tool, **not** a finding about your code and not a fix that declined — so no pull request is opened and whatever it had written is left alone."
               echo
               echo "The output above is everything it managed to report before it died."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+          # AN AGENT THAT NEVER RAN IS NOT A FIX THAT DECLINED, and only the agent verb can
+          # tell the two apart by its exit status.
+          #
+          # The rule above — "an ordinary non-zero exit is not acted on" — is right for
+          # `fix-issue` and for `sync`: `fix-issue` has accept gates and restoring its snapshot
+          # is an ordinary outcome, and a partial sync is still a usable analysis. `predictable
+          # claude` has no accept gates. It either launches the agent or it does not, so a
+          # non-zero exit from it means the run produced nothing, for a reason that is ours.
+          #
+          # MEASURED on run 35879959641, which reported SUCCESS: `predictable claude --pinned`
+          # found no pinned Claude ("No pinned Claude ships with this build"), threw, exited
+          # non-zero — and this step swallowed it, so the empty tree downstream was announced as
+          # "the fix did not change any source; nothing to propose". That is the sentence a
+          # reader gets when an agent considered their defect and declined, and the agent had not
+          # started. The crash arm above was written for exactly this shape and catches only
+          # signal deaths; this is the same lie arriving through an ordinary exit code.
+          if [ "${PC_COMMAND}" = "fix-agent" ] && [ "$RUN_STATUS" -ne 0 ]; then
+            echo "::error::the agent did not run (exit ${RUN_STATUS}) — this is not a fix that chose to change nothing, and the output above says why"
+            {
+              echo "### The agent did not run"
+              echo
+              echo "\`predictable claude\` exited **${RUN_STATUS}** without completing. That is a failure to start or to finish the agent, **not** a decision about your code — so no pull request is opened and the finding stands untouched."
+              echo
+              echo "The most common cause is a toolchain this workflow did not provision: the package ships no agent CLI, so \`provision.sh install base\` has to install one first. The output above names what it could not find."
             } >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi

@@ -1,0 +1,14 @@
+[DEBUG] initializer started
+  pid=2606
+  cwd=/home/runner/work/kotlin-stdlib/kotlin-stdlib
+  command=predictable sync
+  flags=2
+  basePath=/home/runner/work/kotlin-stdlib/kotlin-stdlib/.predictable-code
+[DEBUG] Verification path: /home/runner/work/kotlin-stdlib/kotlin-stdlib/.predictable-code/verification
+  trace: predictable sync → Predictable.Cli.syncWithFindings → Core.SpecSync.sync → Core.SpecSync.syncLocked → Core.SpecSync.syncBody → Core.SpecSync.syncTranslateStep → Core.SpecSync.initVerification
+[INFO] Re-pointing the verification project at the running build (/home/runner/work/_temp/predictable-pkg/predictable-runtime-0.1.0-cloud-a55da7755-linux-x64/workspace) — it was initialised by a different one, so its Analysis modules would have been elaborated against that engine.
+  trace: predictable sync → Predictable.Cli.syncWithFindings → Core.SpecSync.sync → Core.SpecSync.syncLocked → Core.SpecSync.syncBody → Core.SpecSync.syncTranslateStep → Core.SpecSync.initVerification
+[INFO] Verification folder already exists
+  trace: predictable sync → Predictable.Cli.syncWithFindings → Core.SpecSync.sync → Core.SpecSync.syncLocked → Core.SpecSync.syncBody → Core.SpecSync.syncTranslateStep → Core.SpecSync.initVerification
+[INFO]   Translation engine: Kotlin compiler front-end (49 .kt file(s))
+  trace: predictable sync → Predictable.Cli.syncWithFindings → Core.SpecSync.sync → Core.SpecSync.syncLocked → Core.SpecSync.syncBody → Core.SpecSync.syncTranslateStep → PredictableCore.Translation.orchestrateTranslation

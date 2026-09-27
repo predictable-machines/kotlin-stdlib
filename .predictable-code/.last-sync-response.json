@@ -1,3 +1,9 @@
-{"runId": "3283-427874",
+{"runId": "2606-122603",
  "response":
- {"degraded": {"filesTranslated": 3, "filesTotal": 49, "filesFailed": 46}}}
+ {"mechanical":
+  {"specsChecked": 48,
+   "requirementsViolated": 1,
+   "requirementsVerified": 20,
+   "requirementsInferred": 13,
+   "functionsWithIssues": 2,
+   "findingsTotal": 2}}}

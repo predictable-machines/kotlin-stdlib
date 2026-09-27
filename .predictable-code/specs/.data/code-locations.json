@@ -1,1 +1,559 @@
-{"refs": [], "decls": []}
+{"refs":
+ [{"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 137,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#137-156",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 156,
+     "declName": "getIndex",
+     "declKind": "method"}],
+   "itemId": "REQ-0001"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 91,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#91-114",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 114,
+     "declName": "penultimate",
+     "declKind": "method"}],
+   "itemId": "REQ-0002"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 64,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#64-64",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 64,
+     "declName": "eighth",
+     "declKind": "method"}],
+   "itemId": "REQ-0003"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 37,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#37-37",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 37,
+     "declName": "fifth",
+     "declKind": "method"}],
+   "itemId": "REQ-0004"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 28,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#28-28",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 28,
+     "declName": "forth",
+     "declKind": "method"}],
+   "itemId": "REQ-0005"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 73,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#73-73",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 73,
+     "declName": "ninth",
+     "declKind": "method"}],
+   "itemId": "REQ-0006"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 10,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#10-10",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 10,
+     "declName": "second",
+     "declKind": "method"}],
+   "itemId": "REQ-0007"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 55,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#55-55",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 55,
+     "declName": "seventh",
+     "declKind": "method"}],
+   "itemId": "REQ-0008"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 46,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#46-46",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 46,
+     "declName": "sixth",
+     "declKind": "method"}],
+   "itemId": "REQ-0009"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 82,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#82-82",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 82,
+     "declName": "tenth",
+     "declKind": "method"}],
+   "itemId": "REQ-0010"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 19,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#19-19",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 19,
+     "declName": "third",
+     "declKind": "method"}],
+   "itemId": "REQ-0011"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 64,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#64-64",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 64,
+     "declName": "eighth",
+     "declKind": "method"}],
+   "itemId": "ANL-0001"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 66,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#66-66",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 66,
+     "declName": "eighthOrNull",
+     "declKind": "method"}],
+   "itemId": "ANL-0002"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 37,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#37-37",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 37,
+     "declName": "fifth",
+     "declKind": "method"}],
+   "itemId": "ANL-0003"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 39,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#39-39",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 39,
+     "declName": "fifthOrNull",
+     "declKind": "method"}],
+   "itemId": "ANL-0004"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 28,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#28-28",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 28,
+     "declName": "forth",
+     "declKind": "method"}],
+   "itemId": "ANL-0005"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 30,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#30-30",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 30,
+     "declName": "forthOrNull",
+     "declKind": "method"}],
+   "itemId": "ANL-0006"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 137,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#137-156",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 156,
+     "declName": "getIndex",
+     "declKind": "method"}],
+   "itemId": "ANL-0007"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 159,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#159-173",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 173,
+     "declName": "getIndexOrNull",
+     "declKind": "method"}],
+   "itemId": "ANL-0008"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 73,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#73-73",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 73,
+     "declName": "ninth",
+     "declKind": "method"}],
+   "itemId": "ANL-0009"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 75,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#75-75",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 75,
+     "declName": "ninthOrNull",
+     "declKind": "method"}],
+   "itemId": "ANL-0010"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 10,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#10-10",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 10,
+     "declName": "second",
+     "declKind": "method"}],
+   "itemId": "ANL-0011"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 12,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#12-12",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 12,
+     "declName": "secondOrNull",
+     "declKind": "method"}],
+   "itemId": "ANL-0012"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 55,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#55-55",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 55,
+     "declName": "seventh",
+     "declKind": "method"}],
+   "itemId": "ANL-0013"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 57,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#57-57",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 57,
+     "declName": "seventhOrNull",
+     "declKind": "method"}],
+   "itemId": "ANL-0014"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 46,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#46-46",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 46,
+     "declName": "sixth",
+     "declKind": "method"}],
+   "itemId": "ANL-0015"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 48,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#48-48",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 48,
+     "declName": "sixthOrNull",
+     "declKind": "method"}],
+   "itemId": "ANL-0016"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 82,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#82-82",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 82,
+     "declName": "tenth",
+     "declKind": "method"}],
+   "itemId": "ANL-0017"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 84,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#84-84",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 84,
+     "declName": "tenthOrNull",
+     "declKind": "method"}],
+   "itemId": "ANL-0018"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 19,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#19-19",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 19,
+     "declName": "third",
+     "declKind": "method"}],
+   "itemId": "ANL-0019"},
+  {"specId": "SPEC-004",
+   "refs":
+   [{"startLine": 21,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#21-21",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+     "endLine": 21,
+     "declName": "thirdOrNull",
+     "declKind": "method"}],
+   "itemId": "ANL-0020"},
+  {"specId": "SPEC-005",
+   "refs":
+   [{"startLine": 117,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt#117-130",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+     "endLine": 130,
+     "declName": "path",
+     "declKind": "method"}],
+   "itemId": "REQ-0001"},
+  {"specId": "SPEC-005",
+   "refs":
+   [{"startLine": 7,
+     "key":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt#7-171",
+     "file":
+     "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+     "endLine": 171,
+     "declName": "<get-depth>",
+     "declKind": "method"}],
+   "itemId": "ANL-0021"},
+  {"specId": "SPEC-050",
+   "refs":
+   [{"startLine": 36,
+     "key":
+     "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt#36-36",
+     "file":
+     "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+     "endLine": 36,
+     "declName": "resource",
+     "declKind": "method"}],
+   "itemId": "REQ-0001"}],
+ "decls":
+ [{"startLine": 137,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#137-156",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 156,
+   "declName": "getIndex"},
+  {"startLine": 91,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#91-114",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.penultimate",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 114,
+   "declName": "penultimate"},
+  {"startLine": 64,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#64-64",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.eighth",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 64,
+   "declName": "eighth"},
+  {"startLine": 37,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#37-37",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.fifth",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 37,
+   "declName": "fifth"},
+  {"startLine": 28,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#28-28",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.forth",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 28,
+   "declName": "forth"},
+  {"startLine": 73,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#73-73",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.ninth",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 73,
+   "declName": "ninth"},
+  {"startLine": 10,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#10-10",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.second",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 10,
+   "declName": "second"},
+  {"startLine": 55,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#55-55",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.seventh",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 55,
+   "declName": "seventh"},
+  {"startLine": 46,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#46-46",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.sixth",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 46,
+   "declName": "sixth"},
+  {"startLine": 82,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#82-82",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.tenth",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 82,
+   "declName": "tenth"},
+  {"startLine": 19,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#19-19",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.third",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 19,
+   "declName": "third"},
+  {"startLine": 66,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#66-66",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.eighthOrNull",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 66,
+   "declName": "eighthOrNull"},
+  {"startLine": 39,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#39-39",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.fifthOrNull",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 39,
+   "declName": "fifthOrNull"},
+  {"startLine": 30,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#30-30",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.forthOrNull",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 30,
+   "declName": "forthOrNull"},
+  {"startLine": 159,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#159-173",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndexOrNull",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 173,
+   "declName": "getIndexOrNull"},
+  {"startLine": 75,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#75-75",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.ninthOrNull",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 75,
+   "declName": "ninthOrNull"},
+  {"startLine": 12,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#12-12",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.secondOrNull",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 12,
+   "declName": "secondOrNull"},
+  {"startLine": 57,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#57-57",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.seventhOrNull",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 57,
+   "declName": "seventhOrNull"},
+  {"startLine": 48,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#48-48",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.sixthOrNull",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 48,
+   "declName": "sixthOrNull"},
+  {"startLine": 84,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#84-84",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.tenthOrNull",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 84,
+   "declName": "tenthOrNull"},
+  {"startLine": 21,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt#21-21",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.thirdOrNull",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+   "endLine": 21,
+   "declName": "thirdOrNull"},
+  {"startLine": 117,
+   "key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt#117-130",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.path",
+   "file":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+   "endLine": 130,
+   "declName": "path"},
+  {"startLine": 36,
+   "key":
+   "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt#36-36",
+   "fqn": "Code.com.javiersc.kotlin.stdlib.FilesKt.resource",
+   "file": "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+   "endLine": 36,
+   "declName": "resource"}]}

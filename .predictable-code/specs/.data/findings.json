@@ -1,1 +1,21 @@
-[]
+[{"vc": "vc1.cont.h_2",
+  "severity": "warning",
+  "priority": 5,
+  "message":
+  "May throw TreeNodeException. For some inputs this code might throw here, but the analyzer can't confirm it: the throw turns on a value it does not track at this point (an analysis limitation).",
+  "line": 127,
+  "fqn": "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.path",
+  "file":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "defectClass": "domain-guard",
+  "category": "throw"},
+ {"vc": "vc2.isTrue.success",
+  "severity": "warning",
+  "priority": 5,
+  "message":
+  "May break a called method's requirement. This code can call a method with arguments that violate what that method requires.",
+  "fqn": "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-depth>»",
+  "file":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "defectClass": "unchecked-precondition",
+  "category": "callee-precondition"}]

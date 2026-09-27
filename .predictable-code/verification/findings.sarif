@@ -2,7 +2,7 @@
  "runs":
  [{"tool":
    {"driver":
-    {"version": "0.1.0-cloud-ecb982387",
+    {"version": "0.1.0-cloud-a55da7755",
      "rules":
      [{"shortDescription":
        {"text":
@@ -80,7 +80,397 @@
        "defaultConfiguration": {"level": "note", "enabled": true}}],
      "name": "predictable-code",
      "informationUri": "https://code.predictablemachines.com"}},
-   "results": [],
+   "results":
+   [{"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.FilesKt.resource|no_throw_refuted|vc1.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.FilesKt.resource may throw an uncaught exception."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 36, "endLine": 36},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.eighth|no_throw_refuted|vc1.isTrue.isFalse"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.eighth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 64, "endLine": 64},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.eighth|no_throw_refuted|vc2.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.eighth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 64, "endLine": 64},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.fifth|no_throw_refuted|vc1.isTrue.isFalse"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.fifth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 37, "endLine": 37},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.fifth|no_throw_refuted|vc2.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.fifth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 37, "endLine": 37},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.forth|no_throw_refuted|vc1.isTrue.isFalse"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.forth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 28, "endLine": 28},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.forth|no_throw_refuted|vc2.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.forth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 28, "endLine": 28},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex|no_throw_refuted|vc1.isTrue.isFalse"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.getIndex may throw an uncaught exception (trigger not known)."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 137, "endLine": 156},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex|no_throw_refuted|vc2.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.getIndex may throw an uncaught exception (trigger not known)."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 137, "endLine": 156},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.ninth|no_throw_refuted|vc1.isTrue.isFalse"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.ninth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 73, "endLine": 73},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.ninth|no_throw_refuted|vc2.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.ninth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 73, "endLine": 73},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.penultimate|no_throw_refuted|vc1.isTrue.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.penultimate may throw an uncaught exception."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 91, "endLine": 114},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.penultimate|no_throw_refuted|vc2.isTrue.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.penultimate may throw an uncaught exception."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 91, "endLine": 114},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.penultimate|no_throw_refuted|vc3.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.penultimate may throw an uncaught exception."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 91, "endLine": 114},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.second|no_throw_refuted|vc1.isTrue.isFalse"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.second may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 10, "endLine": 10},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.second|no_throw_refuted|vc2.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.second may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 10, "endLine": 10},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.seventh|no_throw_refuted|vc1.isTrue.isFalse"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.seventh may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 55, "endLine": 55},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.seventh|no_throw_refuted|vc2.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.seventh may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 55, "endLine": 55},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.sixth|no_throw_refuted|vc1.isTrue.isFalse"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.sixth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 46, "endLine": 46},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.sixth|no_throw_refuted|vc2.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.sixth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 46, "endLine": 46},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.tenth|no_throw_refuted|vc1.isTrue.isFalse"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.tenth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 82, "endLine": 82},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.tenth|no_throw_refuted|vc2.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.tenth may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 82, "endLine": 82},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.third|no_throw_refuted|vc1.isTrue.isFalse"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.third may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 19, "endLine": 19},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.IterableKt.third|no_throw_refuted|vc2.isFalse.isTrue"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.IterableKt.third may throw an uncaught exception. Throws via com.javiersc.kotlin.stdlib.IterableKt.getIndex."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 19, "endLine": 19},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "no_throw_refuted",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.path|no_throw_refuted|vc1.cont.h_2"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.tree.TreeNode.path may throw an uncaught exception."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 117, "endLine": 130},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt"}}}],
+     "level": "note",
+     "kind": "fail"},
+    {"ruleId": "precondition_violated",
+     "partialFingerprints":
+     {"predictableFinding/v1":
+      "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-depth>»|precondition_violated|vc2.isTrue.success"},
+     "message":
+     {"text":
+      "com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-depth>» may call a method with arguments that violate its requirement. Requirement: The size must not be negative; the result has exactly that many elements."},
+     "locations":
+     [{"physicalLocation":
+       {"region": {"startLine": 97, "endLine": 106},
+        "artifactLocation":
+        {"uri":
+         "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt"}}}],
+     "level": "note",
+     "kind": "fail"}],
    "automationDetails": {"id": "predictable-code/analysis"}}],
  "$schema":
  "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json"}

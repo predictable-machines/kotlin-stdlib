@@ -1,0 +1,1 @@
+{"complete":true,"diagnostics":[],"reason":"a value binding, not an operation: it has no body and nothing that could fail","runKey":"c83c839e867b5b27","status":"value","theorem":"Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlack.new.analyze_unconstrained","uncheckedCauses":[],"uncheckedObligations":[],"unreflected":0,"verified":[]}

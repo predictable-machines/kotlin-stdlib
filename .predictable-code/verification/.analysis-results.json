@@ -1,17 +1,29 @@
-{"valueBindings": 1,
- "vacuousClean": 23,
+{"valueBindings": 109,
+ "vacuousClean": 272,
  "uncheckedObligations": 0,
- "unanalyzedCount": 6,
+ "unanalyzedCount": 0,
  "unanalyzed": [],
- "totalFunctions": 29,
+ "totalFunctions": 296,
  "totalByType": 0,
  "stubbedBodies": 0,
- "sourceFilesTranslated": 3,
+ "sourceFilesTranslated": 49,
  "sourceFilesTotal": 49,
  "resultsPath":
  "/home/runner/work/kotlin-stdlib/kotlin-stdlib/.predictable-code/verification/.analysis-results.json",
  "results":
- {"Code.com.javiersc.kotlin.test.iterableMatchersKt.assertSize":
+ {"Code.com.javiersc.kotlin.test.stringMatchersKt.assertNotEmpty":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.stringMatchersKt.assertNotEmpty.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/stringMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.stringMatchersKt.assertNotBlank":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.test.stringMatchersKt.assertNotBlank.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/test/stringMatchers.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertSize":
   {"verdict": "clean",
    "theorem":
    "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertSize.analyze_unconstrained",
@@ -136,106 +148,3667 @@
    "Code.com.javiersc.kotlin.test.booleanMatchersKt.assertFalse.analyze_unconstrained",
    "source": "Code/com/javiersc/kotlin/test/booleanMatchers.lean",
    "diagnostics": []},
-  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile":
-  {"verdict": "unanalyzed",
-   "theorem":
-   "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile.analyze_unconstrained",
-   "source": "Code/com/javiersc/kotlin/test/FileMatchersTest/jvm.lean",
-   "diagnostics": []},
-  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory":
-  {"verdict": "unanalyzed",
-   "theorem":
-   "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory.analyze_unconstrained",
-   "source": "Code/com/javiersc/kotlin/test/FileMatchersTest/jvm.lean",
-   "diagnostics": []},
-  "Code.com.javiersc.kotlin.test.FileMatchersTest.tearDown":
+  "Code.com.javiersc.kotlin.stdlib.validate.ValidatorKt.validateWith":
   {"verdict": "clean",
    "theorem":
-   "Code.com.javiersc.kotlin.test.FileMatchersTest.tearDown.analyze_unconstrained",
-   "source": "Code/com/javiersc/kotlin/test/FileMatchersTest/jvm.lean",
+   "Code.com.javiersc.kotlin.stdlib.validate.ValidatorKt.validateWith.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/Validator.lean",
    "diagnostics": []},
-  "Code.com.javiersc.kotlin.test.FileMatchersTest.new":
+  "Code.com.javiersc.kotlin.stdlib.validate.ValidatorKt.Validator":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.ValidatorKt.Validator.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/Validator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.Validator.validate":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.Validator.validate.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/Validator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.Validator.new":
   {"verdict": "value",
    "theorem":
-   "Code.com.javiersc.kotlin.test.FileMatchersTest.new.analyze_unconstrained",
-   "source": "Code/com/javiersc/kotlin/test/FileMatchersTest/jvm.lean",
+   "Code.com.javiersc.kotlin.stdlib.validate.Validator.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/Validator.lean",
    "reason":
    "a value binding, not an operation: it has no body and nothing that could fail",
    "diagnostics": []},
-  "Code.com.javiersc.kotlin.test.FileMatchersTest.constructor":
+  "Code.com.javiersc.kotlin.stdlib.validate.Validator.lambda_14":
   {"verdict": "clean",
    "theorem":
-   "Code.com.javiersc.kotlin.test.FileMatchersTest.constructor.analyze_unconstrained",
-   "source": "Code/com/javiersc/kotlin/test/FileMatchersTest/jvm.lean",
+   "Code.com.javiersc.kotlin.stdlib.validate.Validator.lambda_14.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/Validator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.Validator.anonymous_25.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.Validator.anonymous_25.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/Validator.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RulesScopeKt.RuleScope":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RulesScopeKt.RuleScope.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.validatorFor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.validatorFor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.validatedBy":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.validatedBy.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.rulesFor_1":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.rulesFor_1.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.rulesFor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.rulesFor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invoke":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invoke.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invalidIfIsEmpty":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invalidIfIsEmpty.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invalidIfIsBlank":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invalidIfIsBlank.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.«<get-rules>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.«<get-rules>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.validator":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.validator.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.validIf":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.validIf.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.valid":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.valid.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.rule":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.rule.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.invalidIf":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.invalidIf.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.invalid":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.invalid.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/validate/RulesScope.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeKt.tree":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeKt.tree.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeIterators.«<get-entries>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeIterators.«<get-entries>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNodeIterators.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeIterators.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeIterators.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNodeIterators.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeIterators.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeIterators.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNodeIterators.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeException.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeException.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeException.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeException.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-root>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-root>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-parent>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-parent>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-nodeCount>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-nodeCount>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-isRoot>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-isRoot>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-height>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-height>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-depth>»":
+  {"verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-depth>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics":
+   [{"vcTag": "vc2.isTrue.success",
+     "triggerGuard": null,
+     "throwingCallee": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "reachableWhen": [],
+     "precClause": null,
+     "line": null,
+     "kind": "precondition_violated",
+     "inputs": ["b_102 = <Prod>"],
+     "hypotheses":
+     ["0ⱼ ⊑ Prod.fst(b_102)",
+      "¬ ((Prod.snd(b_102) === null) = true)",
+      "0ⱼ ⊑ Prod.fst(b_102)"],
+     "header":
+     "precondition `vc2.isTrue.success` violated\nfrom spec: IlArray.newM_spec",
+     "guardIr": null,
+     "goal": "0ⱼ ⊑ (Prod.fst(b_102) ⊞ 1ⱼ)",
+     "findingClass": "uncalled",
+     "derivedFacts":
+     ["Prod.fst(b_102) = 2147483647ⱼ", "(Prod.snd(b_102) === null) = false"],
+     "concreteGoal": "0ⱼ ⊑ (2147483647ⱼ ⊞ 1ⱼ)",
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}]},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-children>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-children>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.removeChild":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.removeChild.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.print":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.print.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.prettyString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.prettyString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.path":
+  {"verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.path.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.cont.h_2",
+     "triggerGuard": "¬ (Prod.fst(b_107).isSome = true)",
+     "throwingCallee": null,
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen": ["¬ (Prod.fst(b_107).isSome = true)"],
+     "precClause": null,
+     "line": 228,
+     "kind": "no_throw_refuted",
+     "inputs": ["b_107 = <Prod>"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws `IO.userError \"TreeNodeException\"` on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["Prod.fst(b_107).isSome = false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.lambda_135":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.lambda_135.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.iterator":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.iterator.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.clear":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.clear.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.child":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.child.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.addChild":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.addChild.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.next":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.next.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.hasNext":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.hasNext.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.next":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.next.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.hasNext":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.hasNext.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.getChildrenStack":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.getChildrenStack.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.next":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.next.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.hasNext":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.hasNext.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.tree.ChildDeclarationInterface.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.tree.ChildDeclarationInterface.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/tree/TreeNode.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.root_31.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.root_31.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-values>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-values>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-size>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-size>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-keys>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-keys>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-entries>»":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-entries>».analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.isEmpty":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.isEmpty.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.get":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.get.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.containsValue":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.containsValue.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.containsKey":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.containsKey.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.addVertex":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.addVertex.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.addEdge":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.addEdge.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.GraphKt.mutableGraphOf":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.GraphKt.mutableGraphOf.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.GraphKt.buildGraph":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.GraphKt.buildGraph.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.vertexesFor_1":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.vertexesFor_1.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.vertexesFor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.vertexesFor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.toGraphSortedByEdges":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.toGraphSortedByEdges.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.renderer":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.renderer.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_26":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_26.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_19":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_19.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_133":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_133.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_128":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_128.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.doesNotContainsCircularVertexes":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.doesNotContainsCircularVertexes.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.deepFirstSearchCircularDependencies":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.deepFirstSearchCircularDependencies.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.contains_1":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.contains_1.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.containsCircularVertexes":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.containsCircularVertexes.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.contains":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.contains.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.asString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.asString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.Vertex.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.Vertex.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.Vertex.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.Vertex.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.Vertex.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.Vertex.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.constructor_1":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.constructor_1.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/graph/Graph.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.UseContextParameters.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.UseContextParameters.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/UseContextParameters.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.UseContextParameters.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.UseContextParameters.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/UseContextParameters.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.TKt.or_1":
+  {"verdict": "clean",
+   "theorem": "Code.com.javiersc.kotlin.stdlib.TKt.or_1.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/T.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.TKt.or":
+  {"verdict": "clean",
+   "theorem": "Code.com.javiersc.kotlin.stdlib.TKt.or.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/T.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.TKt.ifNull":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.TKt.ifNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/T.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.TKt.ifNotNull":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.TKt.ifNotNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/T.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transformstring":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transformstring.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/StringsTransform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transform_string":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transform_string.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/StringsTransform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transform_hyphen_string":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transform_hyphen_string.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/StringsTransform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transformString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transformString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/StringsTransform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.tRaNsFoRmStRiNg":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.tRaNsFoRmStRiNg.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/StringsTransform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.prepare":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.prepare.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/StringsTransform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TransformString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TransformString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/StringsTransform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TRANSFORM_STRING":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TRANSFORM_STRING.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/StringsTransform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TRANSFORM_HYPHEN_STRING":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TRANSFORM_HYPHEN_STRING.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/StringsTransform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TRANSFORMSTRING":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TRANSFORMSTRING.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/StringsTransform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsKt.replace":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsKt.replace.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Strings.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsKt.remove_1":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsKt.remove_1.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Strings.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsKt.removeIf":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsKt.removeIf.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Strings.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsKt.removeDuplicateEmptyLines":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsKt.removeDuplicateEmptyLines.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Strings.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsKt.remove":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsKt.remove.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Strings.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsKt.lambda_55":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsKt.lambda_55.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Strings.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsKt.lambda_49":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsKt.lambda_49.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Strings.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsKt.endWithNewLine":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsKt.endWithNewLine.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Strings.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsKt.decapitalize":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsKt.decapitalize.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Strings.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.StringsKt.capitalize":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.StringsKt.capitalize.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Strings.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.X64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.X64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.X64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.X64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.SimulatorArm64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.SimulatorArm64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.SimulatorArm64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.SimulatorArm64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.DeviceArm64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.DeviceArm64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.DeviceArm64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.DeviceArm64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm32.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm32.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm32.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm32.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.NodeJS.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.NodeJS.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.NodeJS.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.NodeJS.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.NodeJS.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.NodeJS.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.NodeJS.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.NodeJS.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.D8.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.D8.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.D8.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.D8.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Browser.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Browser.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Browser.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Browser.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.X64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.X64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.X64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.X64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.SimulatorArm64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.SimulatorArm64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.SimulatorArm64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.SimulatorArm64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Arm64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Arm64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Arm64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Arm64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Native.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Native.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Native.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Native.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Native.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Native.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Native.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Native.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.X64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.X64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.X64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.X64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.X64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.X64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.X64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.X64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Arm64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Arm64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Arm64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Arm64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Linux.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Linux.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Linux.X64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Linux.X64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Linux.X64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Linux.X64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Arm64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Arm64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Arm64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Arm64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JVM.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JVM.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JVM.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JVM.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JVM.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JVM.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JVM.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JVM.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JS.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JS.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JS.NodeJS.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JS.NodeJS.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JS.NodeJS.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JS.NodeJS.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JS.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JS.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JS.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JS.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JS.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JS.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JS.Browser.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JS.Browser.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.JS.Browser.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.JS.Browser.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.IOS.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.IOS.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.IOS.X64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.IOS.X64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.IOS.X64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.IOS.X64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.IOS.SimulatorArm64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.IOS.SimulatorArm64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.IOS.SimulatorArm64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.IOS.SimulatorArm64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Arm64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Arm64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Arm64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Arm64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Apple.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Apple.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Apple.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Apple.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Apple.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Apple.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Apple.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Apple.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.X86.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.X86.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.X86.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.X86.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.X64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.X64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.X64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.X64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.Companion.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.Companion.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm64.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm64.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm64.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm64.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm32.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm32.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm32.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm32.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Platform.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.ListKt.removeDuplicateEmptyLines":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.ListKt.removeDuplicateEmptyLines.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/List.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.ListKt.lambda_9":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.ListKt.lambda_9.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/List.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.thirdOrNull":
+  {"verified":
+   [{"vcTag": "vc1.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc2.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.thirdOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.third":
+  {"verified":
+   [{"vcTag": "vc3.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc4.step.isTrue.isTrue",
+     "triggerGuard": "0ⱼ ⊑ Prod.snd(b_96)",
+     "requirementIr": null,
+     "requirement": null,
+     "line": 82,
+     "kind": "no_throw_refuted",
+     "guardIr": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc5.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.third.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue.isFalse",
+     "triggerGuard":
+     "¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (3ⱼ ⊟ 1ⱼ)) = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (3ⱼ ⊟ 1ⱼ)) = true)",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(IlUnknown.geB (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (Java.Lang.int32.sub (3ⱼ) (1ⱼ)) = true)",
+     "line": 72,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts":
+     ["IlUnknown.foreignVal(\"this:static:?\").size = 0ⱼ",
+      "(IlUnknown.foreignVal(\"this:static:?\").size >= (3ⱼ ⊟ 1ⱼ)) = false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc2.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ (iterator.hasNext() = true)", "¬ (opaque_2874204994 = true)"],
+     "precClause":
+     "(IlUnknown.truthy (IlUnknown.callOn (Il.named (IlUnknown.callOn (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"hasNext\"))) = true)",
+     "line": 76,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = false"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["iterator.hasNext() is missing, empty, zero or false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.tenthOrNull":
+  {"verified":
+   [{"vcTag": "vc1.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc2.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.tenthOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.tenth":
+  {"verified":
+   [{"vcTag": "vc3.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc4.step.isTrue.isTrue",
+     "triggerGuard": "0ⱼ ⊑ Prod.snd(b_96)",
+     "requirementIr": null,
+     "requirement": null,
+     "line": 82,
+     "kind": "no_throw_refuted",
+     "guardIr": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc5.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.tenth.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue.isFalse",
+     "triggerGuard":
+     "¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (10ⱼ ⊟ 1ⱼ)) = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (10ⱼ ⊟ 1ⱼ)) = true)",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(IlUnknown.geB (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (Java.Lang.int32.sub (10ⱼ) (1ⱼ)) = true)",
+     "line": 72,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts":
+     ["IlUnknown.foreignVal(\"this:static:?\").size = 0ⱼ",
+      "(IlUnknown.foreignVal(\"this:static:?\").size >= (10ⱼ ⊟ 1ⱼ)) = false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc2.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ (iterator.hasNext() = true)", "¬ (opaque_2874204994 = true)"],
+     "precClause":
+     "(IlUnknown.truthy (IlUnknown.callOn (Il.named (IlUnknown.callOn (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"hasNext\"))) = true)",
+     "line": 76,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = false"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["iterator.hasNext() is missing, empty, zero or false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.sixthOrNull":
+  {"verified":
+   [{"vcTag": "vc1.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc2.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.sixthOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.sixth":
+  {"verified":
+   [{"vcTag": "vc3.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc4.step.isTrue.isTrue",
+     "triggerGuard": "0ⱼ ⊑ Prod.snd(b_96)",
+     "requirementIr": null,
+     "requirement": null,
+     "line": 82,
+     "kind": "no_throw_refuted",
+     "guardIr": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc5.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.sixth.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue.isFalse",
+     "triggerGuard":
+     "¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (6ⱼ ⊟ 1ⱼ)) = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (6ⱼ ⊟ 1ⱼ)) = true)",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(IlUnknown.geB (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (Java.Lang.int32.sub (6ⱼ) (1ⱼ)) = true)",
+     "line": 72,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts":
+     ["IlUnknown.foreignVal(\"this:static:?\").size = 0ⱼ",
+      "(IlUnknown.foreignVal(\"this:static:?\").size >= (6ⱼ ⊟ 1ⱼ)) = false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc2.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ (iterator.hasNext() = true)", "¬ (opaque_2874204994 = true)"],
+     "precClause":
+     "(IlUnknown.truthy (IlUnknown.callOn (Il.named (IlUnknown.callOn (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"hasNext\"))) = true)",
+     "line": 76,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = false"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["iterator.hasNext() is missing, empty, zero or false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.seventhOrNull":
+  {"verified":
+   [{"vcTag": "vc1.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc2.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.seventhOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.seventh":
+  {"verified":
+   [{"vcTag": "vc3.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc4.step.isTrue.isTrue",
+     "triggerGuard": "0ⱼ ⊑ Prod.snd(b_96)",
+     "requirementIr": null,
+     "requirement": null,
+     "line": 82,
+     "kind": "no_throw_refuted",
+     "guardIr": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc5.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.seventh.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue.isFalse",
+     "triggerGuard":
+     "¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (7ⱼ ⊟ 1ⱼ)) = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (7ⱼ ⊟ 1ⱼ)) = true)",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(IlUnknown.geB (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (Java.Lang.int32.sub (7ⱼ) (1ⱼ)) = true)",
+     "line": 72,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts":
+     ["IlUnknown.foreignVal(\"this:static:?\").size = 0ⱼ",
+      "(IlUnknown.foreignVal(\"this:static:?\").size >= (7ⱼ ⊟ 1ⱼ)) = false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc2.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ (iterator.hasNext() = true)", "¬ (opaque_2874204994 = true)"],
+     "precClause":
+     "(IlUnknown.truthy (IlUnknown.callOn (Il.named (IlUnknown.callOn (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"hasNext\"))) = true)",
+     "line": 76,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = false"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["iterator.hasNext() is missing, empty, zero or false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.secondOrNull":
+  {"verified":
+   [{"vcTag": "vc1.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc2.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.secondOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.second":
+  {"verified":
+   [{"vcTag": "vc3.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc4.step.isTrue.isTrue",
+     "triggerGuard": "0ⱼ ⊑ Prod.snd(b_96)",
+     "requirementIr": null,
+     "requirement": null,
+     "line": 82,
+     "kind": "no_throw_refuted",
+     "guardIr": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc5.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.second.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue.isFalse",
+     "triggerGuard":
+     "¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (2ⱼ ⊟ 1ⱼ)) = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (2ⱼ ⊟ 1ⱼ)) = true)",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(IlUnknown.geB (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (Java.Lang.int32.sub (2ⱼ) (1ⱼ)) = true)",
+     "line": 72,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts":
+     ["IlUnknown.foreignVal(\"this:static:?\").size = 0ⱼ",
+      "(IlUnknown.foreignVal(\"this:static:?\").size >= (2ⱼ ⊟ 1ⱼ)) = false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc2.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ (iterator.hasNext() = true)", "¬ (opaque_2874204994 = true)"],
+     "precClause":
+     "(IlUnknown.truthy (IlUnknown.callOn (Il.named (IlUnknown.callOn (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"hasNext\"))) = true)",
+     "line": 76,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = false"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["iterator.hasNext() is missing, empty, zero or false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.penultimateOrNull":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.penultimateOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.penultimate":
+  {"verified":
+   [{"vcTag": "vc4.isFalse.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "requirementIr": null,
+     "requirement": null,
+     "line": 34,
+     "kind": "no_throw_refuted",
+     "guardIr": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}],
+   "verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.penultimate.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue.isTrue",
+     "triggerGuard":
+     "IlUnknown.foreignVal(\"this:static:?\").size == 0ⱼ = true",
+     "throwingCallee": null,
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["IlUnknown.foreignVal(\"this:static:?\").size == 0ⱼ = true",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(¬ (Nat.beq (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (0ⱼ) = true))",
+     "line": 22,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["IlUnknown.foreignVal(\"this:static:?\").size = 0ⱼ"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc2.isTrue.isFalse.isTrue",
+     "triggerGuard":
+     "IlUnknown.foreignVal(\"this:static:?\").size == 1ⱼ = true",
+     "throwingCallee": null,
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["IlUnknown.foreignVal(\"this:static:?\").size == 1ⱼ = true",
+      "¬ (IlUnknown.foreignVal(\"this:static:?\").size == 0ⱼ = true)",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(¬ (Nat.beq (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (1ⱼ) = true))",
+     "line": 25,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["IlUnknown.foreignVal(\"this:static:?\").size = 1ⱼ"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc3.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "throwingCallee": null,
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ (iterator.hasNext() = true)", "¬ (opaque_2874204994 = true)"],
+     "precClause":
+     "(IlUnknown.truthy (IlUnknown.callOn (Il.named (IlUnknown.callOn (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"hasNext\"))) = true)",
+     "line": 31,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = false"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["iterator.hasNext() is missing, empty, zero or false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.ninthOrNull":
+  {"verified":
+   [{"vcTag": "vc1.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc2.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.ninthOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.ninth":
+  {"verified":
+   [{"vcTag": "vc3.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc4.step.isTrue.isTrue",
+     "triggerGuard": "0ⱼ ⊑ Prod.snd(b_96)",
+     "requirementIr": null,
+     "requirement": null,
+     "line": 82,
+     "kind": "no_throw_refuted",
+     "guardIr": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc5.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.ninth.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue.isFalse",
+     "triggerGuard":
+     "¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (9ⱼ ⊟ 1ⱼ)) = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (9ⱼ ⊟ 1ⱼ)) = true)",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(IlUnknown.geB (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (Java.Lang.int32.sub (9ⱼ) (1ⱼ)) = true)",
+     "line": 72,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts":
+     ["IlUnknown.foreignVal(\"this:static:?\").size = 0ⱼ",
+      "(IlUnknown.foreignVal(\"this:static:?\").size >= (9ⱼ ⊟ 1ⱼ)) = false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc2.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ (iterator.hasNext() = true)", "¬ (opaque_2874204994 = true)"],
+     "precClause":
+     "(IlUnknown.truthy (IlUnknown.callOn (Il.named (IlUnknown.callOn (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"hasNext\"))) = true)",
+     "line": 76,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = false"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["iterator.hasNext() is missing, empty, zero or false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndexOrNull":
+  {"verified":
+   [{"vcTag": "vc1.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc2.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndexOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex":
+  {"verified":
+   [{"vcTag": "vc3.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc4.step.isTrue.isTrue",
+     "triggerGuard": "0ⱼ ⊑ Prod.snd(b_98)",
+     "requirementIr": null,
+     "requirement": null,
+     "line": 82,
+     "kind": "no_throw_refuted",
+     "guardIr": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc5.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue.isFalse",
+     "triggerGuard":
+     "¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (index ⊟ 1ⱼ)) = true)",
+     "throwingCallee": null,
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (index ⊟ 1ⱼ)) = true)",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(IlUnknown.geB (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (Java.Lang.int32.sub (index) (1ⱼ)) = true)",
+     "line": 72,
+     "kind": "no_throw_refuted",
+     "inputs": ["index = 1ⱼ", "opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "potential",
+     "derivedFacts":
+     ["IlUnknown.foreignVal(\"this:static:?\").size = 0ⱼ",
+      "(IlUnknown.foreignVal(\"this:static:?\").size >= (index ⊟ 1ⱼ)) = false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc2.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "throwingCallee": null,
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ (iterator.hasNext() = true)", "¬ (opaque_2874204994 = true)"],
+     "precClause":
+     "(IlUnknown.truthy (IlUnknown.callOn (Il.named (IlUnknown.callOn (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"hasNext\"))) = true)",
+     "line": 76,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = false"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "potential",
+     "derivedFacts": ["iterator.hasNext() is missing, empty, zero or false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.forthOrNull":
+  {"verified":
+   [{"vcTag": "vc1.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc2.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.forthOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.forth":
+  {"verified":
+   [{"vcTag": "vc3.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc4.step.isTrue.isTrue",
+     "triggerGuard": "0ⱼ ⊑ Prod.snd(b_96)",
+     "requirementIr": null,
+     "requirement": null,
+     "line": 82,
+     "kind": "no_throw_refuted",
+     "guardIr": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc5.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.forth.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue.isFalse",
+     "triggerGuard":
+     "¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (4ⱼ ⊟ 1ⱼ)) = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (4ⱼ ⊟ 1ⱼ)) = true)",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(IlUnknown.geB (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (Java.Lang.int32.sub (4ⱼ) (1ⱼ)) = true)",
+     "line": 72,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts":
+     ["IlUnknown.foreignVal(\"this:static:?\").size = 0ⱼ",
+      "(IlUnknown.foreignVal(\"this:static:?\").size >= (4ⱼ ⊟ 1ⱼ)) = false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc2.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ (iterator.hasNext() = true)", "¬ (opaque_2874204994 = true)"],
+     "precClause":
+     "(IlUnknown.truthy (IlUnknown.callOn (Il.named (IlUnknown.callOn (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"hasNext\"))) = true)",
+     "line": 76,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = false"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["iterator.hasNext() is missing, empty, zero or false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.fifthOrNull":
+  {"verified":
+   [{"vcTag": "vc1.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc2.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.fifthOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.fifth":
+  {"verified":
+   [{"vcTag": "vc3.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc4.step.isTrue.isTrue",
+     "triggerGuard": "0ⱼ ⊑ Prod.snd(b_96)",
+     "requirementIr": null,
+     "requirement": null,
+     "line": 82,
+     "kind": "no_throw_refuted",
+     "guardIr": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc5.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.fifth.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue.isFalse",
+     "triggerGuard":
+     "¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (5ⱼ ⊟ 1ⱼ)) = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (5ⱼ ⊟ 1ⱼ)) = true)",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(IlUnknown.geB (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (Java.Lang.int32.sub (5ⱼ) (1ⱼ)) = true)",
+     "line": 72,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts":
+     ["IlUnknown.foreignVal(\"this:static:?\").size = 0ⱼ",
+      "(IlUnknown.foreignVal(\"this:static:?\").size >= (5ⱼ ⊟ 1ⱼ)) = false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc2.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ (iterator.hasNext() = true)", "¬ (opaque_2874204994 = true)"],
+     "precClause":
+     "(IlUnknown.truthy (IlUnknown.callOn (Il.named (IlUnknown.callOn (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"hasNext\"))) = true)",
+     "line": 76,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = false"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["iterator.hasNext() is missing, empty, zero or false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.eighthOrNull":
+  {"verified":
+   [{"vcTag": "vc1.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc2.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.eighthOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.IterableKt.eighth":
+  {"verified":
+   [{"vcTag": "vc3.entry",
+     "triggerGuard": null,
+     "requirementIr": ["cmp", "le", ["int", 0], ["int", 0]],
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"},
+    {"vcTag": "vc4.step.isTrue.isTrue",
+     "triggerGuard": "0ⱼ ⊑ Prod.snd(b_96)",
+     "requirementIr": null,
+     "requirement": null,
+     "line": 82,
+     "kind": "no_throw_refuted",
+     "guardIr": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc5.step.isTrue.isFalse",
+     "triggerGuard": null,
+     "requirementIr": null,
+     "requirement":
+     "The size must not be negative; the result has exactly that many elements.",
+     "line": null,
+     "kind": "precondition_violated",
+     "guardIr": null,
+     "calledMethodFqn": "IlArray.newM",
+     "calledMethod": "IlArray.newM"}],
+   "verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IterableKt.eighth.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Iterable.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue.isFalse",
+     "triggerGuard":
+     "¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (8ⱼ ⊟ 1ⱼ)) = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ ((IlUnknown.foreignVal(\"this:static:?\").size >= (8ⱼ ⊟ 1ⱼ)) = true)",
+      "opaque_2874204994 = true"],
+     "precClause":
+     "(IlUnknown.geB (IlUnknown.lengthOfI32 (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"size\"))) (Java.Lang.int32.sub (8ⱼ) (1ⱼ)) = true)",
+     "line": 72,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = true"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts":
+     ["IlUnknown.foreignVal(\"this:static:?\").size = 0ⱼ",
+      "(IlUnknown.foreignVal(\"this:static:?\").size >= (8ⱼ ⊟ 1ⱼ)) = false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null},
+    {"vcTag": "vc2.isFalse.isTrue",
+     "triggerGuard": "¬ (iterator.hasNext() = true)",
+     "throwingCallee": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen":
+     ["¬ (iterator.hasNext() = true)", "¬ (opaque_2874204994 = true)"],
+     "precClause":
+     "(IlUnknown.truthy (IlUnknown.callOn (Il.named (IlUnknown.callOn (IlUnknown.foreignVal ((Java.Lang.String.ofLeanString \"this:static:?\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"iterator\"))) ((Java.Lang.String.ofLeanString \"hasNext\"))) = true)",
+     "line": 76,
+     "kind": "no_throw_refuted",
+     "inputs": ["opaque_2874204994 = false"],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"NoSuchElementException\" on the path below",
+     "guardIr": null,
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["iterator.hasNext() is missing, empty, zero or false"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.IdentityKt.identity":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.IdentityKt.identity.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Identity.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.FilesKt.root":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.FilesKt.root.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.FilesKt.resourceOrNull":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.FilesKt.resourceOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.FilesKt.resource":
+  {"verdict": "potential-issues",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.FilesKt.resource.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "diagnostics":
+   [{"vcTag": "vc1.isTrue",
+     "triggerGuard": "(tmp0_elvis_lhs === null) = true",
+     "throwingCallee": null,
+     "requirementIr": null,
+     "requirement": null,
+     "reachableWhen": ["(tmp0_elvis_lhs === null) = true"],
+     "precClause":
+     "(¬ (IlUnknown.eqB (Il.named (IlUnknown.nullV) ((Java.Lang.String.ofLeanString \"tmp0_elvis_lhs\"))) (IlUnknown.nullV) = true))",
+     "line": 145,
+     "kind": "no_throw_refuted",
+     "inputs": [],
+     "hypotheses": [],
+     "header":
+     "no-throw claim refuted — the body throws \"IllegalStateException\" (IlUnknown.box (Java.Lang.String.ofLeanString \"File not found\" on the path below",
+     "guardIr": ["isNull", ["null"]],
+     "goal": null,
+     "findingClass": "uncalled",
+     "derivedFacts": ["(tmp0_elvis_lhs === null) = true"],
+     "concreteGoal": null,
+     "calledMethodFqn": null,
+     "calledMethod": null}]},
+  "Code.com.javiersc.kotlin.stdlib.FileScopeMarker.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.FileScopeMarker.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.FileScopeMarker.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.FileScopeMarker.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.FileScope.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.FileScope.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.FileScope.file":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.FileScope.file.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.FileScope.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.FileScope.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.toEitherNel":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.toEitherNel.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.right":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.right.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.merge":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.merge.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.leftNel":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.leftNel.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.left":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.left.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.lambda_400":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.lambda_400.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.lambda_373":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.lambda_373.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.lambda_372":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.lambda_372.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.handleErrorWith":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.handleErrorWith.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.getOrElse":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.getOrElse.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.flatten":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.flatten.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.flatMap":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.flatMap.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.compareTo":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.compareTo.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.EitherKt.combine":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.EitherKt.combine.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.swap":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.swap.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.onRight":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.onRight.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.onLeft":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.onLeft.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.mapLeft":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.mapLeft.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.map":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.map.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.leftOrNull":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.leftOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.lambda_287_2":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.lambda_287_2.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.lambda_287":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.lambda_287.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.lambda_268":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.lambda_268.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.lambda_245":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.lambda_245.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.lambda_140_2":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.lambda_140_2.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.lambda_140":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.lambda_140.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.isRight_1":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.isRight_1.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.isRight":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.isRight.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.isLeft_1":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.isLeft_1.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.isLeft":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.isLeft.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.getOrNull":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.getOrNull.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.fold":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.fold.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.Right.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.Right.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.Right.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.Right.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.Right.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.Right.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.Right.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.Right.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.Right.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.Right.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.Left.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.Left.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.Left.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.Left.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.Left.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.Left.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.Left.Companion.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.Left.Companion.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.Either.Left.Companion.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.Either.Left.Companion.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Either.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.DirScope.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.DirScope.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.DirScope.dir":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.DirScope.dir.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.DirScope.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.DirScope.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Files.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.notContain_1":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.notContain_1.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/CharSequence.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.notContain":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.notContain.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/CharSequence.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.isNotNullNorEmpty":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.isNotNullNorEmpty.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/CharSequence.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.isNotNullNorBlank":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.isNotNullNorBlank.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/CharSequence.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.BooleanKt.ifTrue":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.BooleanKt.ifTrue.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Boolean.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.BooleanKt.ifFalse":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.BooleanKt.ifFalse.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/Boolean.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColorsKt.ansiColor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColorsKt.ansiColor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.toString":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.toString.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Reset.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Reset.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Reset.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Reset.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Yellow.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Yellow.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Yellow.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Yellow.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.White.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.White.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.White.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.White.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Red.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Red.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Red.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Red.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Purple.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Purple.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Purple.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Purple.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Green.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Green.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Green.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Green.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Cyan.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Cyan.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Cyan.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Cyan.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightYellow.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightYellow.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightYellow.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightYellow.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightWhite.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightWhite.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightWhite.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightWhite.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightRed.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightRed.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightRed.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightRed.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightPurple.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightPurple.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightPurple.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightPurple.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightGreen.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightGreen.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightGreen.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightGreen.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightCyan.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightCyan.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightCyan.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightCyan.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlue.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlue.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlue.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlue.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlack.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlack.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlack.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlack.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Blue.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Blue.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Blue.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Blue.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Black.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Black.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Black.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Black.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Yellow.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Yellow.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Yellow.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Yellow.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Red.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Red.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Red.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Red.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Purple.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Purple.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Purple.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Purple.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Green.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Green.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Green.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Green.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Gray.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Gray.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Gray.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Gray.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Cyan.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Cyan.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Cyan.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Cyan.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Blue.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Blue.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Blue.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Blue.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Black.new":
+  {"verdict": "value",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Black.new.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
+   "reason":
+   "a value binding, not an operation: it has no body and nothing that could fail",
+   "diagnostics": []},
+  "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Black.constructor":
+  {"verdict": "clean",
+   "theorem":
+   "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Black.constructor.analyze_unconstrained",
+   "source": "Code/com/javiersc/kotlin/stdlib/AnsiColors.lean",
    "diagnostics": []}},
  "quarantinedModules": [],
- "potentialIssues": 0,
+ "potentialIssues": 14,
  "partiallyAnalyzed": 0,
  "outputPath":
  "/home/runner/work/kotlin-stdlib/kotlin-stdlib/.predictable-code/verification/Analysis",
- "outputIncomplete":
- ["Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory.analyze_unconstrained (no findings sidecar)",
-  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory.analyze_unconstrained (no findings sidecar)",
-  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory.analyze_unconstrained (no findings sidecar)",
-  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile.analyze_unconstrained (no findings sidecar)",
-  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile.analyze_unconstrained (no findings sidecar)",
-  "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile.analyze_unconstrained (no findings sidecar)"],
- "notTranslatedFiles":
- ["kotlin-stdlib/android/main/kotlin/com/javiersc/kotlin/stdlib/Platform.android.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/androidNativeArm32/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeArm32.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/androidNativeArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/androidNativeX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/androidNativeX86/main/kotlin/com/javiersc/kotlin/stdlib/Platform.androidNativeX86.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Boolean.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/CharSequence.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Identity.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/List.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/T.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/UseContextParameters.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNodeIterators.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/Validator.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/iosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.iosArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/iosSimulatorArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.iosSimulatorArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/iosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.iosX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/js/main/kotlin/com/javiersc/kotlin/stdlib/Platform.js.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Platform.jvm.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/linuxArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.linuxArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/linuxX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.linuxX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/macosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.macosArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/macosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.macosX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/mingwX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.mingwX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/tvosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.tvosArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/tvosSimulatorArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.tvosSimulatorArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/tvosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.tvosX64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/wasmJs/main/kotlin/com/javiersc/kotlin/stdlib/Platform.wasmJs.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/wasmWasi/main/kotlin/com/javiersc/kotlin/stdlib/Platform.wasmWasi.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/watchosArm32/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosArm32.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/watchosArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/watchosDeviceArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosDeviceArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/watchosSimulatorArm64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosSimulatorArm64.kt (not translated (Kotlin front-end emitted no IL for this file))",
-  "kotlin-stdlib/watchosX64/main/kotlin/com/javiersc/kotlin/stdlib/Platform.watchosX64.kt (not translated (Kotlin front-end emitted no IL for this file))"],
+ "outputIncomplete": [],
+ "notTranslatedFiles": [],
  "notCompiledModules": [],
- "modulesTotal": 8,
- "modulesCompiled": 8,
- "generatedAt": "2026-09-22T10:44:02+00:00[UTC]",
- "findingsUncalled": 0,
- "findingsPotential": 0,
+ "modulesTotal": 29,
+ "modulesCompiled": 29,
+ "generatedAt": "2026-09-27T22:01:05+00:00[UTC]",
+ "findingsUncalled": 24,
+ "findingsPotential": 2,
  "findingsAffecting": 0,
  "droppedHubDecls": [],
- "clean": 23,
+ "clean": 282,
  "callGraph": null,
  "byContract": 0,
  "buildSucceeded": false,

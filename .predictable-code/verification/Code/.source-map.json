@@ -1,4 +1,14 @@
-{"Code.com.javiersc.kotlin.test.iterableMatchersKt.assertSize":
+{"Code.com.javiersc.kotlin.test.stringMatchersKt.assertNotEmpty":
+ {"startLine": 15,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/stringMatchers.kt",
+  "endLine": 21},
+ "Code.com.javiersc.kotlin.test.stringMatchersKt.assertNotBlank":
+ {"startLine": 7,
+  "sourceFile":
+  "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/stringMatchers.kt",
+  "endLine": 13},
+ "Code.com.javiersc.kotlin.test.iterableMatchersKt.assertSize":
  {"startLine": 34,
   "sourceFile":
   "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/iterableMatchers.kt",
@@ -103,83 +113,2458 @@
   "sourceFile":
   "kotlin-test/common/main/kotlin/com/javiersc/kotlin/test/booleanMatchers.kt",
   "endLine": 8},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile should pass for file»":
- {"startLine": 38,
-  "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 41},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile should fail with custom message»":
- {"startLine": 50,
-  "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 54},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertFile should fail for directory»":
- {"startLine": 44,
-  "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 47},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory should pass for directory»":
- {"startLine": 17,
-  "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 20},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory should fail with custom message»":
+ "Code.com.javiersc.kotlin.stdlib.validate.ValidatorKt.validateWith":
  {"startLine": 31,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/Validator.kt",
+  "endLine": 36},
+ "Code.com.javiersc.kotlin.stdlib.validate.ValidatorKt.Validator":
+ {"startLine": 22,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/Validator.kt",
+  "endLine": 29},
+ "Code.com.javiersc.kotlin.stdlib.validate.Validator.validate":
+ {"startLine": 11,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/Validator.kt",
+  "endLine": 18},
+ "Code.com.javiersc.kotlin.stdlib.validate.Validator.lambda_14":
+ {"startLine": 15,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/Validator.kt",
+  "endLine": 15},
+ "Code.com.javiersc.kotlin.stdlib.validate.Validator.anonymous_25":
+ {"startLine": 25,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/Validator.kt",
+  "endLine": 28},
+ "Code.com.javiersc.kotlin.stdlib.validate.Validator":
+ {"startLine": 7,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/Validator.kt",
+  "endLine": 19},
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScopeKt.RuleScope":
+ {"startLine": 65,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 97},
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.validatorFor":
+ {"startLine": 43,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 45},
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.validatedBy":
+ {"startLine": 47,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 49},
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.rulesFor_1":
+ {"startLine": 19,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 26},
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.rulesFor":
+ {"startLine": 13,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 17},
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invoke":
+ {"startLine": 32,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
   "endLine": 35},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.«assertDirectory should fail for file»":
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invalidIfIsEmpty":
+ {"startLine": 54,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 56},
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invalidIfIsBlank":
+ {"startLine": 59,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 61},
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule.new":
+ {"startLine": 51,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 51},
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule.constructor":
+ {"startLine": 51,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 51},
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule":
+ {"startLine": 51,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 51},
+ "Code.com.javiersc.kotlin.stdlib.validate.RulesScope":
+ {"startLine": 7,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 62},
+ "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.validator":
+ {"startLine": 92,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 96},
+ "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.validIf":
+ {"startLine": 84,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 86},
+ "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.valid":
+ {"startLine": 88,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 90},
+ "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.rule":
+ {"startLine": 72,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 74},
+ "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.invalidIf":
+ {"startLine": 76,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 78},
+ "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.invalid":
+ {"startLine": 80,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 82},
+ "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.<get-rules>":
+ {"startLine": 70,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 70},
+ "Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66":
+ {"startLine": 66,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/validate/RulesScope.kt",
+  "endLine": 97},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeKt.tree":
+ {"startLine": 209,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 218},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeIterators.«<get-entries>»":
+ {"startLine": 0,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNodeIterators.kt",
+  "endLine": 0},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeIterators.new":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNodeIterators.kt",
+  "endLine": 69},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeIterators.constructor":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNodeIterators.kt",
+  "endLine": 69},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeIterators.<get-entries>":
+ {"startLine": 1,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNodeIterators.kt",
+  "endLine": 1},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeIterators":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNodeIterators.kt",
+  "endLine": 69},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeException.new":
+ {"startLine": 222,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 222},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeException.constructor":
+ {"startLine": 222,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 222},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNodeException":
+ {"startLine": 220,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 222},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-root>»":
+ {"startLine": 24,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 24},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-parent>»":
+ {"startLine": 14,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 14},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-nodeCount>»":
+ {"startLine": 74,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 77},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-isRoot>»":
+ {"startLine": 32,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 32},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-height>»":
+ {"startLine": 83,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 89},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-depth>»":
+ {"startLine": 97,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 106},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.«<get-children>»":
+ {"startLine": 20,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 20},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.toString":
+ {"startLine": 139,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 141},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.removeChild":
+ {"startLine": 62,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 66},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.print":
+ {"startLine": 149,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 162},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.prettyString":
+ {"startLine": 143,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 147},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.path":
+ {"startLine": 117,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 130},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.new":
+ {"startLine": 7,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 7},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.lambda_135":
+ {"startLine": 135,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 135},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.iterator":
+ {"startLine": 165,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 170},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.constructor":
+ {"startLine": 7,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 7},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.clear":
+ {"startLine": 133,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 137},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.child":
+ {"startLine": 48,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 54},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.addChild":
+ {"startLine": 42,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 45},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.<get-root>":
+ {"startLine": 24,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 24},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.<get-parent>":
+ {"startLine": 14,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 14},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.<get-nodeCount>":
+ {"startLine": 74,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 77},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.<get-isRoot>":
+ {"startLine": 32,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 32},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.<get-height>":
+ {"startLine": 83,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 89},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.<get-depth>":
+ {"startLine": 97,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 106},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.<get-children>":
+ {"startLine": 20,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 20},
+ "Code.com.javiersc.kotlin.stdlib.tree.TreeNode":
+ {"startLine": 7,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 171},
+ "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.next":
+ {"startLine": 32,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.kt",
+  "endLine": 36},
+ "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.new":
+ {"startLine": 22,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.kt",
+  "endLine": 22},
+ "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.hasNext":
+ {"startLine": 30,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.kt",
+  "endLine": 30},
+ "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator.constructor":
+ {"startLine": 22,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.kt",
+  "endLine": 22},
+ "Code.com.javiersc.kotlin.stdlib.tree.PreOrderTreeIterator":
+ {"startLine": 22,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PreOrderTreeIterator.kt",
+  "endLine": 37},
+ "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.next":
+ {"startLine": 31,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.kt",
+  "endLine": 33},
+ "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.new":
+ {"startLine": 21,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.kt",
+  "endLine": 21},
+ "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.hasNext":
+ {"startLine": 29,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.kt",
+  "endLine": 29},
+ "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.getChildrenStack":
+ {"startLine": 35,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.kt",
+  "endLine": 43},
+ "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator.constructor":
+ {"startLine": 21,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.kt",
+  "endLine": 21},
+ "Code.com.javiersc.kotlin.stdlib.tree.PostOrderTreeIterator":
+ {"startLine": 21,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/PostOrderTreeIterator.kt",
+  "endLine": 44},
+ "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.next":
+ {"startLine": 31,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.kt",
+  "endLine": 35},
+ "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.new":
+ {"startLine": 21,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.kt",
+  "endLine": 21},
+ "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.hasNext":
+ {"startLine": 29,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.kt",
+  "endLine": 29},
+ "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator.constructor":
+ {"startLine": 21,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.kt",
+  "endLine": 21},
+ "Code.com.javiersc.kotlin.stdlib.tree.LevelOrderTreeIterator":
+ {"startLine": 21,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/LevelOrderTreeIterator.kt",
+  "endLine": 36},
+ "Code.com.javiersc.kotlin.stdlib.tree.ChildDeclarationInterface":
+ {"startLine": 173,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "endLine": 194},
+ "Code.com.javiersc.kotlin.stdlib.root_31":
+ {"startLine": 31,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 31},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-values>»":
+ {"startLine": 164,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 164},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-size>»":
+ {"startLine": 161,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 161},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-keys>»":
+ {"startLine": 158,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 158},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.«<get-entries>»":
+ {"startLine": 155,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 155},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.toString":
+ {"startLine": 191,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 191},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.new":
+ {"startLine": 145,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 145},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.isEmpty":
+ {"startLine": 183,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 183},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.get":
+ {"startLine": 185,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 185},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.containsValue":
+ {"startLine": 187,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 187},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.containsKey":
+ {"startLine": 189,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 189},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.constructor":
+ {"startLine": 145,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 145},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.addVertex":
+ {"startLine": 166,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 170},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.addEdge":
+ {"startLine": 172,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 181},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.<get-values>":
+ {"startLine": 164,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 164},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.<get-size>":
+ {"startLine": 161,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 161},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.<get-keys>":
+ {"startLine": 158,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 158},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph.<get-entries>":
+ {"startLine": 155,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 155},
+ "Code.com.javiersc.kotlin.stdlib.graph.MutableGraph":
+ {"startLine": 145,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 192},
+ "Code.com.javiersc.kotlin.stdlib.graph.GraphKt.mutableGraphOf":
+ {"startLine": 197,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 198},
+ "Code.com.javiersc.kotlin.stdlib.graph.GraphKt.buildGraph":
+ {"startLine": 194,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 195},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.«<get-hasMissingVertexes>»":
+ {"startLine": 34,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 34},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.«<get-hasDuplicatedVertexes>»":
+ {"startLine": 29,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 29},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.«<get-hasCircularVertexes>»":
  {"startLine": 23,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 28},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.tearDown":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 23},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.«<get-duplicatedVertexes>»":
+ {"startLine": 26,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 26},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.«<get-circularVertexes>»":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 20},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.vertexesFor_1":
+ {"startLine": 64,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 64},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.vertexesFor":
+ {"startLine": 55,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 62},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.toGraphSortedByEdges":
+ {"startLine": 66,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 90},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.renderer":
+ {"startLine": 92,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 94},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_26":
+ {"startLine": 26,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 26},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_19":
+ {"startLine": 19,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 19},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_133":
+ {"startLine": 132,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 132},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.lambda_128":
+ {"startLine": 129,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 129},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.doesNotContainsCircularVertexes":
+ {"startLine": 53,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 53},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.deepFirstSearchCircularDependencies":
+ {"startLine": 110,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 142},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.contains_1":
+ {"startLine": 46,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 48},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.containsCircularVertexes":
+ {"startLine": 50,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 51},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.contains":
+ {"startLine": 44,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 44},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.asString":
+ {"startLine": 36,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 42},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.Vertex.toString":
+ {"startLine": 97,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 97},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.Vertex.new":
+ {"startLine": 96,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 96},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.Vertex.constructor":
+ {"startLine": 96,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 96},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.Vertex":
+ {"startLine": 96,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 98},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.toString":
+ {"startLine": 107,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 107},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.new":
+ {"startLine": 100,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 100},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.constructor_1":
+ {"startLine": 102,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 105},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge.constructor":
+ {"startLine": 100,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 100},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.Edge":
+ {"startLine": 100,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 108},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.<get-hasMissingVertexes>":
+ {"startLine": 34,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 34},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.<get-hasDuplicatedVertexes>":
+ {"startLine": 29,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 29},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.<get-hasCircularVertexes>":
+ {"startLine": 23,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 23},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.<get-duplicatedVertexes>":
+ {"startLine": 26,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 26},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph.<get-circularVertexes>":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 20},
+ "Code.com.javiersc.kotlin.stdlib.graph.Graph":
+ {"startLine": 3,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt",
+  "endLine": 143},
+ "Code.com.javiersc.kotlin.stdlib.UseContextParameters.new":
+ {"startLine": 3,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/UseContextParameters.kt",
+  "endLine": 3},
+ "Code.com.javiersc.kotlin.stdlib.UseContextParameters.constructor":
+ {"startLine": 3,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/UseContextParameters.kt",
+  "endLine": 3},
+ "Code.com.javiersc.kotlin.stdlib.UseContextParameters":
+ {"startLine": 3,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/UseContextParameters.kt",
+  "endLine": 3},
+ "Code.com.javiersc.kotlin.stdlib.TKt.or_1":
+ {"startLine": 15,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/T.kt",
+  "endLine": 15},
+ "Code.com.javiersc.kotlin.stdlib.TKt.or":
+ {"startLine": 13,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/T.kt",
+  "endLine": 13},
+ "Code.com.javiersc.kotlin.stdlib.TKt.ifNull":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/T.kt",
+  "endLine": 11},
+ "Code.com.javiersc.kotlin.stdlib.TKt.ifNotNull":
+ {"startLine": 3,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/T.kt",
+  "endLine": 6},
+ "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transformstring":
+ {"startLine": 6,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt",
+  "endLine": 6},
+ "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transform_string":
+ {"startLine": 41,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt",
+  "endLine": 41},
+ "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transform_hyphen_string":
+ {"startLine": 45,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt",
+  "endLine": 45},
+ "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.transformString":
+ {"startLine": 10,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt",
+  "endLine": 23},
+ "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.tRaNsFoRmStRiNg":
+ {"startLine": 49,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt",
+  "endLine": 59},
+ "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.prepare":
+ {"startLine": 61,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt",
+  "endLine": 64},
+ "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TransformString":
+ {"startLine": 25,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt",
+  "endLine": 39},
+ "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TRANSFORM_STRING":
+ {"startLine": 43,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt",
+  "endLine": 43},
+ "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TRANSFORM_HYPHEN_STRING":
+ {"startLine": 47,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt",
+  "endLine": 47},
+ "Code.com.javiersc.kotlin.stdlib.StringsTransformKt.TRANSFORMSTRING":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt",
+  "endLine": 8},
+ "Code.com.javiersc.kotlin.stdlib.StringsKt.replace":
+ {"startLine": 5,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt",
+  "endLine": 11},
+ "Code.com.javiersc.kotlin.stdlib.StringsKt.remove_1":
+ {"startLine": 19,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt",
+  "endLine": 25},
+ "Code.com.javiersc.kotlin.stdlib.StringsKt.removeIf":
+ {"startLine": 27,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt",
+  "endLine": 31},
+ "Code.com.javiersc.kotlin.stdlib.StringsKt.removeDuplicateEmptyLines":
+ {"startLine": 58,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt",
+  "endLine": 58},
+ "Code.com.javiersc.kotlin.stdlib.StringsKt.remove":
+ {"startLine": 16,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt",
+  "endLine": 17},
+ "Code.com.javiersc.kotlin.stdlib.StringsKt.lambda_55":
+ {"startLine": 55,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt",
+  "endLine": 55},
+ "Code.com.javiersc.kotlin.stdlib.StringsKt.lambda_49":
+ {"startLine": 47,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt",
+  "endLine": 49},
+ "Code.com.javiersc.kotlin.stdlib.StringsKt.endWithNewLine":
+ {"startLine": 61,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt",
+  "endLine": 62},
+ "Code.com.javiersc.kotlin.stdlib.StringsKt.decapitalize":
+ {"startLine": 55,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt",
+  "endLine": 55},
+ "Code.com.javiersc.kotlin.stdlib.StringsKt.capitalize":
+ {"startLine": 47,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Strings.kt",
+  "endLine": 49},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.X64.new":
+ {"startLine": 274,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 276},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.X64.constructor":
+ {"startLine": 274,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 276},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.X64":
+ {"startLine": 274,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 276},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.SimulatorArm64.new":
+ {"startLine": 270,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 272},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.SimulatorArm64.constructor":
+ {"startLine": 270,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 272},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.SimulatorArm64":
+ {"startLine": 270,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 272},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.DeviceArm64.new":
+ {"startLine": 266,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 268},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.DeviceArm64.constructor":
+ {"startLine": 266,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 268},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.DeviceArm64":
+ {"startLine": 266,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 268},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Companion.toString":
+ {"startLine": 281,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 281},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Companion.new":
+ {"startLine": 278,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 282},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Companion.constructor":
+ {"startLine": 278,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 282},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Companion":
+ {"startLine": 278,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 282},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm64.new":
+ {"startLine": 262,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 264},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm64.constructor":
+ {"startLine": 262,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 264},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm64":
+ {"startLine": 262,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 264},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm32.new":
+ {"startLine": 258,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 260},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm32.constructor":
+ {"startLine": 258,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 260},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS.Arm32":
+ {"startLine": 258,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 260},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WatchOS":
+ {"startLine": 256,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 283},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.NodeJS.new":
+ {"startLine": 238,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 240},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.NodeJS.constructor":
+ {"startLine": 238,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 240},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.NodeJS":
+ {"startLine": 238,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 240},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.Companion.toString":
+ {"startLine": 245,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 245},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.Companion.new":
+ {"startLine": 242,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 246},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.Companion.constructor":
+ {"startLine": 242,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 246},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi.Companion":
+ {"startLine": 242,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 246},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.WAsi":
+ {"startLine": 236,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 247},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.NodeJS.new":
+ {"startLine": 225,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 227},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.NodeJS.constructor":
+ {"startLine": 225,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 227},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.NodeJS":
+ {"startLine": 225,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 227},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.D8.new":
+ {"startLine": 220,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 223},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.D8.constructor":
+ {"startLine": 220,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 223},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.D8":
+ {"startLine": 220,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 223},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Companion.toString":
+ {"startLine": 232,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 232},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Companion.new":
+ {"startLine": 229,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 233},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Companion.constructor":
+ {"startLine": 229,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 233},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Companion":
+ {"startLine": 229,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 233},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Browser.new":
+ {"startLine": 216,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 218},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Browser.constructor":
+ {"startLine": 216,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 218},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS.Browser":
+ {"startLine": 216,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 218},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.JS":
+ {"startLine": 214,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 234},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.Companion.toString":
+ {"startLine": 252,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 252},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.Companion.new":
+ {"startLine": 249,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 253},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.Companion.constructor":
+ {"startLine": 249,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 253},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm.Companion":
+ {"startLine": 249,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 253},
+ "Code.com.javiersc.kotlin.stdlib.Platform.WAsm":
+ {"startLine": 212,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 254},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.X64.new":
+ {"startLine": 201,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 203},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.X64.constructor":
+ {"startLine": 201,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 203},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.X64":
+ {"startLine": 201,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 203},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.SimulatorArm64.new":
+ {"startLine": 197,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 199},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.SimulatorArm64.constructor":
+ {"startLine": 197,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 199},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.SimulatorArm64":
+ {"startLine": 197,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 199},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Companion.toString":
+ {"startLine": 208,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 208},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Companion.new":
+ {"startLine": 205,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 209},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Companion.constructor":
+ {"startLine": 205,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 209},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Companion":
+ {"startLine": 205,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 209},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Arm64.new":
+ {"startLine": 193,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 195},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Arm64.constructor":
+ {"startLine": 193,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 195},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS.Arm64":
+ {"startLine": 193,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 195},
+ "Code.com.javiersc.kotlin.stdlib.Platform.TvOS":
+ {"startLine": 191,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 210},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Native.Companion.toString":
+ {"startLine": 187,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 187},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Native.Companion.new":
+ {"startLine": 184,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 188},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Native.Companion.constructor":
+ {"startLine": 184,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 188},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Native.Companion":
+ {"startLine": 184,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 188},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Native":
+ {"startLine": 182,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 189},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.X64.new":
+ {"startLine": 171,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 173},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.X64.constructor":
+ {"startLine": 171,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 173},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.X64":
+ {"startLine": 171,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 173},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.Companion.toString":
+ {"startLine": 178,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 178},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.Companion.new":
+ {"startLine": 175,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 179},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.Companion.constructor":
+ {"startLine": 175,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 179},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MinGW.Companion":
+ {"startLine": 175,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 179},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MinGW":
+ {"startLine": 169,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 180},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.X64.new":
+ {"startLine": 158,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 160},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.X64.constructor":
+ {"startLine": 158,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 160},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.X64":
+ {"startLine": 158,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 160},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Companion.toString":
+ {"startLine": 165,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 165},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Companion.new":
+ {"startLine": 162,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 166},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Companion.constructor":
+ {"startLine": 162,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 166},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Companion":
+ {"startLine": 162,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 166},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Arm64.new":
+ {"startLine": 154,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 156},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Arm64.constructor":
+ {"startLine": 154,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 156},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MacOS.Arm64":
+ {"startLine": 154,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 156},
+ "Code.com.javiersc.kotlin.stdlib.Platform.MacOS":
+ {"startLine": 152,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 167},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Linux.X64.new":
+ {"startLine": 141,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 143},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Linux.X64.constructor":
+ {"startLine": 141,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 143},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Linux.X64":
+ {"startLine": 141,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 143},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Companion.toString":
+ {"startLine": 148,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 148},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Companion.new":
+ {"startLine": 145,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 149},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Companion.constructor":
+ {"startLine": 145,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 149},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Companion":
+ {"startLine": 145,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 149},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Arm64.new":
+ {"startLine": 137,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 139},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Arm64.constructor":
+ {"startLine": 137,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 139},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Linux.Arm64":
+ {"startLine": 137,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 139},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Linux":
+ {"startLine": 135,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 150},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JVM.Companion.toString":
+ {"startLine": 114,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 114},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JVM.Companion.new":
+ {"startLine": 110,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 115},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JVM.Companion.constructor":
+ {"startLine": 110,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 115},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JVM.Companion":
+ {"startLine": 110,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 115},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JVM":
+ {"startLine": 108,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 116},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JS.NodeJS.new":
+ {"startLine": 124,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 126},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JS.NodeJS.constructor":
+ {"startLine": 124,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 126},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JS.NodeJS":
+ {"startLine": 124,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 126},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JS.Companion.toString":
+ {"startLine": 131,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 131},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JS.Companion.new":
+ {"startLine": 128,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 132},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JS.Companion.constructor":
+ {"startLine": 128,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 132},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JS.Companion":
+ {"startLine": 128,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 132},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JS.Browser.new":
+ {"startLine": 120,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 122},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JS.Browser.constructor":
+ {"startLine": 120,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 122},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JS.Browser":
+ {"startLine": 120,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 122},
+ "Code.com.javiersc.kotlin.stdlib.Platform.JS":
+ {"startLine": 118,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 133},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.X64.new":
+ {"startLine": 97,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 99},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.X64.constructor":
+ {"startLine": 97,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 99},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.X64":
+ {"startLine": 97,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 99},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.SimulatorArm64.new":
+ {"startLine": 93,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 95},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.SimulatorArm64.constructor":
+ {"startLine": 93,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 95},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.SimulatorArm64":
+ {"startLine": 93,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 95},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Companion.toString":
+ {"startLine": 104,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 104},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Companion.new":
+ {"startLine": 101,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 105},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Companion.constructor":
+ {"startLine": 101,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 105},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Companion":
+ {"startLine": 101,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 105},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Arm64.new":
+ {"startLine": 89,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 91},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Arm64.constructor":
+ {"startLine": 89,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 91},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS.Arm64":
+ {"startLine": 89,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 91},
+ "Code.com.javiersc.kotlin.stdlib.Platform.IOS":
+ {"startLine": 87,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 106},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Apple.Companion.toString":
+ {"startLine": 83,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 83},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Apple.Companion.new":
+ {"startLine": 80,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 84},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Apple.Companion.constructor":
+ {"startLine": 80,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 84},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Apple.Companion":
+ {"startLine": 80,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 84},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Apple":
+ {"startLine": 78,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 85},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.X86.new":
+ {"startLine": 67,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 69},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.X86.constructor":
+ {"startLine": 67,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 69},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.X86":
+ {"startLine": 67,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 69},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.X64.new":
+ {"startLine": 63,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 65},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.X64.constructor":
+ {"startLine": 63,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 65},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.X64":
+ {"startLine": 63,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 65},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.Companion.toString":
+ {"startLine": 74,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 74},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.Companion.new":
+ {"startLine": 71,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 75},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.Companion.constructor":
+ {"startLine": 71,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 75},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.Companion":
+ {"startLine": 71,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 75},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm64.new":
+ {"startLine": 59,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 61},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm64.constructor":
+ {"startLine": 59,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 61},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm64":
+ {"startLine": 59,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 61},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm32.new":
+ {"startLine": 55,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 57},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm32.constructor":
+ {"startLine": 55,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 57},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android.Arm32":
+ {"startLine": 55,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 57},
+ "Code.com.javiersc.kotlin.stdlib.Platform.Android":
+ {"startLine": 53,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 76},
+ "Code.com.javiersc.kotlin.stdlib.Platform":
+ {"startLine": 49,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Platform.kt",
+  "endLine": 284},
+ "Code.com.javiersc.kotlin.stdlib.ListKt.removeDuplicateEmptyLines":
+ {"startLine": 4,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/List.kt",
+  "endLine": 9},
+ "Code.com.javiersc.kotlin.stdlib.ListKt.lambda_9":
+ {"startLine": 6,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/List.kt",
+  "endLine": 8},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.thirdOrNull":
+ {"startLine": 21,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 21},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.third":
+ {"startLine": 19,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 19},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.tenthOrNull":
+ {"startLine": 84,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 84},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.tenth":
+ {"startLine": 82,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 82},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.sixthOrNull":
+ {"startLine": 48,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 48},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.sixth":
+ {"startLine": 46,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 46},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.seventhOrNull":
  {"startLine": 57,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 60},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.new":
- {"startLine": 11,
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 57},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.seventh":
+ {"startLine": 55,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 61},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.constructor":
- {"startLine": 11,
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 55},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.secondOrNull":
+ {"startLine": 12,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 61},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.assertFile should pass for file":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 12},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.second":
+ {"startLine": 10,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 10},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.penultimateOrNull":
+ {"startLine": 116,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 134},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.penultimate":
+ {"startLine": 91,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 114},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.ninthOrNull":
+ {"startLine": 75,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 75},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.ninth":
+ {"startLine": 73,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 73},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndexOrNull":
+ {"startLine": 159,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 173},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex":
+ {"startLine": 137,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 156},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.forthOrNull":
+ {"startLine": 30,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 30},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.forth":
+ {"startLine": 28,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 28},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.fifthOrNull":
+ {"startLine": 39,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 39},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.fifth":
+ {"startLine": 37,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 37},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.eighthOrNull":
+ {"startLine": 66,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 66},
+ "Code.com.javiersc.kotlin.stdlib.IterableKt.eighth":
+ {"startLine": 64,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "endLine": 64},
+ "Code.com.javiersc.kotlin.stdlib.IdentityKt.identity":
+ {"startLine": 3,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Identity.kt",
+  "endLine": 3},
+ "Code.com.javiersc.kotlin.stdlib.FilesKt.root":
+ {"startLine": 29,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 34},
+ "Code.com.javiersc.kotlin.stdlib.FilesKt.resourceOrNull":
  {"startLine": 38,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 41},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.assertFile should fail with custom message":
- {"startLine": 50,
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 39},
+ "Code.com.javiersc.kotlin.stdlib.FilesKt.resource":
+ {"startLine": 36,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 54},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.assertFile should fail for directory":
- {"startLine": 44,
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 36},
+ "Code.com.javiersc.kotlin.stdlib.FileScopeMarker.new":
+ {"startLine": 5,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 47},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.assertDirectory should pass for directory":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 5},
+ "Code.com.javiersc.kotlin.stdlib.FileScopeMarker.constructor":
+ {"startLine": 5,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 5},
+ "Code.com.javiersc.kotlin.stdlib.FileScopeMarker":
+ {"startLine": 5,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 5},
+ "Code.com.javiersc.kotlin.stdlib.FileScope.new":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 8},
+ "Code.com.javiersc.kotlin.stdlib.FileScope.file":
+ {"startLine": 10,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 15},
+ "Code.com.javiersc.kotlin.stdlib.FileScope.constructor":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 8},
+ "Code.com.javiersc.kotlin.stdlib.FileScope":
+ {"startLine": 7,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 16},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.toEitherNel":
+ {"startLine": 400,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 400},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.right":
+ {"startLine": 366,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 366},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.merge":
+ {"startLine": 362,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 362},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.leftNel":
+ {"startLine": 402,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 402},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.left":
+ {"startLine": 364,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 364},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.lambda_400":
+ {"startLine": 400,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 400},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.lambda_373":
+ {"startLine": 373,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 373},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.lambda_372":
+ {"startLine": 372,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 372},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.handleErrorWith":
+ {"startLine": 312,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 318},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.getOrElse":
+ {"startLine": 337,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 343},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.flatten":
+ {"startLine": 320,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 320},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.flatMap":
+ {"startLine": 297,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 303},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.compareTo":
+ {"startLine": 368,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 374},
+ "Code.com.javiersc.kotlin.stdlib.EitherKt.combine":
+ {"startLine": 381,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 398},
+ "Code.com.javiersc.kotlin.stdlib.Either.toString":
+ {"startLine": 287,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 287},
+ "Code.com.javiersc.kotlin.stdlib.Either.swap":
+ {"startLine": 140,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 140},
+ "Code.com.javiersc.kotlin.stdlib.Either.onRight":
+ {"startLine": 200,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 203},
+ "Code.com.javiersc.kotlin.stdlib.Either.onLeft":
+ {"startLine": 220,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 223},
+ "Code.com.javiersc.kotlin.stdlib.Either.new":
  {"startLine": 17,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 20},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.assertDirectory should fail with custom message":
- {"startLine": 31,
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 288},
+ "Code.com.javiersc.kotlin.stdlib.Either.mapLeft":
+ {"startLine": 177,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 183},
+ "Code.com.javiersc.kotlin.stdlib.Either.map":
+ {"startLine": 157,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 160},
+ "Code.com.javiersc.kotlin.stdlib.Either.leftOrNull":
+ {"startLine": 263,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 269},
+ "Code.com.javiersc.kotlin.stdlib.Either.lambda_287_2":
+ {"startLine": 287,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 287},
+ "Code.com.javiersc.kotlin.stdlib.Either.lambda_287":
+ {"startLine": 287,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 287},
+ "Code.com.javiersc.kotlin.stdlib.Either.lambda_268":
+ {"startLine": 268,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 268},
+ "Code.com.javiersc.kotlin.stdlib.Either.lambda_245":
+ {"startLine": 245,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 245},
+ "Code.com.javiersc.kotlin.stdlib.Either.lambda_140_2":
+ {"startLine": 140,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 140},
+ "Code.com.javiersc.kotlin.stdlib.Either.lambda_140":
+ {"startLine": 140,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 140},
+ "Code.com.javiersc.kotlin.stdlib.Either.isRight_1":
+ {"startLine": 84,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 87},
+ "Code.com.javiersc.kotlin.stdlib.Either.isRight":
+ {"startLine": 29,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
   "endLine": 35},
- "Code.com.javiersc.kotlin.test.FileMatchersTest.assertDirectory should fail for file":
- {"startLine": 23,
+ "Code.com.javiersc.kotlin.stdlib.Either.isLeft_1":
+ {"startLine": 58,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 28},
- "Code.com.javiersc.kotlin.test.FileMatchersTest":
- {"startLine": 11,
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 61},
+ "Code.com.javiersc.kotlin.stdlib.Either.isLeft":
+ {"startLine": 20,
   "sourceFile":
-  "kotlin-test/jvm/test/kotlin/com/javiersc/kotlin/test/FileMatchersTest.jvm.kt",
-  "endLine": 61}}
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 26},
+ "Code.com.javiersc.kotlin.stdlib.Either.getOrNull":
+ {"startLine": 240,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 246},
+ "Code.com.javiersc.kotlin.stdlib.Either.fold":
+ {"startLine": 114,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 123},
+ "Code.com.javiersc.kotlin.stdlib.Either.constructor":
+ {"startLine": 17,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 288},
+ "Code.com.javiersc.kotlin.stdlib.Either.Right.toString":
+ {"startLine": 282,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 282},
+ "Code.com.javiersc.kotlin.stdlib.Either.Right.new":
+ {"startLine": 280,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 280},
+ "Code.com.javiersc.kotlin.stdlib.Either.Right.constructor":
+ {"startLine": 280,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 280},
+ "Code.com.javiersc.kotlin.stdlib.Either.Right.Companion.new":
+ {"startLine": 284,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 284},
+ "Code.com.javiersc.kotlin.stdlib.Either.Right.Companion.constructor":
+ {"startLine": 284,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 284},
+ "Code.com.javiersc.kotlin.stdlib.Either.Right.Companion":
+ {"startLine": 284,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 284},
+ "Code.com.javiersc.kotlin.stdlib.Either.Right":
+ {"startLine": 280,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 285},
+ "Code.com.javiersc.kotlin.stdlib.Either.Left.toString":
+ {"startLine": 274,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 274},
+ "Code.com.javiersc.kotlin.stdlib.Either.Left.new":
+ {"startLine": 272,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 272},
+ "Code.com.javiersc.kotlin.stdlib.Either.Left.constructor":
+ {"startLine": 272,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 272},
+ "Code.com.javiersc.kotlin.stdlib.Either.Left.Companion.new":
+ {"startLine": 276,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 276},
+ "Code.com.javiersc.kotlin.stdlib.Either.Left.Companion.constructor":
+ {"startLine": 276,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 276},
+ "Code.com.javiersc.kotlin.stdlib.Either.Left.Companion":
+ {"startLine": 276,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 276},
+ "Code.com.javiersc.kotlin.stdlib.Either.Left":
+ {"startLine": 272,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 277},
+ "Code.com.javiersc.kotlin.stdlib.Either":
+ {"startLine": 17,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Either.kt",
+  "endLine": 288},
+ "Code.com.javiersc.kotlin.stdlib.DirScope.new":
+ {"startLine": 19,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 19},
+ "Code.com.javiersc.kotlin.stdlib.DirScope.dir":
+ {"startLine": 21,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 26},
+ "Code.com.javiersc.kotlin.stdlib.DirScope.constructor":
+ {"startLine": 19,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 19},
+ "Code.com.javiersc.kotlin.stdlib.DirScope":
+ {"startLine": 18,
+  "sourceFile":
+  "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt",
+  "endLine": 27},
+ "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.notContain_1":
+ {"startLine": 22,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/CharSequence.kt",
+  "endLine": 22},
+ "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.notContain":
+ {"startLine": 17,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/CharSequence.kt",
+  "endLine": 20},
+ "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.isNotNullNorEmpty":
+ {"startLine": 12,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/CharSequence.kt",
+  "endLine": 15},
+ "Code.com.javiersc.kotlin.stdlib.CharSequenceKt.isNotNullNorBlank":
+ {"startLine": 7,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/CharSequence.kt",
+  "endLine": 10},
+ "Code.com.javiersc.kotlin.stdlib.BooleanKt.ifTrue":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Boolean.kt",
+  "endLine": 11},
+ "Code.com.javiersc.kotlin.stdlib.BooleanKt.ifFalse":
+ {"startLine": 3,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Boolean.kt",
+  "endLine": 6},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColorsKt.ansiColor":
+ {"startLine": 3,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 6},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.toString":
+ {"startLine": 12,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 12},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.new":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 119},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.constructor":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 119},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Reset.new":
+ {"startLine": 14,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 16},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Reset.constructor":
+ {"startLine": 14,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 16},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Reset":
+ {"startLine": 14,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 16},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.new":
+ {"startLine": 18,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 83},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.constructor":
+ {"startLine": 18,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 83},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Yellow.new":
+ {"startLine": 32,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 34},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Yellow.constructor":
+ {"startLine": 32,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 34},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Yellow":
+ {"startLine": 32,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 34},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.White.new":
+ {"startLine": 48,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 50},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.White.constructor":
+ {"startLine": 48,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 50},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.White":
+ {"startLine": 48,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 50},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Red.new":
+ {"startLine": 24,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 26},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Red.constructor":
+ {"startLine": 24,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 26},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Red":
+ {"startLine": 24,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 26},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Purple.new":
+ {"startLine": 40,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 42},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Purple.constructor":
+ {"startLine": 40,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 42},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Purple":
+ {"startLine": 40,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 42},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Green.new":
+ {"startLine": 28,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 30},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Green.constructor":
+ {"startLine": 28,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 30},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Green":
+ {"startLine": 28,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 30},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Cyan.new":
+ {"startLine": 44,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 46},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Cyan.constructor":
+ {"startLine": 44,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 46},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Cyan":
+ {"startLine": 44,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 46},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightYellow.new":
+ {"startLine": 64,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 66},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightYellow.constructor":
+ {"startLine": 64,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 66},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightYellow":
+ {"startLine": 64,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 66},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightWhite.new":
+ {"startLine": 80,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 82},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightWhite.constructor":
+ {"startLine": 80,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 82},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightWhite":
+ {"startLine": 80,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 82},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightRed.new":
+ {"startLine": 56,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 58},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightRed.constructor":
+ {"startLine": 56,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 58},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightRed":
+ {"startLine": 56,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 58},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightPurple.new":
+ {"startLine": 72,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 74},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightPurple.constructor":
+ {"startLine": 72,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 74},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightPurple":
+ {"startLine": 72,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 74},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightGreen.new":
+ {"startLine": 60,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 62},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightGreen.constructor":
+ {"startLine": 60,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 62},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightGreen":
+ {"startLine": 60,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 62},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightCyan.new":
+ {"startLine": 76,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 78},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightCyan.constructor":
+ {"startLine": 76,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 78},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightCyan":
+ {"startLine": 76,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 78},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlue.new":
+ {"startLine": 68,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 70},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlue.constructor":
+ {"startLine": 68,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 70},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlue":
+ {"startLine": 68,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 70},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlack.new":
+ {"startLine": 52,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 54},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlack.constructor":
+ {"startLine": 52,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 54},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.BrightBlack":
+ {"startLine": 52,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 54},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Blue.new":
+ {"startLine": 36,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 38},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Blue.constructor":
+ {"startLine": 36,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 38},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Blue":
+ {"startLine": 36,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 38},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Black.new":
+ {"startLine": 20,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 22},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Black.constructor":
+ {"startLine": 20,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 22},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground.Black":
+ {"startLine": 20,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 22},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Foreground":
+ {"startLine": 18,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 83},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.new":
+ {"startLine": 85,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 118},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.constructor":
+ {"startLine": 85,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 118},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Yellow.new":
+ {"startLine": 99,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 101},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Yellow.constructor":
+ {"startLine": 99,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 101},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Yellow":
+ {"startLine": 99,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 101},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Red.new":
+ {"startLine": 91,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 93},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Red.constructor":
+ {"startLine": 91,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 93},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Red":
+ {"startLine": 91,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 93},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Purple.new":
+ {"startLine": 107,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 109},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Purple.constructor":
+ {"startLine": 107,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 109},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Purple":
+ {"startLine": 107,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 109},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Green.new":
+ {"startLine": 95,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 97},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Green.constructor":
+ {"startLine": 95,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 97},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Green":
+ {"startLine": 95,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 97},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Gray.new":
+ {"startLine": 115,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 117},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Gray.constructor":
+ {"startLine": 115,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 117},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Gray":
+ {"startLine": 115,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 117},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Cyan.new":
+ {"startLine": 111,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 113},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Cyan.constructor":
+ {"startLine": 111,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 113},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Cyan":
+ {"startLine": 111,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 113},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Blue.new":
+ {"startLine": 103,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 105},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Blue.constructor":
+ {"startLine": 103,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 105},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Blue":
+ {"startLine": 103,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 105},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Black.new":
+ {"startLine": 87,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 89},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Black.constructor":
+ {"startLine": 87,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 89},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background.Black":
+ {"startLine": 87,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 89},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor.Background":
+ {"startLine": 85,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 118},
+ "Code.com.javiersc.kotlin.stdlib.AnsiColor":
+ {"startLine": 8,
+  "sourceFile":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/AnsiColors.kt",
+  "endLine": 119}}

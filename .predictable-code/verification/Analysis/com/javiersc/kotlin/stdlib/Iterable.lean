@@ -1,0 +1,53 @@
+import Code.com.javiersc.kotlin.stdlib.Iterable
+import PredictableAnalysis.Tactic.AnalyzeDecl
+import PredictableAnalysis.Tactic.VerifyProperty
+
+set_option mvcgen.warning false
+
+open Std.Do
+
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.penultimate
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.penultimateOrNull
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.getIndexOrNull
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.second
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.secondOrNull
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.third
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.thirdOrNull
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.forth
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.forthOrNull
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.fifth
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.fifthOrNull
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.sixth
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.sixthOrNull
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.seventh
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.seventhOrNull
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.eighth
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.eighthOrNull
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.ninth
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.ninthOrNull
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.tenth
+#analyze_decl Code.com.javiersc.kotlin.stdlib.IterableKt.tenthOrNull
+#verify_invariants Code.com.javiersc.kotlin.stdlib.IterableKt
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.penultimate
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.penultimateOrNull
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.getIndexOrNull
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.second
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.secondOrNull
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.third
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.thirdOrNull
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.forth
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.forthOrNull
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.fifth
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.fifthOrNull
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.sixth
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.sixthOrNull
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.seventh
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.seventhOrNull
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.eighth
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.eighthOrNull
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.ninth
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.ninthOrNull
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.tenth
+#verify_returns Code.com.javiersc.kotlin.stdlib.IterableKt.tenthOrNull

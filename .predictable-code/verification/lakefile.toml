@@ -3,7 +3,7 @@ version = "0.1.0"
 
 [[require]]
 name = "predictable"
-path = "/home/runner/work/_temp/predictable-pkg/predictable-runtime-0.1.0-cloud-ecb982387-linux-x64/workspace"
+path = "/home/runner/work/_temp/predictable-pkg/predictable-runtime-0.1.0-cloud-a55da7755-linux-x64/workspace"
 
 [[lean_lib]]
 name = "Code"
@@ -21,5 +21,11 @@ leanOptions = { "warningAsError" = true }
 [[lean_lib]]
 name = "Analysis"
 globs = ["Analysis.+"]
+leanOptions = { "warningAsError" = false }
+moreLeanArgs = ["-M", "3584"]
+
+[[lean_lib]]
+name = "RequirementChecks"
+globs = ["RequirementChecks.+"]
 leanOptions = { "warningAsError" = false }
 moreLeanArgs = ["-M", "3584"]

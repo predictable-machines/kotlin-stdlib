@@ -13,11 +13,13 @@
 #
 # WHAT IT WRITES. `.predictable-code/` — the specs, inferred requirements, analysis and
 # datasets — onto a branch, as a pull request. Never straight to your default branch.
+# An analysis asks no model and is never handed a model key of yours: only a fix, or a spec
+# whose requirements a model writes, reads an `ANTHROPIC_API_KEY` secret.
 #
 # The stamp below is how the Control Center knows whether this repository is running a
 # current copy. It is compared as a NUMBER, never as a diff, so your own edits to this
 # file — a bigger `runner:`, a different `heap_mb` — are yours and are left alone.
-# predictable-workflow-version: 25
+# predictable-workflow-version: 31
 name: Predictable Code
 
 on:
@@ -45,12 +47,22 @@ on:
         # anybody's. That is why it is the fix this workflow can offer — an agent fix
         # would need a provider key configured here, which would end the "no secret is
         # stored in this repository" promise above.
-        description: "What to run: sync (analyse), fix (one deterministic fix), or fix-agent (one agent fix)."
+        #
+        # `spec-new`, `spec-describe` and `requirement-add` AUTHOR a spec (#2019): each is one
+        # deterministic CLI verb that edits one Markillo `.md`, and the propose step turns
+        # that one file into a pull request. They need no model and no key — see the key
+        # check below, which runs for the two fix verbs only.
+        #
+        # `spec-generate` (#2055) authors a spec too, with the requirements WRITTEN BY A MODEL
+        # from the person's name and short description: the same `specs new` verb without
+        # `--blank`, so it needs the customer's key like a fix does, and proposes its one `.md`
+        # exactly like the three verbs above.
+        description: "What to run: sync (analyse), fix (one deterministic fix), fix-agent (one agent fix), spec-new / spec-describe / requirement-add (author a spec), or spec-generate (a new spec whose requirements a model writes)."
         required: false
         default: sync
         type: string
       target:
-        description: "For a fix, the finding to fix. Ignored by sync."
+        description: "For a fix, the finding to fix. For spec-describe and requirement-add, the spec id. Ignored by sync and spec-new."
         required: false
         default: ""
         type: string
@@ -59,7 +71,20 @@ on:
         # producer of what a fix agent is asked — the desktop product uses the same
         # function — and a second builder written in shell is how a hosted agent would
         # come to be told something a local one is not.
-        description: "For command=fix-agent, what the agent is asked to do."
+        # For `spec-generate` it is the person's short description of the feature, which the
+        # model expands: also what a model is asked, and also supplied verbatim.
+        description: "For command=fix-agent, what the agent is asked to do. For spec-generate, the person's short description of the feature."
+        required: false
+        default: ""
+        type: string
+      text:
+        # WHAT A PERSON WROTE, for the three authoring verbs: the new spec's name, the
+        # description, or the requirement sentence. Its own input rather than `prompt`,
+        # because `prompt` is what an AGENT is asked, and a field whose meaning depends
+        # on the verb is how a hosted run comes to hand prose to the wrong reader.
+        # Free text from an API call, so it reaches the script through the ENVIRONMENT,
+        # exactly like `prompt`.
+        description: "For spec-new and spec-generate, the spec name; for spec-describe, the description; for requirement-add, the requirement sentence."
         required: false
         default: ""
         type: string
@@ -137,7 +162,14 @@ jobs:
         # customer's runner to tell them to add a secret; discovered here it costs
         # seconds. The same reason the product refuses a control it cannot honour
         # rather than starting a run that cannot finish.
-        if: inputs.command != 'sync'
+        # THE TWO FIX VERBS, NAMED — not "everything but sync". Authoring a spec (#2019) runs
+        # a deterministic verb that spawns no engine, so demanding a model key for it would
+        # refuse a repository that has every right to author; while `fix` MUST stay in, for
+        # the measured reason above (an empty key published a pull request of our own log).
+        # AND `spec-generate` (#2055): it is `specs new` WITHOUT `--blank`, whose requirements a
+        # model writes through the project's engine — the same `claude` spawn `fix-issue` makes,
+        # so the same missing key would fail it after the download, or leave an empty spec.
+        if: inputs.command == 'fix' || inputs.command == 'fix-agent' || inputs.command == 'spec-generate'
         env:
           # NOT CONFIGURED BY US AND NOT REQUIRED OF ANYONE ELSE: this is the one
           # secret the workflow reads, it is the customer's own, and it is read only on
@@ -164,6 +196,9 @@ jobs:
           # can print it. That is an exfiltration path wearing the clothes of a feature,
           # so the set of names this reads is closed and lives here.
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY || secrets.ORG_ANTHROPIC_KEY }}
+          # Which verb is asking, so the refusal names it — a spec generation told "a fix
+          # needs a key" is sent looking for a fix it never asked for.
+          PC_COMMAND: ${{ inputs.command }}
         run: |
           set -euo pipefail
           # WHICH ENGINE THIS REPOSITORY CHOSE, because the key it needs follows from it.
@@ -182,9 +217,17 @@ jobs:
           # DEFAULTS TO CLAUDE when there is no project file: that is the product's own
           # compiled-in fallback, and a repository with no committed analysis is refused a
           # few lines later for that reason instead — a better message than this one.
+          #
+          # A SPEC GENERATION ASKS THE INFERENCE ENGINE (#2055): `specs new` goes through
+          # `mkInferenceAdapter`, which prefers `inferenceProvider` and falls back to the main
+          # one — so that is the engine whose key this checks, in the same order.
           ENGINE=claudeCode
           if [ -f .predictable-code/project.json ]; then
-            ENGINE=$(jq -r '.aiProvider.engine // "claudeCode"' .predictable-code/project.json 2>/dev/null || echo claudeCode)
+            if [ "${PC_COMMAND}" = "spec-generate" ]; then
+              ENGINE=$(jq -r '.inferenceProvider.engine // .aiProvider.engine // "claudeCode"' .predictable-code/project.json 2>/dev/null || echo claudeCode)
+            else
+              ENGINE=$(jq -r '.aiProvider.engine // "claudeCode"' .predictable-code/project.json 2>/dev/null || echo claudeCode)
+            fi
           fi
           echo "Configured engine: ${ENGINE}"
 
@@ -193,7 +236,7 @@ jobs:
           # a run configured for it would install 3.9 GB and then fail on a missing
           # binary. The remedy is the customer's and it is one command, so it is named.
           if [ "${ENGINE}" = "copilotCli" ]; then
-            echo "::error::this repository is configured to use GitHub Copilot CLI, which the Predictable runtime package does not ship — a hosted fix cannot run it"
+            echo "::error::this repository is configured to use GitHub Copilot CLI, which the Predictable runtime package does not ship — a hosted ${PC_COMMAND} cannot run it"
             {
               echo "### The configured engine is not available on a runner"
               echo
@@ -215,7 +258,7 @@ jobs:
             exit 0
           fi
           if [ -z "${ANTHROPIC_API_KEY}" ]; then
-            echo "::error::a fix needs an ANTHROPIC_API_KEY secret this repository can see — set it on the repository, or on the organisation and share it with this repository (a secret named ORG_ANTHROPIC_KEY is also read)"
+            echo "::error::${PC_COMMAND} needs an ANTHROPIC_API_KEY secret this repository can see — set it on the repository, or on the organisation and share it with this repository (a secret named ORG_ANTHROPIC_KEY is also read)"
             {
               echo "### No model key"
               echo
@@ -224,9 +267,15 @@ jobs:
               # already set the key org-wide was told to add a second one per repository.
               # A message that sends a reader to do redundant work is wrong even when the
               # work would succeed.
-              echo 'A fix runs an agent on this runner, so it needs a model key that belongs to you. Set a secret named `ANTHROPIC_API_KEY` that this repository can see — either on the repository (Settings -> Secrets and variables -> Actions) or on the organisation, shared with this repository — and run the fix again. A secret named `ORG_ANTHROPIC_KEY` is read as well, so if your organisation already uses that name there is nothing to add.'
-              echo
-              echo 'ANALYSIS needs no key — only a fix does. The **verified fix** differs from the agent fix by re-analysing and discarding its own edit unless four accept gates hold, not by running without a model.'
+              if [ "${PC_COMMAND}" = "spec-generate" ]; then
+                echo 'Generating a spec'"'"'s requirements runs a model on this runner, so it needs a model key that belongs to you. Set a secret named `ANTHROPIC_API_KEY` that this repository can see — either on the repository (Settings -> Secrets and variables -> Actions) or on the organisation, shared with this repository — and try again. A secret named `ORG_ANTHROPIC_KEY` is read as well.'
+                echo
+                echo 'A **blank** new spec needs no key: it writes the spec for you to fill in, with no model.'
+              else
+                echo 'A fix runs an agent on this runner, so it needs a model key that belongs to you. Set a secret named `ANTHROPIC_API_KEY` that this repository can see — either on the repository (Settings -> Secrets and variables -> Actions) or on the organisation, shared with this repository — and run the fix again. A secret named `ORG_ANTHROPIC_KEY` is read as well, so if your organisation already uses that name there is nothing to add.'
+                echo
+                echo 'ANALYSIS needs no key — only a fix does. The **verified fix** differs from the agent fix by re-analysing and discarding its own edit unless four accept gates hold, not by running without a model.'
+              fi
             } >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
@@ -476,6 +525,84 @@ jobs:
             rm -rf "$STATE"
           fi
 
+      - name: Resolve an authored spec
+        # AUTHORING ONLY (#2019). Resolves, BEFORE the verb edits anything, which spec file an edit
+        # is about and whether to continue its branch — and writes the helpers every later step
+        # uses to name that branch, so the slug rule exists once.
+        #
+        # ITS OWN STEP BECAUSE IT NEEDS A TOKEN, and the Run step must not have one: Run is also
+        # where a fix agent runs with `bypassPermissions`, and a token in its environment is a
+        # token the agent can print. This step launches no agent — it runs `specs details` and
+        # `gh pr list` — so the job's own token is safe here.
+        id: spec
+        if: inputs.command == 'spec-new' || inputs.command == 'spec-describe' || inputs.command == 'requirement-add' || inputs.command == 'spec-generate'
+        env:
+          PC_HOME: ${{ steps.toolchain.outputs.predictable_home }}
+          PC_COMMAND: ${{ inputs.command }}
+          PC_TARGET: ${{ inputs.target }}
+          # READ-ONLY use: `gh pr list`, so a branch is continued only while its pull request is
+          # OPEN. Nothing here pushes.
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          predictable() { PREDICTABLE_HOME="$PC_HOME" "$PC_HOME/launcher.sh" "$@"; }
+          # THE HELPERS, written for the Run and Propose steps to source. Quoted heredoc: nothing
+          # in it is expanded here.
+          #
+          # `spec_in_checkout` makes a path repo-relative through `realpath` — it must EXIST (`-e`
+          # is GNU-only, so it is tested with `[ -e ]`) — and refuses one outside the checkout or
+          # one holding a CONTROL CHARACTER: the result becomes a `git add` pathspec and a line of
+          # `$GITHUB_OUTPUT`, where a newline would forge a second output. `spec_branch_for` is the
+          # ONE slug rule: `predictable/specs/<file>`, keyed on the FILE — an id is not unique
+          # (#1831), a file is one spec.
+          HELPERS="${RUNNER_TEMP}/pc-spec-helpers.sh"
+          cat > "$HELPERS" <<'PC_SPEC_HELPERS'
+          WS=$(realpath "$GITHUB_WORKSPACE")
+          spec_in_checkout() {
+            _real=$( [ -n "$1" ] && [ -e "$1" ] && realpath "$1" 2>/dev/null || true)
+            case "$_real" in
+              *[[:cntrl:]]*) return 1 ;;
+              "$WS"/*) printf '%s' "${_real#"$WS"/}" ;;
+              *) return 1 ;;
+            esac
+          }
+          spec_branch_for() {
+            printf 'predictable/specs/%s' "$(printf '%s' "$1" | tr -c 'A-Za-z0-9._-' '-' | cut -c1-80)"
+          }
+          PC_SPEC_HELPERS
+          # shellcheck disable=SC1090
+          . "$HELPERS"
+
+          # AN EDIT CONTINUES ITS SPEC'S BRANCH — ONLY WHILE ITS PULL REQUEST IS OPEN. A runner
+          # starts from a clean checkout of the dispatched ref, so a second edit to a spec whose
+          # first edit is still in review would otherwise start from the version WITHOUT it and
+          # collide on push. So the file is resolved first, and if its branch has an OPEN pull
+          # request the edit is made on THAT branch: the commit lands on top, the push
+          # fast-forwards, and that pull request updates. A branch whose pull request was CLOSED
+          # (a reviewer rejected the edit) or merged is NOT continued — building on it would bring
+          # a rejected commit back, or an old base — and the Propose step replaces it instead.
+          CONTINUED=no
+          PRE_SPEC_FILE=""
+          if [ "${PC_COMMAND}" = "spec-describe" ] || [ "${PC_COMMAND}" = "requirement-add" ]; then
+            PRE_ABS=$(predictable specs details "${PC_TARGET}" --path "$PWD/.predictable-code" --json 2>/dev/null \
+              | jq -r '.[0] // empty' 2>/dev/null || true)
+            PRE_SPEC_FILE=$(spec_in_checkout "$PRE_ABS" || true)
+            if [ -n "$PRE_SPEC_FILE" ]; then
+              PRE_BRANCH=$(spec_branch_for "$PRE_SPEC_FILE")
+              OPEN=$(gh pr list --head "$PRE_BRANCH" --state open --json url --jq '.[0].url // empty' 2>/dev/null || true)
+              if [ -n "$OPEN" ] \
+                && git fetch -q origin "refs/heads/${PRE_BRANCH}:refs/remotes/origin/${PRE_BRANCH}" 2>/dev/null; then
+                echo "::notice::continuing ${PRE_BRANCH}, where this spec's earlier edit is in review (${OPEN})"
+                git checkout -q -B "$PRE_BRANCH" "origin/${PRE_BRANCH}"
+                CONTINUED=yes
+              fi
+            fi
+          fi
+          {
+            echo "pre_spec_file=${PRE_SPEC_FILE}"
+            echo "continued=${CONTINUED}"
+          } >> "$GITHUB_OUTPUT"
+
       - name: Run
         id: analyse
         env:
@@ -488,6 +615,11 @@ jobs:
           # most important of the three to keep out of the script text.
           PC_TARGET: ${{ inputs.target }}
           PC_PROMPT: ${{ inputs.prompt }}
+          # The authoring verbs' free text (#2019) — a name, a description or a requirement
+          # sentence. Through the environment for the same reason as the prompt.
+          PC_TEXT: ${{ inputs.text }}
+          # The spec file the "Resolve an authored spec" step resolved for an edit (#2019).
+          PC_PRE_SPEC_FILE: ${{ steps.spec.outputs.pre_spec_file }}
           # Where the plugin was unpacked. Set for every verb and used by one: the CLI
           # reads it instead of cloning, and an empty value simply means the CLI's own
           # default applies, which is right for the verbs that never launch an agent.
@@ -500,7 +632,14 @@ jobs:
           # a preflight that accepts a key the run step cannot see passes a check and then
           # spawns an agent with an empty key, which is the failure this file already
           # records having shipped once.
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY || secrets.ORG_ANTHROPIC_KEY }}
+          #
+          # ONLY TO THE VERBS THAT RUN A MODEL (#2103) — exactly the verbs the preflight above
+          # checks the key for, and never an analysis or a spec a person writes, which spawn no
+          # engine. The CLI not using a key is a property of one binary; an empty variable is a
+          # property of this file anyone can read, and the header above says the same thing.
+          # `a && b || ''` is the expression language's conditional; with no secret set, `b` is
+          # empty and the result is '' either way.
+          ANTHROPIC_API_KEY: ${{ contains(fromJSON('["fix","fix-agent","spec-generate"]'), inputs.command) && (secrets.ANTHROPIC_API_KEY || secrets.ORG_ANTHROPIC_KEY) || '' }}
           # Empty is NOT the same as unset for this knob: the product reads the variable
           # and an empty string is not a number, so it falls back to measured headroom —
           # which is what an empty input should mean.
@@ -661,11 +800,55 @@ jobs:
           # ONE SPAWN, CHOSEN HERE. Both verbs emit the same `{"event":…}` stream on
           # stdout and both are followed by the same pump below, so the difference
           # between them is an argv and nothing else.
+          # AUTHORING (#2019): one of the three verbs that edit a spec. Named once, because
+          # four later branches ask the same question.
+          PC_AUTHORING=no
+          case "${PC_COMMAND}" in
+            spec-new|spec-describe|requirement-add|spec-generate) PC_AUTHORING=yes ;;
+          esac
           if [ "${PC_COMMAND}" != "sync" ]; then
-            [ -n "${PC_TARGET}" ] || {
-              echo "::error::${PC_COMMAND} needs a target finding"
-              exit 1
-            }
+            if [ "${PC_AUTHORING}" = "yes" ]; then
+              # WHAT A PERSON WROTE IS REQUIRED, and so is the spec it is about — except
+              # for a new spec, which has no id yet.
+              [ -n "${PC_TEXT}" ] || {
+                echo "::error::${PC_COMMAND} needs text"
+                exit 1
+              }
+              if [ "${PC_COMMAND}" != "spec-new" ] && [ "${PC_COMMAND}" != "spec-generate" ]; then
+                [ -n "${PC_TARGET}" ] || {
+                  echo "::error::${PC_COMMAND} needs a target spec"
+                  exit 1
+                }
+              fi
+              # BOTH ARE POSITIONAL OR FLAG VALUES, and a leading `-` is read by the CLI as
+              # an option wherever it lands (`--path=…` would redirect the write). The
+              # Control Center refuses these before dispatching; this refuses them again,
+              # because the workflow can be dispatched by anything holding the App's token.
+              case "${PC_TARGET}" in -*|*[[:cntrl:]]*) echo "::error::invalid spec id"; exit 1 ;; esac
+              case "${PC_TEXT}" in -*) echo "::error::text cannot start with '-'"; exit 1 ;; esac
+              # A NEW SPEC'S NAME becomes its title, its commit subject and a line of
+              # `$GITHUB_OUTPUT`, so it may hold no control character: a newline there would
+              # forge a second output (`spec_branch=main`). A description or a requirement
+              # sentence may be multi-line; it reaches only the verb and the commit body.
+              if [ "${PC_COMMAND}" = "spec-new" ] || [ "${PC_COMMAND}" = "spec-generate" ]; then
+                case "${PC_TEXT}" in *[[:cntrl:]]*) echo "::error::a spec name cannot contain control characters"; exit 1 ;; esac
+              fi
+              # A GENERATION IS SEEDED BY WHAT THE PERSON WROTE (#2055): without it the model has a
+              # name alone to invent a feature from. It is a FLAG VALUE (`--context`), so a leading
+              # `-` is refused for the same reason as the text's.
+              if [ "${PC_COMMAND}" = "spec-generate" ]; then
+                [ -n "${PC_PROMPT}" ] || {
+                  echo "::error::spec-generate needs a description (the prompt input)"
+                  exit 1
+                }
+                case "${PC_PROMPT}" in -*) echo "::error::the description cannot start with '-'"; exit 1 ;; esac
+              fi
+            else
+              [ -n "${PC_TARGET}" ] || {
+                echo "::error::${PC_COMMAND} needs a target finding"
+                exit 1
+              }
+            fi
             [ -f .predictable-code/project.json ] || {
               # NAMED, because the remedy is a different button. A repository with no
               # committed analysis has nothing to fix, and "no such finding" would send
@@ -674,6 +857,16 @@ jobs:
               exit 1
             }
           fi
+          # AN AUTHORED SPEC'S HELPERS (#2019) — `spec_in_checkout`, `spec_branch_for` and `WS` —
+          # written ONCE by the "Resolve an authored spec" step, so the slug rule exists in one
+          # place for every step that names the branch. `PRE_SPEC_FILE` is the file that step
+          # resolved for an edit (empty for a new spec).
+          PRE_SPEC_FILE="${PC_PRE_SPEC_FILE:-}"
+          if [ "${PC_AUTHORING}" = "yes" ]; then
+            # shellcheck disable=SC1091
+            . "${RUNNER_TEMP}/pc-spec-helpers.sh"
+          fi
+
           if [ "${PC_COMMAND}" = "fix-agent" ]; then
             [ -n "${PC_PROMPT}" ] || {
               # The prompt is BUILT BY THE CONTROL PLANE from the finding's own fields,
@@ -726,9 +919,35 @@ jobs:
           elif [ "${PC_COMMAND}" = "fix" ]; then
             predictable analyze fix-issue "${PC_TARGET}" \
               --path "$PWD/.predictable-code" --json > "$RESULT_JSON" 2> "$RUN_JSON" &
-          else
+          # AUTHORING (#2019): the same three verbs the desktop product runs, with `--json` so
+          # the one file each wrote comes back as `filePath` — the ONLY path the propose step
+          # stages. `--blank` because a hosted spec is authored by a person, never generated.
+          elif [ "${PC_COMMAND}" = "spec-new" ]; then
+            predictable specs new "${PC_TEXT}" --blank \
+              --path "$PWD/.predictable-code" --json > "$RESULT_JSON" 2> "$RUN_JSON" &
+          # GENERATION (#2055): the same verb WITHOUT `--blank`, so the model writes the
+          # description and the requirements, and every requirement is held to the canonical
+          # check before it is written. NO PLUGIN: this is the inference adapter's plain `claude`
+          # spawn — the one `fix-issue` makes — not `predictable claude`, so the plugin download
+          # above (fix-agent only) is not needed; the provisioned `bin/claude` is.
+          elif [ "${PC_COMMAND}" = "spec-generate" ]; then
+            predictable specs new "${PC_TEXT}" --context "${PC_PROMPT}" \
+              --path "$PWD/.predictable-code" --json > "$RESULT_JSON" 2> "$RUN_JSON" &
+          elif [ "${PC_COMMAND}" = "spec-describe" ]; then
+            predictable specs describe "${PC_TARGET}" --text "${PC_TEXT}" \
+              --path "$PWD/.predictable-code" --json > "$RESULT_JSON" 2> "$RUN_JSON" &
+          elif [ "${PC_COMMAND}" = "requirement-add" ]; then
+            predictable specs requirements add "${PC_TARGET}" --description "${PC_TEXT}" \
+              --path "$PWD/.predictable-code" --json > "$RESULT_JSON" 2> "$RUN_JSON" &
+          elif [ "${PC_COMMAND}" = "sync" ]; then
             predictable sync --path "$PWD/.predictable-code" --json \
               > "$RESULT_JSON" 2> "$RUN_JSON" &
+          else
+            # NAMED, never a fall-through to `sync`: a verb this file does not know is a dispatch
+            # from a control plane newer than this copy, and analysing instead would report an
+            # outcome for something nobody asked for.
+            echo "::error::unknown command '${PC_COMMAND}'; this workflow is older than the Control Center that dispatched it — merge the update pull request"
+            exit 1
           fi
           SYNC_PID=$!
           # `kill -0` rather than a `pgrep` pattern: this repo has already been bitten by
@@ -823,6 +1042,20 @@ jobs:
           # reader gets when an agent considered their defect and declined, and the agent had not
           # started. The crash arm above was written for exactly this shape and catches only
           # signal deaths; this is the same lie arriving through an ordinary exit code.
+          # AN AUTHORING VERB THAT EXITS NON-ZERO WROTE NOTHING WE TRUST — no such spec, a name
+          # that is already a spec's file, an unparsable sentence — and unlike a fix there is
+          # no "declined" outcome to read from the tree. So it fails here, with the verb's own
+          # words above, and no pull request is opened.
+          if [ "${PC_AUTHORING}" = "yes" ] && [ "$RUN_STATUS" -ne 0 ]; then
+            echo "::error::${PC_COMMAND} was refused (exit ${RUN_STATUS}); the output above says why, and no pull request is opened"
+            {
+              echo "### The spec was not changed"
+              echo
+              echo "\`${PC_COMMAND}\` exited **${RUN_STATUS}**. Nothing was written to your repository and no pull request is opened; the output above is the command's own reason."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
           if [ "${PC_COMMAND}" = "fix-agent" ] && [ "$RUN_STATUS" -ne 0 ]; then
             echo "::error::the agent did not run (exit ${RUN_STATUS}) — this is not a fix that chose to change nothing, and the output above says why"
             {
@@ -921,6 +1154,51 @@ jobs:
             # the snapshot otherwise, so "changed nothing" is a real and ordinary
             # outcome: the fix was tried and declined. That is reported, never failed.
             echo "result=${PC_COMMAND}" >> "$GITHUB_OUTPUT"
+            if [ "${PC_AUTHORING}" = "yes" ]; then
+              # THE ONE FILE THE VERB WROTE, repo-relative, or the run fails. `filePath` is
+              # absolute on the runner; `spec_in_checkout` resolves it (it must EXIST) and the
+              # workspace prefix test refuses anything outside the checkout, because this
+              # value becomes a `git add` pathspec in the next step.
+              SPEC_ABS=$(jq -r '.filePath // empty' "$RESULT_JSON" 2>/dev/null || true)
+              SPEC_FILE=$(spec_in_checkout "$SPEC_ABS") || {
+                echo "::error::${PC_COMMAND} reported no spec file inside this repository, so there is nothing to propose"
+                exit 1
+              }
+              # The edit must have landed in the file whose branch it continued, or the pull
+              # request would carry a different spec than the one resolved above.
+              if [ -n "$PRE_SPEC_FILE" ] && [ "$PRE_SPEC_FILE" != "$SPEC_FILE" ]; then
+                echo "::error::${PC_COMMAND} wrote ${SPEC_FILE}, not ${PRE_SPEC_FILE} as resolved; nothing is proposed"
+                exit 1
+              fi
+              # CR/LF STRIPPED: each becomes one line of `$GITHUB_OUTPUT`, and a newline inside a
+              # name a person typed would forge another output line after it — `spec_branch=main`
+              # redirecting the push, or a `spec_file` that never passed `spec_in_checkout`.
+              SPEC_ID=$(jq -r '.specId // .id // empty' "$RESULT_JSON" 2>/dev/null | tr -d '\r\n' || true)
+              SPEC_NAME=$(jq -r '.specName // .name // empty' "$RESULT_JSON" 2>/dev/null | tr -d '\r\n' || true)
+              {
+                echo "spec_file=${SPEC_FILE}"
+                echo "spec_branch=$(spec_branch_for "$SPEC_FILE")"
+                echo "spec_id=${SPEC_ID}"
+                echo "spec_name=${SPEC_NAME}"
+              } >> "$GITHUB_OUTPUT"
+              # WHAT A GENERATION LEFT OUT, AND WHAT IT WAS GROUNDED IN (#2055), for the pull
+              # request to state. The sentences are MODEL TEXT, so they go to a FILE the propose
+              # step renders, never to `$GITHUB_OUTPUT`; the count is reduced to digits first.
+              #
+              # AND THE FILE IS INERT MARKDOWN. It lands in a pull request body, where model text
+              # seeded by what a person typed would otherwise render: a newline starts a heading
+              # or a block, `@someone` pings a real person when the pull request opens, `#123`
+              # cross-links an issue, a link or an image renders. So each value is collapsed to one
+              # line and set in a DOUBLE-backtick code span — GitHub links nothing inside one — with
+              # every run of backticks reduced to a single one, which cannot close that span.
+              if [ "${PC_COMMAND}" = "spec-generate" ]; then
+                jq -r 'def inert: tostring | gsub("[[:cntrl:]]+"; " ") | gsub("`+"; "`") | "`` " + . + " ``";
+                  (.rejected // [])[] | "- \(.description | inert) — \(.error | inert)"' "$RESULT_JSON" \
+                  > "${RUNNER_TEMP}/pc-spec-rejected.md" 2>/dev/null || : > "${RUNNER_TEMP}/pc-spec-rejected.md"
+                GROUNDED=$(jq -r '.groundedFunctions // 0' "$RESULT_JSON" 2>/dev/null | tr -cd '0-9' || true)
+                echo "spec_grounded=${GROUNDED:-0}" >> "$GITHUB_OUTPUT"
+              fi
+            fi
             exit 0
           fi
 
@@ -996,12 +1274,29 @@ jobs:
       - name: Propose the results
         env:
           GH_TOKEN: ${{ github.token }}
+          # THE MODEL KEY'S VALUE, read here for ONE purpose: to refuse a commit that contains it
+          # (#2057, `refuse_secrets` below). The same closed pair the Run step reads; under a name
+          # no tool this step runs looks for, so nothing here can USE it as a credential.
+          PC_MODEL_KEY: ${{ secrets.ANTHROPIC_API_KEY || secrets.ORG_ANTHROPIC_KEY }}
+          CONTROL_PLANE: ${{ inputs.control_plane }}
           VERDICT: ${{ steps.analyse.outputs.result }}
           TAG: ${{ steps.toolchain.outputs.tag }}
           PC_COMMAND: ${{ inputs.command }}
           # Through the environment for the reason the run step says: this input
           # arrives from an API call and must never be spliced into shell.
           PC_TARGET: ${{ inputs.target }}
+          # What the Run step resolved for an authoring verb (#2019): the ONE file to stage,
+          # already checked to be inside the checkout, and what to call the change.
+          # The requirement sentence, for the commit body — through the environment, as in Run.
+          PC_TEXT: ${{ inputs.text }}
+          SPEC_FILE: ${{ steps.analyse.outputs.spec_file }}
+          SPEC_BRANCH: ${{ steps.analyse.outputs.spec_branch }}
+          # Whether the edit was made on its spec's branch with an OPEN pull request (#2019).
+          SPEC_CONTINUED: ${{ steps.spec.outputs.continued }}
+          SPEC_ID: ${{ steps.analyse.outputs.spec_id }}
+          SPEC_NAME: ${{ steps.analyse.outputs.spec_name }}
+          # How many analysed functions a generation was grounded in (#2055); digits only.
+          SPEC_GROUNDED: ${{ steps.analyse.outputs.spec_grounded }}
         run: |
           set -euo pipefail
           git config user.name "predictable-code[bot]"
@@ -1044,7 +1339,9 @@ jobs:
           # commit its branch is not based on, and that is a product decision rather
           # than a repair.
           push_or_explain() {
-            if git push origin "$BRANCH" 2> "${RUNNER_TEMP}/pc-push.err"; then
+            # Extra push flags, if any, come first: only the authored-spec path passes one
+            # (`--force-with-lease`, below); every other caller pushes exactly as before.
+            if git push "$@" origin "$BRANCH" 2> "${RUNNER_TEMP}/pc-push.err"; then
               cat "${RUNNER_TEMP}/pc-push.err" >&2
               return 0
             fi
@@ -1062,6 +1359,58 @@ jobs:
             return 1
           }
 
+          # THE CONTROL PLANE OPENS THE PULL REQUEST, with the App's installation token.
+          #
+          # A pull request this job opens with its own GITHUB_TOKEN starts NO workflow run:
+          # that is GitHub's rule for every event the token causes. So the repository's own
+          # CI never ran on our pull requests, the Control Center had no checks to show, and
+          # a base that requires checks could never merge one. Opened by the plane, CI runs
+          # as on any other pull request, and the plane records it and arms the auto-merge
+          # choice of whoever started this run.
+          #
+          # IT FALLS BACK to opening it here when the plane cannot be reached or refuses, so
+          # a run never loses its results over it, and it says so: without the plane, this
+          # repository's CI will not run on the pull request until something pushes to it.
+          open_pull_request() {
+            PC_PR_HEAD="$1"
+            PC_PR_TITLE="$2"
+            PC_PR_BODY="$3"
+            # No plane named, or no way to mint a token (a run started by hand from GitHub's own
+            # UI can lack either): straight to the fallback rather than an unbound variable.
+            PC_PR_OIDC=""
+            if [ -n "${CONTROL_PLANE:-}" ] && [ -n "${ACTIONS_ID_TOKEN_REQUEST_URL:-}" ]; then
+              PC_PR_OIDC=$(curl -sS -m 20 \
+                -H "Authorization: bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN:-}" \
+                "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=${CONTROL_PLANE}" \
+                | jq -r '.value // empty') || PC_PR_OIDC=""
+            fi
+            if [ -n "$PC_PR_OIDC" ]; then
+              # BASED ON THE BRANCH THIS RAN ON: the Control Center reads a pull request as
+              # the analysis of its base, and a fix of `feature/x` belongs on `feature/x`.
+              jq -n --arg head "$PC_PR_HEAD" --arg base "${GITHUB_REF_NAME}" \
+                --arg title "$PC_PR_TITLE" --rawfile body "$PC_PR_BODY" \
+                '{head: $head, base: $base, title: $title, body: $body}' \
+                > "${RUNNER_TEMP}/pc-pr-request.json"
+              PC_PR_STATUS=$(curl -sS -m 60 -o "${RUNNER_TEMP}/pc-pr-answer.json" -w '%{http_code}' \
+                -X POST \
+                -H "Authorization: Bearer ${PC_PR_OIDC}" \
+                -H 'content-type: application/json' \
+                --data-binary "@${RUNNER_TEMP}/pc-pr-request.json" \
+                "${CONTROL_PLANE}/api/cloud/pull-requests") || PC_PR_STATUS=000
+              if [ "$PC_PR_STATUS" = "201" ] || [ "$PC_PR_STATUS" = "200" ]; then
+                echo "Opened $(jq -r '.url // "the pull request"' "${RUNNER_TEMP}/pc-pr-answer.json")"
+                return 0
+              fi
+              echo "::warning::the control plane did not open the pull request (HTTP ${PC_PR_STATUS}): $(head -c 300 "${RUNNER_TEMP}/pc-pr-answer.json" 2>/dev/null)"
+            fi
+            echo "::warning::opening the pull request with this job's own token, so this repository's CI will not run on it until something pushes to it"
+            gh pr create \
+              --title "$PC_PR_TITLE" \
+              --body-file "$PC_PR_BODY" \
+              --head "$PC_PR_HEAD" \
+              --base "${GITHUB_REF_NAME}"
+          }
+
           # ──────────────────────────────────────────────────────────────────────
           # A FIX PROPOSES DIFFERENT BYTES FOR A DIFFERENT REASON, so it branches here.
           #
@@ -1071,6 +1420,115 @@ jobs:
           # branch name matches the desktop product's (`predictable/propose/<finding>`)
           # so the same finding proposes to the same place wherever the compute ran.
           # ──────────────────────────────────────────────────────────────────────
+          # ──────────────────────────────────────────────────────────────────────────
+          # AN AUTHORED SPEC (#2019): ONE FILE, ONE BRANCH PER SPEC, ONE PULL REQUEST.
+          #
+          # STAGED IS INVERTED from the fix below. A fix stages the tree and drops what we
+          # generate; a spec stages EXACTLY the `.md` its verb reported (`SPEC_FILE`,
+          # already resolved inside the checkout by the Run step) and nothing else — not
+          # the specs tree, which also holds the dataset the verb just recompiled, and not
+          # `.predictable-code/`. The commit is scoped to that path too (`-- "$SPEC_FILE"`
+          # is git's `--only`), so nothing else in the index can ride along.
+          #
+          # THE BRANCH IS KEYED ON THE FILE, not the spec id: an id is not unique (#1831),
+          # a file is one spec. A later edit to the same spec was made ON this branch (the
+          # Run step checked it out), so it commits on top, the push is a fast-forward, and
+          # the pull request it opened the first time is the one that updates.
+          #
+          # READY, NOT DRAFT, for symmetry with the fix pull request below.
+          # ──────────────────────────────────────────────────────────────────────────
+          case "${PC_COMMAND}" in
+            spec-new|spec-describe|requirement-add|spec-generate)
+              # Decided by the Run step (`spec_branch_for`), which is also where a later edit
+              # checked this branch out. `-B`, not `-b`: on that later edit the checkout IS the
+              # branch, and `-b` would refuse to recreate it; `-B` at HEAD leaves it as it is.
+              BRANCH="${SPEC_BRANCH}"
+              [ -n "$BRANCH" ] && [ -n "$SPEC_FILE" ] || {
+                echo "::error::the run resolved no spec file or branch to propose"
+                exit 1
+              }
+              git checkout -B "$BRANCH"
+              git add -- "$SPEC_FILE"
+              if git diff --cached --quiet -- "$SPEC_FILE"; then
+                echo "::notice::${SPEC_FILE} is unchanged; nothing to propose"
+                echo "The spec file already said this, so there is nothing to propose." >> "$GITHUB_STEP_SUMMARY"
+                exit 0
+              fi
+              case "${PC_COMMAND}" in
+                spec-new) VERB=create ;;
+                spec-generate) VERB=generate ;;
+                *) VERB=edit ;;
+              esac
+              case "${PC_COMMAND}" in
+                spec-new) CHANGE="created" ;;
+                spec-generate) CHANGE="generated by a model from the name and description a person wrote" ;;
+                spec-describe) CHANGE="description set" ;;
+                *) CHANGE="requirement added: ${PC_TEXT}" ;;
+              esac
+              git commit -m "spec(${SPEC_ID:-spec}): ${VERB} ${SPEC_NAME:-${SPEC_FILE}}" \
+                -m "Authored in the Predictable Control Center (${CHANGE}); produced by ${TAG} on ${GITHUB_SHA}." \
+                -- "$SPEC_FILE"
+              if [ "${SPEC_CONTINUED:-no}" = "yes" ]; then
+                push_or_explain
+              else
+                # NOT CONTINUED, so this commit starts from the dispatched ref. A branch of this
+                # name may still exist — its pull request CLOSED or merged, or a new spec's name
+                # reused — and a plain push would fail as a non-fast-forward. It is REPLACED, with
+                # a lease on exactly what the remote holds now (empty: it must not exist), so a
+                # branch somebody pushed to meanwhile is never overwritten.
+                STALE=$(git ls-remote origin "refs/heads/${BRANCH}" | cut -f1)
+                push_or_explain --force-with-lease="${BRANCH}:${STALE}"
+              fi
+              {
+                echo "**${SPEC_NAME:-${SPEC_FILE}}** · spec \`${SPEC_ID:-?}\` · \`${SPEC_FILE}\`"
+                echo
+                if [ "${PC_COMMAND}" = "spec-generate" ]; then
+                  # SAYS A MODEL WROTE IT, because it did: the sentence the authored path prints
+                  # ("no AI generated this text") would be false here, and a reviewer weighs a
+                  # model's requirements differently from a person's.
+                  echo "A person named this spec and described it in the Predictable Control Center; **a model wrote its description and requirements**, using this repository's own key, in its own Actions (\`${TAG}\`). Only the spec file is in this change."
+                  echo
+                  echo "Every requirement here passed the canonical requirement check before it was written: it parses as the next analysis parses it, and it is a form the analysis decides."
+                  if [ "${SPEC_GROUNDED:-0}" -gt 0 ] 2>/dev/null; then
+                    echo "Each one also names one of the ${SPEC_GROUNDED} functions of this repository's last analysis, and only that function's own parameters."
+                  else
+                    echo "This repository had no analysed functions to ground them in, so a requirement may name a function the next analysis cannot find — it then gets no verdict."
+                  fi
+                  REJECTED="${RUNNER_TEMP}/pc-spec-rejected.md"
+                  if [ -s "$REJECTED" ]; then
+                    echo
+                    echo "### Left out: not canonical after three attempts"
+                    echo
+                    echo "The model proposed these and none passed the check, so they are **not** in the spec. Add any you want by hand, as a canonical sentence:"
+                    echo
+                    cat "$REJECTED"
+                  fi
+                  echo
+                  echo "Review them as you would a colleague's: a requirement that reaches a verdict says whether the code does this, not whether this is what you want."
+                else
+                  echo "A person wrote this in the Predictable Control Center, and \`${TAG}\` recorded it in the spec's Markillo file with a deterministic command in this repository's own Actions — **no AI generated this text**. Only the spec file is in this change."
+                fi
+                echo
+                echo "Later edits to the same spec are added to this branch, so the diff is the full record of what changed. The requirements are checked against the code by the next analysis; nothing here claims they hold yet."
+              } > /tmp/pc-spec-body.md
+              # ONE PULL REQUEST PER BRANCH: a later edit's push already updated it, so an
+              # existing one is reported rather than refused.
+              EXISTING=$(gh pr list --head "$BRANCH" --state open --json url --jq '.[0].url // empty' 2>/dev/null || true)
+              if [ -n "$EXISTING" ]; then
+                echo "::notice::updated the open pull request for ${SPEC_FILE}: ${EXISTING}"
+                echo "Added to the open pull request for this spec: ${EXISTING}" >> "$GITHUB_STEP_SUMMARY"
+              else
+                # BASED ON THE BRANCH THIS RAN ON, which the spec branch was cut from: the same rule
+                # as the analysis and the fix, or a spec written against `feature/x` is proposed
+                # against the default branch with every commit of `feature/x` beside it.
+                # Through the ONE opener (`open_pull_request`, above), so the repository's CI runs
+                # on it: a pull request this job opened with its own token would start none.
+                open_pull_request "$BRANCH" "spec(${SPEC_ID:-spec}): ${VERB} ${SPEC_NAME:-${SPEC_FILE}}" /tmp/pc-spec-body.md
+              fi
+              exit 0
+              ;;
+          esac
+
           if [ "${PC_COMMAND}" != "sync" ]; then
             # SLUGGED, because a finding id reaches us from an API call and a branch
             # name is not a free-form string: git refuses spaces, `..`, `~`, `^`, `:`,
@@ -1163,10 +1621,9 @@ jobs:
               echo
               echo "The finding still stands on \`${GITHUB_REF_NAME}\` until this merges."
             } > /tmp/pc-fix-body.md
-            gh pr create \
-              --title "Predictable Code fix: ${PC_TARGET}" \
-              --body-file /tmp/pc-fix-body.md \
-              --head "$BRANCH"
+            # BASED ON THE BRANCH THIS RAN ON (`open_pull_request` sends `${GITHUB_REF_NAME}`),
+            # which is the one the fix branch was cut from.
+            open_pull_request "$BRANCH" "Predictable Code fix: ${PC_TARGET}" /tmp/pc-fix-body.md
             exit 0
           fi
 
@@ -1226,12 +1683,45 @@ jobs:
           # pathspec, because a negative pathspec makes `git add` exit 1 on an ignored
           # path and end the step.
           git reset -q -- .predictable-code/verification/.lake
+          # AN ENGINE'S CREDENTIALS ARE NEVER THE PRODUCT. OpenCode keeps its state — including an
+          # `auth.json` holding the key it was handed — under `.predictable-code/opencode/`. An
+          # analysis runs no engine and is handed no key, but `init` only IGNORES that directory,
+          # and the `-f` above overrides exactly that rule, so this reset (and `refuse_secrets`
+          # below) is what stands between an engine's state and the customer's own pull request
+          # whatever left it there. Guarded, because on most runs the directory does not exist.
+          if [ -e .predictable-code/opencode ]; then
+            git reset -q -- .predictable-code/opencode
+          fi
           if [ -d "$SPECS_DIR" ]; then
             echo "::notice::staging inferred specs from ${SPECS_DIR}/"
             # Same reason: a project may ignore its specs directory locally, and the
             # pull request is worthless without the documents its findings cite.
             git add -Af "$SPECS_DIR"
           fi
+
+          # FAIL CLOSED ON A SECRET, whatever wrote it. The reset of `opencode/` above is a
+          # DENYLIST of the one engine known to keep its key under the state directory, and the
+          # forced add overrides every ignore rule — so the next engine that keeps a credential
+          # there would be committed into the customer's own pull request with nobody noticing.
+          # So what is about to be committed is checked for the key's VALUE and for a
+          # credentials-shaped file, and a hit publishes NOTHING: a failed run costs a re-run, a
+          # leaked key costs the customer a rotation and whatever was done with it meanwhile.
+          # GitHub masks the value in this log; it is never echoed.
+          refuse_secrets() {
+            if [ -n "${PC_MODEL_KEY:-}" ] && git diff --cached --binary | grep -qF -- "$PC_MODEL_KEY"; then
+              echo "::error::the analysis about to be committed contains this repository's model key — nothing was published"
+              git reset -q
+              return 1
+            fi
+            CRED=$(git diff --cached --name-only -- .predictable-code \
+              | grep -iE '(^|/)(auth|credentials?)[^/]*\.json$' | head -1 || true)
+            if [ -n "$CRED" ]; then
+              echo "::error::the analysis about to be committed contains a credentials file (${CRED}) — nothing was published"
+              git reset -q
+              return 1
+            fi
+          }
+          refuse_secrets
 
           # WHAT WE WROTE IS MARKED AS GENERATED, or the repository's OWN formatter
           # fails on it and nothing this product proposes can ever be merged.
@@ -1314,7 +1804,6 @@ jobs:
             echo "Only \`.predictable-code/\` and your specs directory are written — no source file is changed."
           } > /tmp/pc-body.md
 
-          gh pr create \
-            --title "Predictable Code analysis (${VERDICT})" \
-            --body-file /tmp/pc-body.md \
-            --head "$BRANCH"
+          # BASED ON THE BRANCH THIS ANALYSED (`open_pull_request` sends `${GITHUB_REF_NAME}`),
+          # because the Control Center reads a pull request as the analysis OF ITS BASE.
+          open_pull_request "$BRANCH" "Predictable Code analysis (${VERDICT})" /tmp/pc-body.md

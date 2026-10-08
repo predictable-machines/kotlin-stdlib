@@ -1,0 +1,45 @@
+[{"vc": "il1.bounds",
+  "severity": "warning",
+  "priority": 3,
+  "message":
+  "May break a called method's requirement. This code can call a method with arguments that violate what that method requires.",
+  "line": 138,
+  "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex",
+  "file":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "defectClass": "bounds",
+  "class": "potential",
+  "category": "callee-precondition"},
+ {"vc": "il3.bounds",
+  "severity": "warning",
+  "priority": 5,
+  "message":
+  "May break a called method's requirement. This code can call a method with arguments that violate what that method requires.",
+  "line": 92,
+  "fqn": "Code.com.javiersc.kotlin.stdlib.IterableKt.penultimate",
+  "file":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt",
+  "defectClass": "bounds",
+  "category": "callee-precondition"},
+ {"vc": "il1.null-dereference",
+  "severity": "warning",
+  "priority": 5,
+  "message":
+  "A value in `path` may be null where it is used. `path` uses a value that is expected to be present, and the analysis could not rule out its being null at that point.",
+  "line": 123,
+  "fqn": "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.path",
+  "file":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "defectClass": "null-dereference",
+  "category": "callee-precondition"},
+ {"vc": "il2.domain-guard",
+  "severity": "warning",
+  "priority": 4,
+  "message":
+  "May throw TreeNodeException. For some inputs this code throws TreeNodeException, so it can fail at runtime.",
+  "line": 127,
+  "fqn": "Code.com.javiersc.kotlin.stdlib.tree.TreeNode.path",
+  "file":
+  "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt",
+  "defectClass": "domain-guard",
+  "category": "throw"}]

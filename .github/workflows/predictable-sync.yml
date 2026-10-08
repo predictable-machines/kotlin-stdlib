@@ -11,22 +11,21 @@
 # short-lived, pre-signed URL in return. No secret is stored in this repository, none
 # is configured, and no credential of ours ever reaches this runner.
 #
-# WHAT IT WRITES. An analysis is committed to ONE branch of its own, `predictable-code-database`,
-# under the analysed branch's name: `<branch>/.analysis.json` says which commit it describes and
-# who asked, and `<branch>/.predictable-code/` holds the datasets. It never commits to your code's
-# branches and opens no pull request. A fix, an authored spec, its documentation or a setting is a
-# change to your code, so each of those is still proposed as a pull request on its own branch.
-# An analysis asks no model and is never handed a model key of yours: only a fix, a spec whose
-# requirements a model writes, or a run that writes the specs' missing descriptions — each one
-# started by a person — reads an `ANTHROPIC_API_KEY` secret.
-# A CLEAN is the one run that removes instead: it deletes `.predictable-code/` (and, when asked,
-# your spec files) with `predictable clean`, as a pull request of deletions only, which never
-# merges itself.
+# WHAT IT WRITES. Everything Predictable keeps lives on ONE branch of its own,
+# `predictable-code-database`, which `predictable` checks out at `.predictable-code/` and commits
+# and pushes itself: the configuration (`project.json`) and the acknowledged findings at its root,
+# and each analysis under the analysed branch's name — `<branch>/.analysis.json` says which commit
+# it describes and who asked, and `<branch>/.predictable-code/` holds the datasets. It never commits
+# to your code's branches and opens no pull request for an analysis. A fix, an authored spec or its
+# documentation is a change to your code, so each of those is proposed as a pull request on its
+# own branch. An analysis asks no model and is never handed a model key of yours: only a fix, a
+# spec whose requirements a model writes, or a run that writes the specs' missing descriptions —
+# each one started by a person — reads an `ANTHROPIC_API_KEY` secret.
 #
 # The stamp below is how the Control Center knows whether this repository is running a
 # current copy. It is compared as a NUMBER, never as a diff, so your own edits to this
 # file — a bigger `runner:`, a different `heap_mb` — are yours and are left alone.
-# predictable-workflow-version: 36
+# predictable-workflow-version: 42
 name: Predictable Code
 
 on:
@@ -67,19 +66,23 @@ on:
         #
         # `spec-fill-descriptions` (#2103) asks a model for the descriptions the specs lack —
         # every one, or the spec files `text` names — and proposes exactly the files it wrote on
-        # `predictable/specs/documentation`. It needs the key like a fix. `settings-set` proposes
-        # ONE committed project setting (only `auto-describe`), so a person can switch it from
-        # the Control Center while `project.json` keeps its one writer, the CLI.
+        # `predictable/specs/documentation`. It needs the key like a fix.
         #
-        # `clean` REMOVES Predictable's data with `predictable clean`: the state directory, or the
-        # state and every spec file (`target`). Deterministic and keyless, and the one verb whose
-        # pull request is nothing but deletions — which is why it never merges itself.
-        description: "What to run: sync (analyse), fix (one deterministic fix), fix-agent (one agent fix), spec-new / spec-describe / requirement-add (author a spec), spec-generate (a new spec whose requirements a model writes), spec-fill-descriptions (a model writes the specs' missing descriptions), settings-set (propose one project setting), or clean (remove Predictable's data, as a pull request)."
+        # A SETTING AND A CLEAN ARE NOT VERBS HERE: both are writes to `predictable-code-database`,
+        # which the Control Center makes itself.
+        #
+        # `republish` (#2257) rebuilds the datasets over the branch's last analysis WITHOUT
+        # analysing: what a merge that changed only module summaries is owed. It recompiles the
+        # specs (`predictable specs compile`) over the branch's analysis in the database and
+        # publishes the result as the analysis of the commit it checked out. Keyless, and started by
+        # the Control Center alone; over an analysis another build wrote it analyses instead, since
+        # that analysis is not this build's to rebuild.
+        description: "What to run: sync (analyse), fix (one deterministic fix), fix-agent (one agent fix), spec-new / spec-describe / requirement-add (author a spec), spec-generate (a new spec whose requirements a model writes), spec-fill-descriptions (a model writes the specs' missing descriptions), or republish (rebuild the datasets over the last analysis when only module summaries changed)."
         required: false
         default: sync
         type: string
       target:
-        description: "For a fix, the finding to fix. For spec-describe and requirement-add, the spec id. For settings-set, the setting (only auto-describe). For clean, what to remove: state (.predictable-code/ only) or all (the state and every spec file). Ignored by sync and spec-new."
+        description: "For a fix, the finding to fix. For spec-describe and requirement-add, the spec id. Ignored by sync and spec-new."
         required: false
         default: ""
         type: string
@@ -101,7 +104,7 @@ on:
         # on the verb is how a hosted run comes to hand prose to the wrong reader.
         # Free text from an API call, so it reaches the script through the ENVIRONMENT,
         # exactly like `prompt`.
-        description: "For spec-new and spec-generate, the spec name; for spec-describe, the description; for requirement-add, the requirement sentence; for spec-fill-descriptions, all or the spec files, one per line; for settings-set, the value."
+        description: "For spec-new and spec-generate, the spec name; for spec-describe, the description; for requirement-add, the requirement sentence; for spec-fill-descriptions, all or the spec files, one per line."
         required: false
         default: ""
         type: string
@@ -133,6 +136,16 @@ on:
         required: false
         default: ""
         type: string
+      attempt:
+        # WHICH ATTEMPT AT A FIX THIS IS (#2240), named by the Control Center and written into the
+        # fix branch's `.analysis.json` — nowhere else. A fix chain retries a still-reported finding
+        # on the SAME branch, so that branch's directory on the data branch is overwritten attempt
+        # after attempt; this is how the plane tells the analysis of the attempt it is waiting on
+        # from an earlier one, without trusting two clocks. Data, never shell: environment + `jq`.
+        description: "For command=fix-agent, the Control Center's id for this attempt; empty otherwise."
+        required: false
+        default: ""
+        type: string
       heap_mb:
         # Only useful together with a bigger runner, for the reason above. Empty means
         # the product decides from the memory it can actually see, which is the right
@@ -143,7 +156,7 @@ on:
         type: string
 
 # Least privilege, and each one is load-bearing:
-#   contents     — check the code out, push the analysis to `predictable-code-database`, and push
+#   contents     — check the code out, push `predictable-code-database`, and push
 #                  the branch a fix or an authored spec is proposed on
 #   id-token     — mint the OIDC token that authenticates this job to the control plane
 #   pull-requests— open the pull request a fix or an authored spec is proposed in
@@ -163,9 +176,22 @@ concurrency:
 jobs:
   sync:
     runs-on: ${{ inputs.runner }}
+    # MUST EQUAL `PC_JOB_SECONDS` / 60 in the Run step (#2264). A description run derives its time
+    # bound and its hard stop from that number, and no step can read this one; changed apart, the
+    # run would stop early or be cancelled by GitHub with its work unpublished.
+    # `cloud-workflow-template.test.ts` fails the build when the two disagree.
     timeout-minutes: 60
 
     steps:
+      # WHEN THIS JOB STARTED, before anything else spends its hour (#2264). A description run
+      # bounds itself by TIME so the runner's own timeout never cancels it: a cancelled job
+      # publishes nothing, and a whole run's descriptions — the customer's key spent on them —
+      # were lost exactly that way. The Run step derives the bound from this.
+      - name: Note when the job started
+        run: |
+          set -euo pipefail
+          echo "PC_JOB_STARTED=$(date +%s)" >> "$GITHUB_ENV"
+
       - uses: actions/checkout@v6
         with:
           # Full history: the analysis records which commit it describes, and a shallow
@@ -271,6 +297,24 @@ jobs:
               echo 'This repository'"'"'s `.predictable-code/project.json` selects **GitHub Copilot CLI**. The runtime package this workflow installs ships `claude` and `opencode`, and no `copilot` — so a hosted fix has nothing to run.'
               echo
               echo 'Either switch the project to an engine the package ships (`predictable settings engine set claude <model>`, or `opencode`), or run the fix from your own machine where your `copilot` CLI is installed and signed in.'
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+          # NO INFERENCE ON OPENCODE YET (#2234): a generation or a description run writes text
+          # people read, and it must not carry a memory file the model was never meant to see.
+          # The `claude` it spawns runs isolated from every `CLAUDE.md`; OpenCode still reads
+          # the checkout's and `~/.claude/CLAUDE.md`, and its isolation is #2239. Refused here,
+          # before the download, rather than run leaking — the fix verbs read the main engine
+          # and are not affected, and Claude is the default.
+          if [ "${ENGINE}" = "opencodeCli" ] && { [ "${PC_COMMAND}" = "spec-generate" ] || [ "${PC_COMMAND}" = "spec-fill-descriptions" ]; }; then
+            echo "::error::opencode inference is temporarily unavailable pending memory isolation, see #2239 — a hosted ${PC_COMMAND} cannot run on it"
+            {
+              echo "### OpenCode inference is temporarily unavailable"
+              echo
+              echo 'This repository'"'"'s `.predictable-code/project.json` selects **OpenCode** for inference. A hosted '"${PC_COMMAND}"' does not run on it yet: OpenCode still reads memory files (`CLAUDE.md`) the model must not see in what it writes, and isolating it is tracked in #2239.'
+              echo
+              echo 'Switch inference to Claude (`predictable settings inference-engine set claude <model>`), which runs isolated, and run it again.'
             } >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
@@ -531,102 +575,109 @@ jobs:
           set -euo pipefail
           PREDICTABLE_HOME="$PC_HOME" "$PC_HOME/provision.sh" install base
 
-      - name: Restore this branch's analysis
-        # EVERY VERB READS IT. A sync reuses what the last analysis of this branch left, and counts
-        # the specs that are new since it; a fix resolves its finding against the analysis that
+      - name: Open the database
+        # EVERY VERB READS IT. A sync reuses the analysis of the same state and counts the specs
+        # that are new since the last one; a fix resolves its finding against the analysis that
         # found it; a generated requirement binds against its IL; documenting or editing a spec the
         # analysis inferred needs that spec's page. All of it lives on `predictable-code-database`,
-        # not on the branch this run checked out, so without this step a fix would find no finding.
+        # which `predictable migrate` checks out at `.predictable-code/` — the same worktree a
+        # developer's machine has, so this run and theirs read and write it alike.
         #
-        # THE CODE BRANCH'S OWN FILES WIN. The findings a person acknowledged and `init`'s
-        # `.gitignore` are the branch's alone and never come from here. `project.json` is the
-        # configuration the analysis RAN WITH, so the data branch carries it — and it is restored
-        # only where the branch has none, which is every repository whose configuration `init`
-        # made on a runner: without it every verb but `sync` is refused for want of a project.
+        # A REPOSITORY FROM BEFORE THE DATABASE (a `.predictable-code/` on the code branch) is
+        # migrated HERE ONLY FOR THIS RUN (`--keep-code-branch`): its configuration moves to the
+        # database, and the code branch is not touched — that is a person's commit to make, with
+        # `predictable migrate` on their own machine.
         #
         # SPEC PAGES ONLY FOR THE VERBS THAT TOUCH AN EXISTING SPEC — describing one, adding a
         # requirement to one, writing missing descriptions — and only where the branch has none.
         # Restored for a fix, they would ride into its pull request; restored for a sync, they
-        # would be analysed as if a person had written them.
-        #
-        # WRITTEN TO A FILE AS WELL AS RUN, because the spec step may check another branch out —
-        # with `-f`, over these untracked copies — and then restores again on top of that branch.
+        # would be analysed as if a person had written them. WRITTEN TO A FILE AS WELL AS RUN,
+        # because the spec step may check another branch out — with `-f`, over these untracked
+        # copies — and then restores again on top of that branch.
         env:
+          PC_HOME: ${{ steps.toolchain.outputs.predictable_home }}
           EXPECTED: ${{ steps.toolchain.outputs.schema_hash }}
           PC_COMMAND: ${{ inputs.command }}
         run: |
           set -euo pipefail
           # A BRANCH, NEVER A TAG. Everything this workflow reads and writes is keyed by the branch
-          # name: the analysis on the data branch, and the base of every pull request. A tag's
-          # directory there would be pruned by the next analysis (only branches are listed), and a
-          # tag sharing a branch's name would replace that branch's analysis.
+          # name: the analysis on the database, and the base of every pull request.
           if [ "${GITHUB_REF_TYPE:-branch}" != "branch" ]; then
             echo "::error::this workflow runs on a branch; it was dispatched on the ${GITHUB_REF_TYPE} ${GITHUB_REF_NAME}"
             exit 1
           fi
+          git config user.name "predictable-code[bot]"
+          git config user.email "predictable-code[bot]@users.noreply.github.com"
+          # NO HOOK OF THE REPOSITORY'S RUNS FOR ANY PUSH OF THIS JOB — the database's included, which
+          # the sync pushes itself: see "THE REPOSITORY'S OWN GIT HOOKS" in the Propose step.
+          git config core.hooksPath /dev/null
+          PREDICTABLE_HOME="$PC_HOME" "$PC_HOME/launcher.sh" migrate --force --keep-code-branch \
+            --path "$PWD/.predictable-code"
           RESTORE="${RUNNER_TEMP:-/tmp}/pc-restore.sh"
           cat > "$RESTORE" <<'PC_RESTORE'
           set -euo pipefail
-          STATE=.predictable-code
-          DATA_BRANCH=predictable-code-database
-          DATA_REF="refs/remotes/origin/${DATA_BRANCH}"
-          clear_outputs() {
-            [ -d "$STATE" ] || return 0
-            find "$STATE" -mindepth 1 -maxdepth 1 \
-              ! -name project.json ! -name findings-acknowledged.json ! -name .gitignore \
-              -exec rm -rf {} +
-          }
-          # Absent is the ordinary first analysis, so a fetch that finds no such branch is not an
-          # error; the analysed branch's name is the directory, verbatim.
-          [ -n "${GITHUB_REF_NAME:-}" ] || exit 0
-          # A CLEAN REMOVES WHAT THE CODE BRANCH HOLDS, so nothing is restored over it: a restored
-          # state directory would be what gets cleaned, and its absence is how the Run step tells a
-          # branch with nothing to clean.
-          [ "${PC_COMMAND:-sync}" != "clean" ] || exit 0
-          git fetch -q --no-tags origin "+refs/heads/${DATA_BRANCH}:${DATA_REF}" 2>/dev/null || exit 0
-          SAVED="${GITHUB_REF_NAME}"
-          if git cat-file -e "${DATA_REF}:${SAVED}/${STATE}" 2>/dev/null; then
-            echo "Restoring the analysis of ${GITHUB_REF_NAME} from ${DATA_BRANCH}."
-            clear_outputs
-            mkdir -p "$STATE"
-            SAVED_STATE=$(mktemp -d "${RUNNER_TEMP:-/tmp}/pc-state.XXXXXX")
-            git archive --format=tar "${DATA_REF}:${SAVED}/${STATE}" | tar -x -C "$SAVED_STATE"
-            if [ -f "$SAVED_STATE/project.json" ] && [ ! -f "$STATE/project.json" ]; then
-              cp "$SAVED_STATE/project.json" "$STATE/project.json"
-            fi
-            rm -f "$SAVED_STATE/project.json"
-            cp -R "$SAVED_STATE/." "$STATE/"
-            rm -rf "$SAVED_STATE"
+          ENTRY=".predictable-code/${GITHUB_REF_NAME}"
+          # A CONTINUED BRANCH READS THE ANALYSIS THIS RUN WAS DISPATCHED ON. `predictable` works on
+          # the entry of the branch CHECKED OUT, and the spec step may check out a spec's or a fix's
+          # branch that has no analysis of its own: it gets a copy of the dispatched branch's, here
+          # only — nothing but a sync publishes, and a fix's re-analysis replaces it.
+          CODE_BRANCH=$(git symbolic-ref --quiet --short HEAD || true)
+          if [ -n "$CODE_BRANCH" ] && [ "$CODE_BRANCH" != "${GITHUB_REF_NAME}" ] && [ -d "$ENTRY" ] \
+            && [ ! -e ".predictable-code/${CODE_BRANCH}/.analysis.json" ]; then
+            mkdir -p ".predictable-code/${CODE_BRANCH}"
+            cp -R "${ENTRY}/." ".predictable-code/${CODE_BRANCH}/"
           fi
+          # A REPUBLISH RESTORES THE INFERRED PAGES TOO: the analysis it rebuilds over was made with
+          # them, and its publish carries them forward — without them the branch's inferred pages
+          # would vanish from the data branch, and their specs from the datasets.
           case "${PC_COMMAND:-sync}" in
             spec-describe|requirement-add|spec-fill-descriptions) ;;
+            republish) [ "${PC_REPUBLISH:-}" = "compile" ] || exit 0 ;;
             *) exit 0 ;;
           esac
-          if git cat-file -e "${DATA_REF}:${SAVED}/.specs" 2>/dev/null; then
-            SPECS_DIR=$(jq -r '.defaultSpecsDir // "specs"' "$STATE/project.json" 2>/dev/null || echo specs)
-            UNPACKED=$(mktemp -d "${RUNNER_TEMP:-/tmp}/pc-specs.XXXXXX")
-            git archive --format=tar "${DATA_REF}:${SAVED}/.specs" | tar -x -C "$UNPACKED"
-            # NUL-separated, as the publish side lists them: a page's name may hold a newline.
-            (cd "$UNPACKED" && find . -type f -print0) | while IFS= read -r -d '' page; do
-              page="${page#./}"
-              [ -e "${SPECS_DIR}/${page}" ] && continue
-              mkdir -p "$(dirname "${SPECS_DIR}/${page}")"
-              cp "${UNPACKED}/${page}" "${SPECS_DIR}/${page}"
-            done
-            rm -rf "$UNPACKED"
-          fi
+          [ -d "${ENTRY}/.specs" ] || exit 0
+          SPECS_DIR=$(jq -r '.defaultSpecsDir // "specs"' .predictable-code/project.json 2>/dev/null || echo specs)
+          # NUL-separated: a page's name may hold a newline.
+          (cd "${ENTRY}/.specs" && find . -type f -print0) | while IFS= read -r -d '' page; do
+            page="${page#./}"
+            [ -e "${SPECS_DIR}/${page}" ] && continue
+            mkdir -p "$(dirname "${SPECS_DIR}/${page}")"
+            cp "${ENTRY}/.specs/${page}" "${SPECS_DIR}/${page}"
+          done
           PC_RESTORE
-          bash "$RESTORE"
 
-          # SYNC ONLY from here. A fix reads the analysis that found the finding — clearing it would
-          # leave `fix-issue` nothing to resolve the id against, and the run would fail with "no
-          # such finding" on a repository whose finding is right there.
-          [ "${PC_COMMAND:-sync}" = "sync" ] || exit 0
-          STATE=.predictable-code
-          [ -d "$STATE" ] || { echo "No earlier analysis; this is a first analysis."; exit 0; }
-
+          STATE=".predictable-code/${GITHUB_REF_NAME}/.predictable-code"
           FOUND=""
           [ -f "$STATE/schema-hash" ] && FOUND=$(tr -d '[:space:]' < "$STATE/schema-hash")
+
+          # A REPUBLISH (#2257) REBUILDS THE DATASETS OVER THE BRANCH'S ANALYSIS, so it may only use
+          # one THIS build wrote: another build's state is not this one's to read back, which is the
+          # rule the sync's reuse follows below. Decided BEFORE any page is restored — a republish
+          # that analyses restores none, since they would be analysed as if a person had written
+          # them — and handed to the Run step, which analyses the branch instead: never a republish
+          # over a stale analysis, and none over no analysis at all.
+          PC_REPUBLISH=""
+          if [ "${PC_COMMAND:-sync}" = "republish" ]; then
+            if [ -n "${EXPECTED:-}" ] && [ "$FOUND" = "${EXPECTED}" ] && [ -f "$STATE/viewer-data.json" ]; then
+              PC_REPUBLISH=compile
+            else
+              echo "::notice::the analysis of ${GITHUB_REF_NAME} was not written by this build (found '${FOUND:-none}', expected '${EXPECTED:-unknown}'), so it cannot be republished; this run analyses the branch instead"
+              PC_REPUBLISH=analyse
+            fi
+            echo "PC_REPUBLISH=${PC_REPUBLISH}" >> "${GITHUB_ENV:-/dev/null}"
+          fi
+          export PC_REPUBLISH
+          bash "$RESTORE"
+
+          # AN ANALYSIS ONLY from here — a sync, or a republish that analyses. A fix reads the
+          # analysis that found the finding: clearing it would leave `fix-issue` nothing to resolve
+          # the id against.
+          case "${PC_COMMAND:-sync}" in
+            sync) ;;
+            republish) [ "$PC_REPUBLISH" = "analyse" ] || exit 0 ;;
+            *) exit 0 ;;
+          esac
+          [ -d "$STATE" ] || { echo "No earlier analysis; this is a first analysis."; exit 0; }
 
           # Cleared rather than reconciled, and never silently: there is nobody to
           # prompt in CI, so the desktop tool's drift dialogue has no analogue here. An
@@ -636,22 +687,22 @@ jobs:
             echo "The earlier analysis was written by this build ($FOUND); keeping it for reuse."
           else
             echo "::notice::Replacing the earlier analysis: found '${FOUND:-none}', expected '${EXPECTED:-unknown}'."
-            find "$STATE" -mindepth 1 -maxdepth 1 \
-              ! -name project.json ! -name findings-acknowledged.json ! -name .gitignore \
-              -exec rm -rf {} +
+            find "$STATE" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
           fi
 
       - name: Resolve an authored spec
-        # AUTHORING ONLY (#2019). Resolves, BEFORE the verb edits anything, which spec file an edit
-        # is about and whether to continue its branch — and writes the helpers every later step
-        # uses to name that branch, so the slug rule exists once.
+        # AUTHORING (#2019) AND THE TWO FIXES (#2240). Resolves, BEFORE the verb edits anything,
+        # which spec file an edit is about and whether to continue its branch — and writes the
+        # helpers every later step uses to name that branch, so the slug rule exists once. For a fix
+        # it names the proposal branch, and continues it for an AGENT fix whose pull request is
+        # still open: that is a fix chain's retry, which builds on the attempt before it.
         #
         # ITS OWN STEP BECAUSE IT NEEDS A TOKEN, and the Run step must not have one: Run is also
         # where a fix agent runs with `bypassPermissions`, and a token in its environment is a
         # token the agent can print. This step launches no agent — it runs `specs details` and
         # `gh pr list` — so the job's own token is safe here.
         id: spec
-        if: inputs.command == 'spec-new' || inputs.command == 'spec-describe' || inputs.command == 'requirement-add' || inputs.command == 'spec-generate' || inputs.command == 'spec-fill-descriptions' || inputs.command == 'settings-set'
+        if: inputs.command == 'spec-new' || inputs.command == 'spec-describe' || inputs.command == 'requirement-add' || inputs.command == 'spec-generate' || inputs.command == 'spec-fill-descriptions' || inputs.command == 'fix' || inputs.command == 'fix-agent'
         env:
           PC_HOME: ${{ steps.toolchain.outputs.predictable_home }}
           PC_COMMAND: ${{ inputs.command }}
@@ -685,6 +736,18 @@ jobs:
           spec_branch_for() {
             printf 'predictable/specs/%s' "$(printf '%s' "$1" | tr -c 'A-Za-z0-9._-' '-' | cut -c1-80)"
           }
+          # A FIX'S PROPOSAL BRANCH, keyed on the finding id the Control Center sent. SLUGGED,
+          # because that id reaches us from an API call and a branch name is not a free-form
+          # string: git refuses spaces, `..`, `~`, `^`, `:`, and a leading `-` would be read as an
+          # option. Anything outside the safe set becomes `-`, which cannot change WHICH branch is
+          # written because the id is also recorded in the commit and the pull request body. The
+          # Control Center derives the same name (`hostedFixBranchOf`) to read this branch's
+          # analysis, so the two are pinned together by a test. BYTE-WISE (`LC_ALL=C`), which GNU
+          # `tr` and `cut` are on the runner anyway — stated so the rule is the same wherever it
+          # runs, and so the plane's copy can be exact.
+          fix_branch_for() {
+            printf 'predictable/propose/%s' "$(printf '%s' "$1" | LC_ALL=C tr -c 'A-Za-z0-9._-' '-' | LC_ALL=C cut -c1-80)"
+          }
           PC_SPEC_HELPERS
           # shellcheck disable=SC1090
           . "$HELPERS"
@@ -714,20 +777,30 @@ jobs:
               fi
             fi
           fi
-          # THE TWO VERBS THAT PROPOSE A SET OF FILES (#2103) continue their own branch by the same
-          # rule: a description run adds to the documentation pull request still in review, and a
-          # setting to its own. The setting's key reaches a branch name, so it is slugged here as
-          # the Run step also refuses anything but the one key it sets.
+          # THE VERB THAT PROPOSES A SET OF FILES (#2103) continues its own branch — and, since a
+          # description LOOP opens its pull request only when it is done (#2264), it continues a
+          # branch NO pull request has packaged yet as well as one whose pull request is open: the
+          # runs of one loop write one branch, and the last of them opens one pull request. A
+          # branch whose CURRENT TIP a closed or merged pull request already carried is not
+          # continued — a reviewer declined it, or it landed — and is replaced. Decided on the tip,
+          # never on the branch name alone, and only on a positive answer: an unreadable list is
+          # read as packaged, so the branch is replaced rather than a declined one built on.
           FILES_BRANCH=""
           case "${PC_COMMAND}" in
             spec-fill-descriptions) FILES_BRANCH="predictable/specs/documentation" ;;
-            settings-set) FILES_BRANCH="predictable/settings/$(printf '%s' "${PC_TARGET}" | tr -c 'A-Za-z0-9._-' '-' | cut -c1-40)" ;;
           esac
           if [ -n "$FILES_BRANCH" ]; then
+            FILES_TIP=$(git ls-remote origin "refs/heads/${FILES_BRANCH}" 2>/dev/null | cut -f1 || true)
             OPEN=$(gh pr list --head "$FILES_BRANCH" --state open --json url --jq '.[0].url // empty' 2>/dev/null || true)
-            if [ -n "$OPEN" ] \
+            PACKAGED=1
+            if [ -n "$FILES_TIP" ]; then
+              PACKAGED=$(gh pr list --head "$FILES_BRANCH" --state all --json state,headRefOid \
+                --jq "[.[] | select(.state != \"OPEN\" and .headRefOid == \"${FILES_TIP}\")] | length" \
+                2>/dev/null || echo 1)
+            fi
+            if [ -n "$FILES_TIP" ] && { [ -n "$OPEN" ] || [ "${PACKAGED:-1}" = "0" ]; } \
               && git fetch -q origin "refs/heads/${FILES_BRANCH}:refs/remotes/origin/${FILES_BRANCH}" 2>/dev/null; then
-              echo "::notice::continuing ${FILES_BRANCH}, whose pull request is in review (${OPEN})"
+              echo "::notice::continuing ${FILES_BRANCH}${OPEN:+, whose pull request is in review (${OPEN})}"
               git checkout -q -f -B "$FILES_BRANCH" "origin/${FILES_BRANCH}"
               CONTINUED=yes
             fi
@@ -736,6 +809,24 @@ jobs:
           # analysis and of the spec pages it inferred, and a continued branch may track one of
           # those very pages — the earlier edit's — so the checkout replaces the copy with the
           # branch's version, and the restore then fills in only what the branch does not carry.
+          # A FIX CHAIN'S RETRY CONTINUES ITS BRANCH (#2240), by the same rule as a spec: while the
+          # pull request the first attempt opened is OPEN, the next attempt starts from it, so the
+          # agent builds on what is already proposed and its commit advances that pull request. A
+          # closed or merged one is not continued; the Propose step replaces the branch instead.
+          # Only the AGENT fix: the deterministic verb is one mechanical pass and keeps its shape.
+          FIX_BRANCH=""
+          case "${PC_COMMAND}" in
+            fix|fix-agent) FIX_BRANCH=$(fix_branch_for "${PC_TARGET}") ;;
+          esac
+          if [ "${PC_COMMAND}" = "fix-agent" ]; then
+            OPEN=$(gh pr list --head "$FIX_BRANCH" --state open --json url --jq '.[0].url // empty' 2>/dev/null || true)
+            if [ -n "$OPEN" ] \
+              && git fetch -q origin "refs/heads/${FIX_BRANCH}:refs/remotes/origin/${FIX_BRANCH}" 2>/dev/null; then
+              echo "::notice::continuing ${FIX_BRANCH}, where the earlier attempt at this fix is in review (${OPEN})"
+              git checkout -q -f -B "$FIX_BRANCH" "origin/${FIX_BRANCH}"
+              CONTINUED=yes
+            fi
+          fi
           if [ "$CONTINUED" = yes ]; then
             bash "${RUNNER_TEMP}/pc-restore.sh"
           fi
@@ -743,6 +834,7 @@ jobs:
             echo "pre_spec_file=${PRE_SPEC_FILE}"
             echo "continued=${CONTINUED}"
             echo "files_branch=${FILES_BRANCH}"
+            echo "fix_branch=${FIX_BRANCH}"
           } >> "$GITHUB_OUTPUT"
 
       - name: Run
@@ -751,6 +843,12 @@ jobs:
           PC_HOME: ${{ steps.toolchain.outputs.predictable_home }}
           CONTROL_PLANE: ${{ inputs.control_plane }}
           PC_COMMAND: ${{ inputs.command }}
+          # What the restore step decided a republish is (#2257): `compile` over an analysis this
+          # build wrote, else the whole analysis. Written to `$GITHUB_ENV` there, named here.
+          PC_REPUBLISH: ${{ env.PC_REPUBLISH }}
+          # When the job started (#2264), noted by its first step: a description run's time bound
+          # is derived from it.
+          PC_JOB_STARTED: ${{ env.PC_JOB_STARTED }}
           # Through the ENVIRONMENT, never interpolated into the script. A
           # `${{ inputs.target }}` spliced into shell is an injection site, and this
           # input reaches us from an API call. The PROMPT is free-form prose and is the
@@ -786,6 +884,12 @@ jobs:
           # and an empty string is not a number, so it falls back to measured headroom —
           # which is what an empty input should mean.
           PREDICTABLE_TS_FRONTEND_HEAP_MB: ${{ inputs.heap_mb }}
+          # WHO STARTED IT AND FROM WHERE, for the `.analysis.json` the sync commits to the database
+          # itself (`predictable` publishes at the end of every sync). Empty for a run nobody
+          # started — the analysis a push dispatches — which the record calls `automatic`.
+          PREDICTABLE_ANALYSIS_STARTED_BY: ${{ inputs.started_by }}
+          PREDICTABLE_ANALYSIS_ORIGIN: ${{ inputs.started_by != '' && 'control-center' || 'automatic' }}
+          PREDICTABLE_ANALYSIS_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
           # THE LAUNCHER, never the binary directly. `launcher.sh` is what puts the
@@ -1002,32 +1106,13 @@ jobs:
           case "${PC_COMMAND}" in
             spec-new|spec-describe|requirement-add|spec-generate) PC_AUTHORING=yes ;;
           esac
-          # A SET OF FILES (#2103): the description run and the setting, whose propose step stages
-          # exactly the files the command reports.
+          # A SET OF FILES (#2103): the description run, whose propose step stages exactly the files
+          # the command reports.
           PC_FILES=no
           case "${PC_COMMAND}" in
-            spec-fill-descriptions|settings-set) PC_FILES=yes ;;
+            spec-fill-descriptions) PC_FILES=yes ;;
           esac
-          if [ "${PC_COMMAND}" = "clean" ]; then
-            # WHAT IS CLEANED IS A CLOSED PAIR, and it becomes a flag of a destructive command, so
-            # anything else is refused rather than defaulted — either default would be a guess about a
-            # deletion. The value is not echoed: it arrives from an API call, and this is a log line.
-            case "${PC_TARGET}" in
-              state|all) ;;
-              *) echo "::error::clean needs a target of 'state' or 'all'"; exit 1 ;;
-            esac
-            # NO COMMITTED ANALYSIS IS REQUIRED, unlike every other verb below: a repository holding
-            # only spec files still has something to clean. And NOTHING TO CLEAN IS AN ANSWER, not a
-            # failure — `predictable clean --keep-specs` with no state directory exits 1 ("Nothing was
-            # removed"), which would read as a broken run; so that one case ends here, and the
-            # Propose step reports that nothing was removed.
-            if [ "${PC_TARGET}" = "state" ] && [ ! -e .predictable-code ]; then
-              echo "::notice::this repository has no .predictable-code/ to clean"
-              echo "result=clean" >> "$GITHUB_OUTPUT"
-              exit 0
-            fi
-          fi
-          if [ "${PC_COMMAND}" != "sync" ] && [ "${PC_COMMAND}" != "clean" ]; then
+          if [ "${PC_COMMAND}" != "sync" ]; then
             if [ "${PC_AUTHORING}" = "yes" ]; then
               # WHAT A PERSON WROTE IS REQUIRED, and so is the spec it is about — except
               # for a new spec, which has no id yet.
@@ -1069,22 +1154,19 @@ jobs:
                 echo "::error::${PC_COMMAND} needs text"
                 exit 1
               }
-              if [ "${PC_COMMAND}" = "spec-fill-descriptions" ]; then
-                # `all`, or spec files one per line — each a FLAG VALUE's line, so a leading `-`
-                # or a control character inside a line is refused, as for every authored value.
-                if [ "${PC_TEXT}" != "all" ]; then
-                  printf '%s\n' "${PC_TEXT}" > "${RUNNER_TEMP}/pc-selection.txt"
-                  while IFS= read -r _line; do
-                    case "$_line" in -*|*[[:cntrl:]]*) echo "::error::invalid spec file in the selection"; exit 1 ;; esac
-                  done < "${RUNNER_TEMP}/pc-selection.txt"
-                fi
-              else
-                # A CLOSED SET, not a pass-through to `settings set`: this verb exists so a person
-                # can switch the one setting that spends their key, and anything else the
-                # workflow was dispatched with is refused rather than written.
-                case "${PC_TARGET}" in auto-describe) ;; *) echo "::error::settings-set sets auto-describe only"; exit 1 ;; esac
-                case "${PC_TEXT}" in true|false) ;; *) echo "::error::auto-describe is true or false"; exit 1 ;; esac
+              # `all`, or spec files one per line — each a FLAG VALUE's line, so a leading `-`
+              # or a control character inside a line is refused, as for every authored value.
+              if [ "${PC_TEXT}" != "all" ]; then
+                printf '%s\n' "${PC_TEXT}" > "${RUNNER_TEMP}/pc-selection.txt"
+                while IFS= read -r _line; do
+                  case "$_line" in -*|*[[:cntrl:]]*) echo "::error::invalid spec file in the selection"; exit 1 ;; esac
+                done < "${RUNNER_TEMP}/pc-selection.txt"
               fi
+            elif [ "${PC_COMMAND}" = "republish" ]; then
+              # A REPUBLISH (#2257) NAMES NOTHING: it rebuilds the branch's whole analysis, so it is
+              # dispatched with no target. It still needs that analysis — the check below, which
+              # it does not skip.
+              :
             else
               [ -n "${PC_TARGET}" ] || {
                 echo "::error::${PC_COMMAND} needs a target finding"
@@ -1093,7 +1175,7 @@ jobs:
             fi
             [ -f .predictable-code/project.json ] || {
               # NAMED, because the remedy is a different button. A branch with no analysis —
-              # nothing committed here and nothing on `predictable-code-database` to restore —
+              # no configuration on `predictable-code-database` —
               # has nothing to fix, and "no such finding" would send the reader looking for a
               # typo in an id that was never the problem.
               echo "::error::this branch has no analysis yet; run an analysis of it first"
@@ -1185,30 +1267,54 @@ jobs:
           # DESCRIPTIONS (#2103): the one run that asks a model for them, with the inference
           # adapter's plain `claude` spawn like a generation. `--json` so the files it wrote come
           # back as `written[].key` — the ONLY paths the propose step stages.
+          #
+          # BOUNDED BY TIME, NEVER BY A COUNT (#2264). The job has `timeout-minutes: 60`
+          # (`PC_JOB_SECONDS`), and a job GitHub cancels publishes nothing. So the run starts no
+          # model call once `--time-limit` has passed — FIFTEEN MINUTES before the timeout, room
+          # for the calls still in flight (each bounded by the engine's own timeout), the
+          # re-render, and the propose step's commit and push — and reports what it left as
+          # `overTime`, which the Control Center hands to the next run. As a second line, the wait
+          # loop below stops the process EIGHT minutes before the timeout if it is still running,
+          # and the pages it wrote are proposed from `--checkpoint`, which it appends to as it
+          # writes each one. A run never loses its work to the clock.
           elif [ "${PC_COMMAND}" = "spec-fill-descriptions" ]; then
+            # THE JOB'S `timeout-minutes` IN SECONDS, and it MUST stay equal to it: a step cannot
+            # read its job's timeout, so the number is stated twice and a test holds them equal.
+            PC_JOB_SECONDS=3600
+            PC_NOW=$(date +%s)
+            PC_STARTED="${PC_JOB_STARTED:-$PC_NOW}"
+            DESCRIBE_LIMIT=$(( PC_STARTED + PC_JOB_SECONDS - 900 - PC_NOW ))
+            [ "$DESCRIBE_LIMIT" -gt 60 ] || DESCRIBE_LIMIT=60
+            PC_HARD_STOP=$(( PC_STARTED + PC_JOB_SECONDS - 480 ))
+            DESCRIBE_CHECKPOINT="${RUNNER_TEMP}/pc-describe-checkpoint.ndjson"
             if [ "${PC_TEXT}" = "all" ]; then
               predictable specs fill-descriptions --all \
+                --time-limit "$DESCRIBE_LIMIT" --checkpoint "$DESCRIBE_CHECKPOINT" \
                 --path "$PWD/.predictable-code" --json > "$RESULT_JSON" 2> "$RUN_JSON" &
             else
               predictable specs fill-descriptions --specs "${PC_TEXT}" \
+                --time-limit "$DESCRIBE_LIMIT" --checkpoint "$DESCRIBE_CHECKPOINT" \
                 --path "$PWD/.predictable-code" --json > "$RESULT_JSON" 2> "$RUN_JSON" &
             fi
-          elif [ "${PC_COMMAND}" = "settings-set" ]; then
-            predictable settings set "${PC_TARGET}" "${PC_TEXT}" \
-              --path "$PWD/.predictable-code" --json > "$RESULT_JSON" 2> "$RUN_JSON" &
-          # CLEANING: the real `predictable clean`, so what goes is exactly what the CLI removes — the
-          # state directory keeping `specs/locations/` beside kept spec files, or all of it with every
-          # Markillo spec the CLI discovers across the repository (never a glob written here).
-          # `--force` because nobody is here to answer its prompt: the Control Center's confirmation
-          # dialog was the question, and the pull request is the second look. Its report is plain
-          # text, printed below.
-          elif [ "${PC_COMMAND}" = "clean" ]; then
-            if [ "${PC_TARGET}" = "all" ]; then PC_SPECS_FLAG=--delete-specs; else PC_SPECS_FLAG=--keep-specs; fi
-            predictable clean --force "${PC_SPECS_FLAG}" \
-              --path "$PWD/.predictable-code" > "$RESULT_JSON" 2> "$RUN_JSON" &
+          # THE SYNC PUBLISHES ITSELF: it commits this branch's analysis to `predictable-code-database`
+          # and pushes it, the same way a sync on a developer's machine does.
           elif [ "${PC_COMMAND}" = "sync" ]; then
             predictable sync --path "$PWD/.predictable-code" --json \
               > "$RESULT_JSON" 2> "$RUN_JSON" &
+          # A REPUBLISH (#2257): the specs recompiled over the branch's analysis in the database — no
+          # translation, no solver, no witness — which rebuilds every dataset, the module hierarchy's
+          # summaries included, from the pages as merged; it is published below, once it has
+          # rebuilt them. Over an analysis this build did not write (`PC_REPUBLISH` is not
+          # `compile`), a sync instead, over the entry the database step cleared as it clears a
+          # sync's.
+          elif [ "${PC_COMMAND}" = "republish" ]; then
+            if [ "${PC_REPUBLISH:-}" = "compile" ]; then
+              predictable specs compile --path "$PWD/.predictable-code" --json \
+                > "$RESULT_JSON" 2> "$RUN_JSON" &
+            else
+              predictable sync --path "$PWD/.predictable-code" --json \
+                > "$RESULT_JSON" 2> "$RUN_JSON" &
+            fi
           else
             # NAMED, never a fall-through to `sync`: a verb this file does not know is a dispatch
             # from a control plane newer than this copy, and analysing instead would report an
@@ -1222,6 +1328,14 @@ jobs:
           while kill -0 "$SYNC_PID" 2>/dev/null; do
             sleep "$PUSH_POLL_SECONDS"
             push_progress
+            # THE SECOND LINE of a description run's time bound (#2264), set by its branch above:
+            # past it the process is stopped, so the propose step still has time to run.
+            if [ -n "${PC_HARD_STOP:-}" ] && [ "${PC_HARD_STOPPED:-no}" = "no" ] \
+              && [ "$(date +%s)" -ge "$PC_HARD_STOP" ]; then
+              echo "::warning::${PC_COMMAND} is still running eight minutes before this job's timeout; stopping it so what it wrote can be proposed"
+              kill -TERM "$SYNC_PID" 2>/dev/null || true
+              PC_HARD_STOPPED=yes
+            fi
           done
           # THE EXIT STATUS IS KEPT, and exactly one thing is done with it.
           #
@@ -1239,6 +1353,15 @@ jobs:
           # No legitimate outcome of these verbs is a signal death, so this is a crash
           # and is reported as one.
           wait "$SYNC_PID" && RUN_STATUS=0 || RUN_STATUS=$?
+          # STOPPED BY US AT THE TIME BOUND is not a crash: the pages it wrote are whole (each is
+          # written before it is checkpointed), and the propose step reads them from the
+          # checkpoint. Any other signal death is still reported as the crash it is, below. The
+          # status is cleared on ONE line, guarded by the same test, so nothing else can clear it.
+          if [ "${PC_HARD_STOPPED:-no}" = "yes" ] && [ "$RUN_STATUS" -gt 128 ]; then
+            echo "::warning::${PC_COMMAND} was stopped at its time bound; the descriptions it wrote are proposed from its checkpoint, and the rest are left for another run"
+            echo "The run was stopped at its time bound; what it wrote is proposed, and the rest are left for another run." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "${PC_HARD_STOPPED:-no}" = "yes" ] && [ "$RUN_STATUS" -gt 128 ]; then RUN_STATUS=0; fi
           # The tail: phases written between the last poll and the process exiting are
           # the ones naming the outcome, and losing them loses the answer.
           push_progress final
@@ -1309,26 +1432,6 @@ jobs:
           # reader gets when an agent considered their defect and declined, and the agent had not
           # started. The crash arm above was written for exactly this shape and catches only
           # signal deaths; this is the same lie arriving through an ordinary exit code.
-          # WHAT THE CLEAN REMOVED, in the CLI's own words, and a clean that FAILED proposes nothing:
-          # it may have removed part of what it was asked to, and a pull request of half a clean is
-          # a deletion nobody asked for.
-          if [ "${PC_COMMAND}" = "clean" ]; then
-            if [ -s "$RESULT_JSON" ]; then
-              echo "::group::What predictable clean reported"
-              cat "$RESULT_JSON"
-              echo "::endgroup::"
-            fi
-            if [ "$RUN_STATUS" -ne 0 ]; then
-              echo "::error::predictable clean failed (exit ${RUN_STATUS}); the output above says why, and no pull request is opened"
-              {
-                echo "### Nothing was cleaned"
-                echo
-                echo "\`predictable clean\` exited **${RUN_STATUS}**. No pull request is opened, so nothing is removed from your repository; the output above is the command's own reason."
-              } >> "$GITHUB_STEP_SUMMARY"
-              exit 1
-            fi
-          fi
-
           # AN AUTHORING VERB THAT EXITS NON-ZERO WROTE NOTHING WE TRUST — no such spec, a name
           # that is already a spec's file, an unparsable sentence — and unlike a fix there is
           # no "declined" outcome to read from the tree. So it fails here, with the verb's own
@@ -1439,7 +1542,38 @@ jobs:
           # "Predictable Code analysis ()" on a run that had analysed the project fine.
           # The Control Center's own parser says it plainly: "the verdict is the single
           # key of the envelope's `result`".
-          if [ "${PC_COMMAND}" != "sync" ]; then
+          # A REPUBLISH CARRIES THE VERDICT OF THE ANALYSIS IT REBUILT OVER (#2257): nothing was
+          # analysed, so nothing could have changed it, and inventing one would be a verdict nobody
+          # reached. It is read from that analysis's own record in the database; a record that names
+          # none, or a compile that failed, republishes nothing.
+          #
+          # PUBLISHED HERE, since no sync ran to publish it: `predictable publish` commits the rebuilt
+          # datasets as the analysis of the commit checked out, with the verdict the entry's sync
+          # left, by the rule every sync's publish follows. The entry's `sync-delta.json` goes
+          # first: it is what the LAST SYNC changed, and a republish changed nothing, so it would log
+          # that sync's found and fixed a second time.
+          if [ "${PC_COMMAND}" = "republish" ] && [ "${PC_REPUBLISH:-}" = "compile" ]; then
+            if [ "$RUN_STATUS" -ne 0 ] || [ -z "$(jq -r '.dataPath // empty' "$RESULT_JSON" 2>/dev/null || true)" ]; then
+              echo "::error::predictable specs compile did not rebuild the datasets (exit ${RUN_STATUS}); nothing is republished, and the output above says why"
+              exit 1
+            fi
+            RESULT=$(jq -r '.verdict // empty' ".predictable-code/${GITHUB_REF_NAME}/.analysis.json" 2>/dev/null \
+              | tr -d '\r\n' || true)
+            if [ -z "$RESULT" ]; then
+              echo "::error::the analysis being republished records no verdict, so there is none to carry; nothing is republished"
+              exit 1
+            fi
+            rm -f ".predictable-code/${GITHUB_REF_NAME}/.predictable-code/specs/.data/sync-delta.json"
+            predictable publish || {
+              echo "::error::the rebuilt datasets of ${GITHUB_REF_NAME} could not be published; the line above says why"
+              exit 1
+            }
+            echo "result=${RESULT}" >> "$GITHUB_OUTPUT"
+            echo "::notice::republished over the analysis of ${GITHUB_REF_NAME}, whose verdict was ${RESULT}"
+            exit 0
+          fi
+          # A republish that ANALYSED falls through to the sync's verdict below.
+          if [ "${PC_COMMAND}" != "sync" ] && [ "${PC_COMMAND}" != "republish" ]; then
             # A FIX IS NOT JUDGED BY A VERDICT FIELD, and not by the exit code either.
             # The product's rule is that a fix is `applied` only on POSITIVE EVIDENCE
             # THAT SOURCE CHANGED — `fix-verdict.ts` is the one place that rule lives,
@@ -1459,47 +1593,58 @@ jobs:
               # command wrote.
               FILES="${RUNNER_TEMP}/pc-files.txt"
               : > "$FILES"
-              if [ "${PC_COMMAND}" = "settings-set" ]; then
-                _f=$(spec_in_checkout .predictable-code/project.json) || {
-                  echo "::error::settings-set left no project.json in this repository; nothing is proposed"
+              # A RUN STOPPED AT ITS TIME BOUND printed no report (#2264); what it wrote is in its
+              # CHECKPOINT, one `Written` per line, and stands in for the report: those pages, and
+              # a report that says another run is owed, since the rest were never asked.
+              if ! jq -e '.written' "$RESULT_JSON" >/dev/null 2>&1; then
+                CK="${DESCRIBE_CHECKPOINT:-${RUNNER_TEMP}/pc-describe-checkpoint.ndjson}"
+                if [ -s "$CK" ]; then
+                  jq -s '{status: "described", reason: "was stopped at its time bound", undescribed: length, written: ., failed: [], overTime: 0, breakerStopped: 0, absent: [], model: null, costUsd: 0, anotherRun: true}' \
+                    "$CK" > "$RESULT_JSON" 2>/dev/null || true
+                fi
+              fi
+              jq -r '.written[]?.key' "$RESULT_JSON" > "${RUNNER_TEMP}/pc-written.txt" 2>/dev/null \
+                || : > "${RUNNER_TEMP}/pc-written.txt"
+              while IFS= read -r _k; do
+                [ -n "$_k" ] || continue
+                _f=$(spec_in_checkout "$_k") || {
+                  echo "::error::the run reported a file that is not in this repository; nothing is proposed"
                   exit 1
                 }
                 printf '%s\n' "$_f" >> "$FILES"
-              else
-                jq -r '.written[]?.key' "$RESULT_JSON" > "${RUNNER_TEMP}/pc-written.txt" 2>/dev/null \
-                  || : > "${RUNNER_TEMP}/pc-written.txt"
-                while IFS= read -r _k; do
-                  [ -n "$_k" ] || continue
-                  _f=$(spec_in_checkout "$_k") || {
-                    echo "::error::the run reported a file that is not in this repository; nothing is proposed"
-                    exit 1
-                  }
-                  printf '%s\n' "$_f" >> "$FILES"
-                done < "${RUNNER_TEMP}/pc-written.txt"
-                # WHAT A MODEL WROTE, for the pull request to state — every sentence, what failed,
-                # what is left, and what it cost. INERT, because a model wrote it and GitHub
-                # renders it: each value is one line in a DOUBLE-backtick span with backtick runs
-                # reduced to one, so no newline starts a block, no `@` pings, no `#` links.
-                jq -r 'def inert: tostring | gsub("[[:cntrl:]]+"; " ") | gsub("`+"; "`") | "`` " + . + " ``";
-                  "### Descriptions written by a model",
-                  "",
-                  "\(.undescribed) spec(s) in this run had no description, so a model (\(.model // "unknown" | inert)) wrote \(.written | length) of them, using this repository'"'"'s own key, in its own Actions. **A model wrote every sentence below — review them as you would text nobody on your team wrote.** A person'"'"'s own description is never replaced, and only the spec files listed here are in this change.",
-                  "",
-                  (.written[] | "- \(.key | inert) — \(.text | inert)"),
-                  (if (.failed | length) > 0 then "", "Not written:", "", (.failed[] | "- \(.key | inert) — \(.reason | inert)") else empty end),
-                  (if .reason != null then "", "The run \(.reason | inert)." else empty end),
-                  (if .pending > 0 then "", "\(.pending) more are left: run **Write documentation** again to continue." else empty end),
-                  (if ((.absent // []) | length) > 0 then "", "Not specs in this checkout, so not described — the analysis that listed them may not be merged yet:", "", (.absent[] | "- \(. | inert)") else empty end),
-                  "",
-                  "What the model calls cost: US$\((.costUsd * 100 | round) / 100)."' \
-                  "$RESULT_JSON" > "${RUNNER_TEMP}/pc-fill-body.md" 2>/dev/null || : > "${RUNNER_TEMP}/pc-fill-body.md"
-                # A SELECTED FILE THAT IS NO SPEC HERE is said on the run itself too, because when it
-                # is all the run was asked for, nothing is written and no pull request carries it.
-                ABSENT=$(jq -r '(.absent // []) | length' "$RESULT_JSON" 2>/dev/null | tr -cd '0-9' || true)
-                if [ "${ABSENT:-0}" -gt 0 ]; then
-                  echo "::warning::${ABSENT} selected spec file(s) are not specs in this checkout, so they were not described — the analysis that listed them may not be merged yet"
-                  echo "${ABSENT} selected spec file(s) are not specs in this checkout, so they were not described." >> "$GITHUB_STEP_SUMMARY"
-                fi
+              done < "${RUNNER_TEMP}/pc-written.txt"
+              # WHAT A MODEL WROTE, for the pull request to state — every sentence, what failed,
+              # what is left, and what it cost. INERT, because a model wrote it and GitHub
+              # renders it: each value is one line in a DOUBLE-backtick span with backtick runs
+              # reduced to one, so no newline starts a block, no `@` pings, no `#` links.
+              jq -r 'def inert: tostring | gsub("[[:cntrl:]]+"; " ") | gsub("`+"; "`") | "`` " + . + " ``";
+                "### Descriptions written by a model",
+                "",
+                "\(.undescribed) spec(s) in this run had no description, so a model (\(.model // "unknown" | inert)) wrote \(.written | length) of them, using this repository'"'"'s own key, in its own Actions. **A model wrote every sentence below — review them as you would text nobody on your team wrote.** A person'"'"'s own description is never replaced, and only the spec files listed here are in this change.",
+                "",
+                (.written[] | "- \(.key | inert) — \(.text | inert)"),
+                (if (.failed | length) > 0 then "", "Not written:", "", (.failed[] | "- \(.key | inert) — \(.reason | inert)") else empty end),
+                (if .reason != null then "", "The run \(.reason | inert)." else empty end),
+                (if (.breakerStopped // 0) > 0 then "", "\(.breakerStopped) spec(s) were left because the model could not be reached, so the run stopped before describing them — check this repository'"'"'s key." else empty end),
+                (if (.overTime // 0) > 0 then "", "\(.overTime) more were not reached before this run'"'"'s time bound and are left for the next run." else empty end),
+                (if ((.absent // []) | length) > 0 then "", "Not specs in this checkout, so not described — the analysis that listed them may not be merged yet:", "", (.absent[] | "- \(. | inert)") else empty end),
+                (if .sourcesWithoutSpec == null then "", "Whether every source file has a spec could not be checked in this run." elif (.sourcesWithoutSpec | length) > 0 then "", "\(.sourcesWithoutSpec | length) source file(s) have no spec yet, so there was nothing to describe for them. The next analysis creates their specs; this run never invents one:", "", (.sourcesWithoutSpec[:100][] | "- \(. | inert)"), (if (.sourcesWithoutSpec | length) > 100 then "- … and \((.sourcesWithoutSpec | length) - 100) more" else empty end) else empty end),
+                "",
+                "What the model calls cost: US$\((.costUsd * 100 | round) / 100)."' \
+                "$RESULT_JSON" > "${RUNNER_TEMP}/pc-fill-body.md" 2>/dev/null || : > "${RUNNER_TEMP}/pc-fill-body.md"
+              # WHETHER ANOTHER RUN OWES WORK HERE (#2264): the run's own `anotherRun`, the answer the
+              # Control Center acts on too. Absent or unreadable reads as `false` — this run is the
+              # last — so a report that cannot be read still ends in a pull request, never a branch
+              # nobody packages.
+              ANOTHER=$(jq -r '.anotherRun // false' "$RESULT_JSON" 2>/dev/null || echo false)
+              [ "$ANOTHER" = "true" ] || ANOTHER=false
+              echo "another_run=${ANOTHER}" >> "$GITHUB_OUTPUT"
+              # A SELECTED FILE THAT IS NO SPEC HERE is said on the run itself too, because when it
+              # is all the run was asked for, nothing is written and no pull request carries it.
+              ABSENT=$(jq -r '(.absent // []) | length' "$RESULT_JSON" 2>/dev/null | tr -cd '0-9' || true)
+              if [ "${ABSENT:-0}" -gt 0 ]; then
+                echo "::warning::${ABSENT} selected spec file(s) are not specs in this checkout, so they were not described — the analysis that listed them may not be merged yet"
+                echo "${ABSENT} selected spec file(s) are not specs in this checkout, so they were not described." >> "$GITHUB_STEP_SUMMARY"
               fi
               exit 0
             fi
@@ -1623,14 +1768,17 @@ jobs:
       - name: Propose the results
         env:
           GH_TOKEN: ${{ github.token }}
-          # THE MODEL KEY'S VALUE, read here for ONE purpose: to refuse a commit that contains it
-          # (#2057, `refuse_secrets` below). The same closed pair the Run step reads; under a name
-          # no tool this step runs looks for, so nothing here can USE it as a credential.
+          # THE MODEL KEY'S VALUE, read here for ONE purpose: an agent fix's re-analysis refuses to
+          # publish a dataset that contains it (#2057, `PREDICTABLE_PUBLISH_REFUSE` below). The same
+          # closed pair the Run step reads; under a name no tool this step runs looks for, so
+          # nothing here can USE it as a credential.
           PC_MODEL_KEY: ${{ secrets.ANTHROPIC_API_KEY || secrets.ORG_ANTHROPIC_KEY }}
           CONTROL_PLANE: ${{ inputs.control_plane }}
           VERDICT: ${{ steps.analyse.outputs.result }}
           TAG: ${{ steps.toolchain.outputs.tag }}
           PC_COMMAND: ${{ inputs.command }}
+          # Whether a republish compiled rather than analysed (#2257), as the restore step decided.
+          PC_REPUBLISH: ${{ env.PC_REPUBLISH }}
           # Through the environment for the reason the run step says: this input
           # arrives from an API call and must never be spliced into shell.
           PC_TARGET: ${{ inputs.target }}
@@ -1649,9 +1797,23 @@ jobs:
           # The branch a set-of-files verb proposes on (#2103), named by the step that may have
           # continued it; whether it did is `SPEC_CONTINUED`.
           FILES_BRANCH: ${{ steps.spec.outputs.files_branch }}
-          # Who started an analysis, for its `.analysis.json` — through the environment like
-          # every other input that arrives from an API call.
-          PC_STARTED_BY: ${{ inputs.started_by }}
+          # Whether a description run owes another (#2264), from its own report: the Run step's
+          # `another_run`. Only `true` withholds the pull request; anything else opens it.
+          ANOTHER_RUN: ${{ steps.analyse.outputs.another_run }}
+          # A fix's proposal branch, named once by the branch-resolution step (#2240), which also
+          # continued it for an agent fix whose pull request is open (`SPEC_CONTINUED`).
+          FIX_BRANCH: ${{ steps.spec.outputs.fix_branch }}
+          # Which attempt at a fix this is, for the fix branch's `.analysis.json` (#2240).
+          PC_ATTEMPT: ${{ inputs.attempt }}
+          # What re-analyses an agent fix's branch (#2240): the same launcher the Run step uses, and
+          # the stamp the restore step compares a reused analysis against.
+          PC_HOME: ${{ steps.toolchain.outputs.predictable_home }}
+          EXPECTED: ${{ steps.toolchain.outputs.schema_hash }}
+          # Who started an agent fix, for its re-analysis's `.analysis.json` — through the environment
+          # like every other input that arrives from an API call.
+          PREDICTABLE_ANALYSIS_STARTED_BY: ${{ inputs.started_by }}
+          PREDICTABLE_ANALYSIS_ORIGIN: ${{ inputs.started_by != '' && 'control-center' || 'automatic' }}
+          PREDICTABLE_ANALYSIS_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           set -euo pipefail
           git config user.name "predictable-code[bot]"
@@ -1693,7 +1855,7 @@ jobs:
           # commit its branch is not based on, and that is a product decision rather
           # than a repair.
           push_or_explain() {
-            # Extra push flags, if any, come first: only the authored-spec and clean paths pass one
+            # Extra push flags, if any, come first: only the authored-spec and fix paths pass one
             # (`--force-with-lease`, below); every other caller pushes exactly as before.
             if git push "$@" origin "$BRANCH" 2> "${RUNNER_TEMP}/pc-push.err"; then
               cat "${RUNNER_TEMP}/pc-push.err" >&2
@@ -1881,141 +2043,77 @@ jobs:
               fi
               exit 0
               ;;
-            # ────────────────────────────────────────────────────────────────────────
-            # A CLEAN: ONLY DELETIONS, ONE BRANCH PER BRANCH CLEANED, AND NEVER MERGED ON ITS OWN.
-            #
-            # STAGED FROM THE INDEX, not the tree: `git add -u` records what happened to files git
-            # already tracks and never adds a new one, so nothing our machinery left in the checkout
-            # can ride along — and no `-f`, because a tracked file is staged whatever an ignore
-            # rule says, which is what makes a force-added `.predictable-code/` removable at all.
-            #
-            # AND THEN CHECKED TO BE DELETIONS ONLY. `predictable clean` removes and never writes,
-            # so a modified file in this change means something other than the clean wrote into the
-            # tree; a destructive pull request carrying an edit nobody reviewed for is refused whole.
-            #
-            # KEYED ON THE BRANCH THIS RAN ON (`predictable/clean/<slug>`), and REPLACED by a later
-            # clean of it: the change is derived entirely from that branch, so a second clean — the
-            # other scope, or after new commits — is the same proposal made again. Its open pull
-            # request is CLOSED FIRST and a new one opened, never retitled after the fact: see below.
-            # ────────────────────────────────────────────────────────────────────────
-            clean)
-              BRANCH="predictable/clean/$(printf '%s' "${GITHUB_REF_NAME}" | tr -c 'A-Za-z0-9._-' '-' | cut -c1-80)"
-              git checkout -B "$BRANCH"
-              git add -u -- .
-              if [ -n "$(git diff --cached --diff-filter=d --name-only)" ]; then
-                echo "::error::the clean left files changed that it should only have removed; nothing is proposed"
-                git diff --cached --diff-filter=d --name-status | head -20
-                exit 1
-              fi
-              if git diff --cached --quiet; then
-                echo "::notice::there was nothing of Predictable's to remove; no pull request opened"
-                echo "There was nothing of Predictable's in this repository to remove, so no pull request is opened." >> "$GITHUB_STEP_SUMMARY"
-                exit 0
-              fi
-              REMOVED=$(git diff --cached --name-only | wc -l | tr -d ' ')
-              if [ "${PC_TARGET}" = "all" ]; then
-                WHAT="the analysis state and every spec file"
-              else
-                WHAT="the analysis state"
-              fi
-              TITLE="Predictable Code clean: remove ${WHAT}"
-              git commit -m "${TITLE}" \
-                -m "Removed by ${TAG} on ${GITHUB_SHA} with \`predictable clean\`, as a person asked in the Predictable Control Center."
-              # AN OPEN CLEAN OF THIS BRANCH IS CLOSED BEFORE ANYTHING IS PUSHED. A person merges it on
-              # the strength of its text, and force-pushing a different clean under it would leave it
-              # describing a smaller change than it makes until an edit landed — an edit that can fail.
-              # Closed first, a failure stops here with nothing pushed; the new pull request is then
-              # written together with the branch it describes. A list that could not be read stops
-              # too: it cannot say there is none.
-              if ! EXISTING=$(gh pr list --head "$BRANCH" --state open --json url --jq '.[0].url // empty'); then
-                echo "::error::could not tell whether a clean of ${GITHUB_REF_NAME} is already open; nothing is pushed"
-                exit 1
-              fi
-              if [ -n "$EXISTING" ]; then
-                gh pr close "$EXISTING" --comment "Superseded by a new clean of \`${GITHUB_REF_NAME}\`, which opens its own pull request." || {
-                  echo "::error::could not close ${EXISTING}, the open clean this one replaces; nothing is pushed"
-                  exit 1
-                }
-                echo "Closed ${EXISTING}, the earlier clean of \`${GITHUB_REF_NAME}\`." >> "$GITHUB_STEP_SUMMARY"
-              fi
-              STALE=$(git ls-remote origin "refs/heads/${BRANCH}" | cut -f1)
-              push_or_explain --force-with-lease="${BRANCH}:${STALE}"
-              {
-                echo "A clean of \`${GITHUB_REF_NAME}\`, asked for in the Predictable Control Center and produced by \`${TAG}\` in this repository's own Actions with \`predictable clean\`."
-                echo
-                if [ "${PC_TARGET}" = "all" ]; then
-                  echo "**It removes ${REMOVED} files: \`.predictable-code/\` — the analysis, its findings and its datasets — and every spec file in this repository.**"
-                else
-                  echo "**It removes ${REMOVED} files under \`.predictable-code/\` — the analysis, its findings and its datasets.** Every spec file stays, and so do the code locations under \`.predictable-code/specs/locations/\` they point at."
-                fi
-                echo
-                echo "**It does not merge itself.** Nothing is removed from \`${GITHUB_REF_NAME}\` until a person merges this, and closing it leaves everything as it is. Every change is a deletion; no source file is touched."
-                echo
-                echo "It removes nothing from \`predictable-code-database\`, where this branch's analyses are kept: after it merges, the last analysis still describes this branch's code, and the next one starts from it. To stop Predictable analysing this repository instead, delete \`.github/workflows/predictable-sync.yml\`."
-              } > /tmp/pc-clean-body.md
-              # BASED ON THE BRANCH THIS CLEANED, through the ONE opener, so CI runs on it.
-              open_pull_request "$BRANCH" "$TITLE" /tmp/pc-clean-body.md
-              exit 0
-              ;;
           esac
 
           # ──────────────────────────────────────────────────────────────────────────
-          # A SET OF FILES (#2103): the description run and the setting. STAGED LIKE A SPEC —
+          # A SET OF FILES (#2103): the description run. STAGED LIKE A SPEC —
           # exactly the files the command reported (`pc-files.txt`, resolved inside the checkout
           # by the Run step) and nothing else, committed with those paths as `--only` — on the
           # branch the "Resolve an authored spec" step named and, while its pull request is
           # open, continued.
           # ──────────────────────────────────────────────────────────────────────────
           case "${PC_COMMAND}" in
-            spec-fill-descriptions|settings-set)
+            spec-fill-descriptions)
               BRANCH="${FILES_BRANCH}"
               LIST="${RUNNER_TEMP}/pc-files.txt"
               [ -n "$BRANCH" ] || {
                 echo "::error::the run named no branch to propose on"
                 exit 1
               }
-              if [ ! -s "$LIST" ]; then
+              # THE PULL REQUEST IS THE LOOP'S FINAL PACKAGE (#2264). A run that owes another
+              # (`another_run`, from its own report) commits and pushes what it wrote and opens
+              # NOTHING: a pull request opened after a first batch would be merged by auto-merge
+              # and cut the loop short. The run that owes none — complete, or stopped at the model
+              # wall — opens it, over everything the loop's runs wrote on this branch.
+              ANOTHER="${ANOTHER_RUN:-false}"
+              git checkout -B "$BRANCH"
+              if [ -s "$LIST" ]; then
+                set --
+                while IFS= read -r _f; do
+                  [ -n "$_f" ] && set -- "$@" "$_f"
+                done < "$LIST"
+                git add -- "$@"
+                if git diff --cached --quiet -- "$@"; then
+                  echo "::notice::every file this run wrote already said this"
+                else
+                  RUN_TITLE="docs(specs): descriptions for $# spec(s), written by a model"
+                  git commit -m "$RUN_TITLE" \
+                    -m "written by a model with this repository's key; produced by ${TAG} on ${GITHUB_SHA}." -- "$@"
+                  if [ "${SPEC_CONTINUED:-no}" = "yes" ]; then
+                    push_or_explain
+                  else
+                    # Replaced, never built on, when a pull request already carried it — with a
+                    # lease on what the remote holds, as for a spec.
+                    STALE=$(git ls-remote origin "refs/heads/${BRANCH}" | cut -f1)
+                    push_or_explain --force-with-lease="${BRANCH}:${STALE}"
+                  fi
+                fi
+              fi
+              if [ "$ANOTHER" = "true" ]; then
+                echo "::notice::more specs remain for the next run; the pull request opens when the documentation is complete"
+                echo "Pushed to \`${BRANCH}\`. More specs remain for the next run, which the Control Center starts; the pull request opens once, when the documentation is complete." >> "$GITHUB_STEP_SUMMARY"
+                exit 0
+              fi
+              # WHAT THE WHOLE LOOP WROTE, read from the branch itself rather than from this run's
+              # report: the pull request carries every run's commits, and its body says so.
+              git fetch -q origin "${GITHUB_REF_NAME}" 2>/dev/null || true
+              CHANGED="${RUNNER_TEMP}/pc-fill-changed.txt"
+              git diff --name-only "origin/${GITHUB_REF_NAME}...HEAD" > "$CHANGED" 2>/dev/null || : > "$CHANGED"
+              if [ ! -s "$CHANGED" ]; then
                 echo "::notice::${PC_COMMAND} wrote nothing; nothing to propose"
                 echo "Nothing was written, so there is nothing to propose." >> "$GITHUB_STEP_SUMMARY"
                 exit 0
               fi
-              git checkout -B "$BRANCH"
-              set --
-              while IFS= read -r _f; do
-                [ -n "$_f" ] && set -- "$@" "$_f"
-              done < "$LIST"
-              git add -- "$@"
-              if git diff --cached --quiet -- "$@"; then
-                echo "::notice::every file already said this; nothing to propose"
-                echo "The files already said this, so there is nothing to propose." >> "$GITHUB_STEP_SUMMARY"
-                exit 0
-              fi
-              if [ "${PC_COMMAND}" = "spec-fill-descriptions" ]; then
-                TITLE="docs(specs): descriptions for $# spec(s), written by a model"
-                cp "${RUNNER_TEMP}/pc-fill-body.md" /tmp/pc-files-body.md
-                MADE="written by a model with this repository's key"
-              else
-                TITLE="chore(predictable): set ${PC_TARGET} to ${PC_TEXT}"
-                {
-                  echo "A person asked in the Predictable Control Center to set \`${PC_TARGET}\` to \`${PC_TEXT}\` in \`.predictable-code/project.json\`, and \`${TAG}\` wrote it with \`predictable settings set\` in this repository's own Actions. Only that file is in this change, and it takes effect when this is merged."
-                  echo
-                  if [ "${PC_TEXT}" = "true" ]; then
-                    echo "With it on, after an analysis that finds specs **new** since the last one without a description, the Control Center starts a run that writes them — **using this repository's model key, without asking each time**. Each run's sentences arrive as their own pull request."
-                  else
-                    echo "With it off, nothing writes a description unless a person asks for one: after an analysis the Control Center offers to."
-                  fi
-                } > /tmp/pc-files-body.md
-                MADE="set in the Predictable Control Center"
-              fi
-              git commit -m "$TITLE" -m "${MADE}; produced by ${TAG} on ${GITHUB_SHA}." -- "$@"
-              if [ "${SPEC_CONTINUED:-no}" = "yes" ]; then
-                push_or_explain
-              else
-                # Replaced, never built on, when its pull request is closed or merged — with a
-                # lease on what the remote holds, as for a spec.
-                STALE=$(git ls-remote origin "refs/heads/${BRANCH}" | cut -f1)
-                push_or_explain --force-with-lease="${BRANCH}:${STALE}"
-              fi
+              N_FILES=$(wc -l < "$CHANGED" | tr -d ' ')
+              N_RUNS=$(git rev-list --count "origin/${GITHUB_REF_NAME}..HEAD" 2>/dev/null || echo 1)
+              TITLE="docs(specs): descriptions for ${N_FILES} spec(s), written by a model"
+              {
+                echo "This pull request carries descriptions a model wrote for **${N_FILES} spec file(s)**, across ${N_RUNS} commit(s) of one documentation run. Each sentence is in the diff."
+                echo
+                echo "What the last run did:"
+                echo
+                cat "${RUNNER_TEMP}/pc-fill-body.md"
+              } | head -c 59000 > /tmp/pc-files-body.md
               EXISTING=$(gh pr list --head "$BRANCH" --state open --json url --jq '.[0].url // empty' 2>/dev/null || true)
               if [ -n "$EXISTING" ]; then
                 echo "::notice::updated the open pull request: ${EXISTING}"
@@ -2027,15 +2125,17 @@ jobs:
               ;;
           esac
 
-          if [ "${PC_COMMAND}" != "sync" ]; then
-            # SLUGGED, because a finding id reaches us from an API call and a branch
-            # name is not a free-form string: git refuses spaces, `..`, `~`, `^`, `:`,
-            # and a leading `-` would be read as an option. Anything outside the safe
-            # set becomes `-`, which cannot change WHICH branch is written because the
-            # id is also recorded in the commit and the pull request body.
-            SLUG=$(printf '%s' "${PC_TARGET}" | tr -c 'A-Za-z0-9._-' '-' | cut -c1-80)
-            BRANCH="predictable/propose/${SLUG}"
-            git checkout -b "$BRANCH"
+          # A REPUBLISH IS PUBLISHED LIKE THE ANALYSIS IT STANDS IN FOR (#2257), below.
+          if [ "${PC_COMMAND}" != "sync" ] && [ "${PC_COMMAND}" != "republish" ]; then
+            # Named by the branch-resolution step (`fix_branch_for`), the one slug rule. `-B`, not
+            # `-b`: a fix chain's retry already has this branch checked out (#2240), and `-B` at
+            # HEAD leaves it as it is.
+            BRANCH="${FIX_BRANCH}"
+            [ -n "$BRANCH" ] || {
+              echo "::error::the run named no branch to propose the fix on"
+              exit 1
+            }
+            git checkout -B "$BRANCH"
 
             # THE CHANGE SET IS THE VERDICT. `fix-issue` keeps its edit only if its own
             # accept gates hold and restores the snapshot otherwise, so no change means
@@ -2109,239 +2209,160 @@ jobs:
               MADE_BY="\`predictable analyze fix-issue\`"
               HOW="**This is not an agent's work.** \`predictable analyze fix-issue\` edits narrowly and keeps the edit only if its own accept gates hold, so what is here was re-checked before it was proposed. It is still a change to your source, and it is here to be reviewed."
             fi
+            # WHAT THIS ATTEMPT CHANGED, read from the index before it is committed, for the fix
+            # branch's `.analysis.json` (#2240): the Control Center holds no tree, so this is the
+            # one measurement of the change set it can rest an `applied` verdict on.
+            git diff --cached --numstat > "${RUNNER_TEMP}/pc-fix-numstat.txt"
             git commit -m "Predictable Code fix for ${PC_TARGET}" \
               -m "Produced by ${TAG} on ${GITHUB_SHA} by ${MADE_BY}."
-            push_or_explain
-            {
-              echo "A fix for \`${PC_TARGET}\`, produced by \`${TAG}\` in this repository's own Actions with ${MADE_BY}."
-              echo
-              echo "${HOW}"
-              echo
-              echo "The finding still stands on \`${GITHUB_REF_NAME}\` until this merges."
-            } > /tmp/pc-fix-body.md
-            # BASED ON THE BRANCH THIS RAN ON (`open_pull_request` sends `${GITHUB_REF_NAME}`),
-            # which is the one the fix branch was cut from.
-            open_pull_request "$BRANCH" "Predictable Code fix: ${PC_TARGET}" /tmp/pc-fix-body.md
-            exit 0
+            if [ "${PC_COMMAND}" = "fix-agent" ] && [ "${SPEC_CONTINUED:-no}" = "yes" ]; then
+              # A RETRY ON THE OPEN PULL REQUEST: built on its branch, so the push fast-forwards
+              # and that pull request is the one that updates. No second pull request is opened.
+              push_or_explain
+              echo "Added this attempt to the open pull request for \`${PC_TARGET}\`." >> "$GITHUB_STEP_SUMMARY"
+            else
+              if [ "${PC_COMMAND}" = "fix-agent" ]; then
+                # REPLACED, never built on, when the earlier attempt's pull request was closed or
+                # merged — with a lease on what the remote holds, as for a spec. Without it a
+                # branch left behind by a merged pull request refused every later fix's push.
+                STALE=$(git ls-remote origin "refs/heads/${BRANCH}" | cut -f1)
+                push_or_explain --force-with-lease="${BRANCH}:${STALE}"
+              else
+                push_or_explain
+              fi
+              {
+                echo "A fix for \`${PC_TARGET}\`, produced by \`${TAG}\` in this repository's own Actions with ${MADE_BY}."
+                echo
+                echo "${HOW}"
+                echo
+                echo "The finding still stands on \`${GITHUB_REF_NAME}\` until this merges."
+              } > /tmp/pc-fix-body.md
+              # BASED ON THE BRANCH THIS RAN ON (`open_pull_request` sends `${GITHUB_REF_NAME}`),
+              # which is the one the fix branch was cut from.
+              open_pull_request "$BRANCH" "Predictable Code fix: ${PC_TARGET}" /tmp/pc-fix-body.md
+            fi
+            # THE DETERMINISTIC FIX ENDS HERE: it is one pass, and its own accept gates already
+            # re-checked it before it was kept.
+            [ "${PC_COMMAND}" = "fix-agent" ] || exit 0
+
+            # ────────────────────────────────────────────────────────────────────────
+            # AN AGENT FIX IS RE-ANALYSED ON ITS OWN BRANCH, AND THAT ANALYSIS IS PUBLISHED (#2240).
+            #
+            # The Control Center asks one question of a fix — IS THE FINDING STILL REPORTED — and
+            # it holds no tree to answer it from. So the fix branch is analysed here, exactly as
+            # committed, and published to the data branch under the FIX BRANCH's name, by the same
+            # publisher an analysis uses; the plane reads it like any branch's analysis. AFTER the
+            # commit, so nothing the analysis writes can ride into the pull request.
+            #
+            # A SYNC IS NEVER HANDED A MODEL KEY (#2103): the agent's key is in this job, so the
+            # re-analysis runs with the model key and the job's token unset — it asks no model, and it
+            # must not be able to. (It still inherits what every step here can reach: the OIDC
+            # request variables and the checkout's git credential, exactly as the Run step's agent.)
+            #
+            # IT NEVER FAILS THE FIX. The fix is proposed above whatever happens here; an analysis
+            # that does not finish is simply not published, and the plane reports that it could
+            # not tell, rather than reading an old analysis as this attempt's answer.
+            # ────────────────────────────────────────────────────────────────────────
+            VERIFY_JSON="${RUNNER_TEMP}/pc-verify-result.json"
+            VERIFY_LOG="${RUNNER_TEMP}/pc-verify-progress.ndjson"
+            # WHAT THE RECORD SAYS DIFFERENTLY FOR A FIX, and nothing else: the entry and the
+            # `branch` are the fix branch's, and the record says which attempt it answers and what
+            # that attempt changed. Read by the sync's own publish (`PREDICTABLE_ANALYSIS_FIX`).
+            PC_FIX_JSON=$(jq -cRn \
+              --arg attempt "${PC_ATTEMPT:-}" --arg finding "${PC_TARGET}" --arg base "${GITHUB_REF_NAME}" \
+              '{attempt: (if $attempt == "" then null else $attempt end), finding: $finding, base: $base,
+                changed: [inputs | split("\t") | select(length >= 3)
+                  | {path: (.[2:] | join("\t")), added: ((.[0] | tonumber?) // 0), removed: ((.[1] | tonumber?) // 0)}]}' \
+              < "${RUNNER_TEMP}/pc-fix-numstat.txt")
+            # THE FIX BRANCH STARTS FROM THE ANALYSIS THAT FOUND THE FINDING, reused only when it
+            # was written by THIS build, exactly as the open step decides for a sync, because
+            # reporting an old build's dataset as current costs trust.
+            BASE_ENTRY=".predictable-code/${GITHUB_REF_NAME}"
+            FIX_ENTRY=".predictable-code/${BRANCH}"
+            if [ ! -e "${FIX_ENTRY}/.analysis.json" ] && [ -d "$BASE_ENTRY" ]; then
+              mkdir -p "$FIX_ENTRY"
+              cp -R "${BASE_ENTRY}/." "${FIX_ENTRY}/"
+            fi
+            if [ -d "${FIX_ENTRY}/.predictable-code" ]; then
+              FOUND=""
+              [ -f "${FIX_ENTRY}/.predictable-code/schema-hash" ] && FOUND=$(tr -d '[:space:]' < "${FIX_ENTRY}/.predictable-code/schema-hash")
+              if [ -z "${EXPECTED}" ] || [ "$FOUND" != "${EXPECTED}" ]; then
+                find "${FIX_ENTRY}/.predictable-code" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+              fi
+            fi
+            echo "Re-analysing ${BRANCH} to tell whether ${PC_TARGET} is still reported."
+            # The model key's VALUE goes in as `PREDICTABLE_PUBLISH_REFUSE`, the one thing the
+            # publish refuses to commit — this job's agent had the key, and could have written it
+            # into the state directory. No model is asked: the sync runs none.
+            if ( export PREDICTABLE_PUBLISH_REFUSE="${PC_MODEL_KEY:-}" PREDICTABLE_ANALYSIS_FIX="$PC_FIX_JSON"
+                 unset ANTHROPIC_API_KEY ANTHROPIC_AUTH_TOKEN PC_MODEL_KEY GH_TOKEN
+                 PREDICTABLE_HOME="$PC_HOME" "$PC_HOME/launcher.sh" sync \
+                   --path "$PWD/.predictable-code" --json > "$VERIFY_JSON" 2> "$VERIFY_LOG" ); then
+              VERIFY_STATUS=0
+            else
+              VERIFY_STATUS=$?
+            fi
+            if [ -s "$VERIFY_LOG" ]; then
+              echo "::group::Re-analysis of the fix branch ($(wc -l < "$VERIFY_LOG" | tr -d ' ') lines)"
+              cat "$VERIFY_LOG"
+              echo "::endgroup::"
+            fi
+            # `.result` is a derived-`ToJson` `SyncResponse`: always ONE key, the constructor — the verdict.
+            VERIFY_VERDICT=$(jq -r '.result | keys[0] // empty' "$VERIFY_JSON" 2>/dev/null || true)
+            if [ "$VERIFY_STATUS" -ne 0 ] || [ -z "$VERIFY_VERDICT" ]; then
+              echo "::warning::the fix branch could not be re-analysed (exit ${VERIFY_STATUS}, verdict '${VERIFY_VERDICT:-none}'); the fix is proposed, and the Control Center will say it could not tell whether the finding is gone"
+              {
+                echo "### The fix could not be checked"
+                echo
+                echo "The fix is proposed, but re-analysing \`${BRANCH}\` did not finish, so nothing was published about whether \`${PC_TARGET}\` is still reported. The output above says why."
+              } >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            PC_ANALYSED_BRANCH="$BRANCH"
+            VERDICT="$VERIFY_VERDICT"
           fi
 
           # ──────────────────────────────────────────────────────────────────────────
-          # AN ANALYSIS IS A COMMIT ON `predictable-code-database`, never a pull request.
-          #
-          # It describes the code; it is not a change to it. So it goes to the one branch that
-          # carries nothing but analyses, under the analysed branch's name — `<branch>/` with the
-          # name verbatim, which git makes collision-free by refusing any ref component that
-          # starts with a dot — and the Control Center reads it there. Nothing is merged, nothing
-          # waits for review, and the code's branches never receive a commit from an analysis.
-          #
-          # BUILT WITH PLUMBING, in private indexes, so the checkout and its index are never
-          # touched: one holds the state directory as the run left it, one the specs directory,
-          # and one the data branch with this branch's directory replaced. Only `<branch>/`
-          # changes, so two branches analysed at once each rebuild on the other's commit and the
-          # second push succeeds.
+          # AN ANALYSIS IS A COMMIT ON `predictable-code-database`, never a pull request, and the
+          # SYNC MADE IT: `predictable sync` commits the branch's analysis to the database it checked
+          # out at `.predictable-code/` and pushes it, exactly as on a developer's machine. What is
+          # checked here is the outcome — origin's database records THIS commit as this branch's
+          # analysis — and the run says so, or says why not.
           # ──────────────────────────────────────────────────────────────────────────
           DATA_BRANCH=predictable-code-database
           DATA_REF="refs/remotes/origin/${DATA_BRANCH}"
-          # FORCED, AND SCOPED TO THE STATE DIRECTORY. A project that ran Predictable locally
-          # ignores `.predictable-code/` in its own `.gitignore` — that is what `init` puts there —
-          # and a plain `git add` would add nothing. Measured once already: a complete run whose
-          # results were thrown away at this step because the repository ignored the directory.
-          # Then everything that is not the analysis is taken back out by NAME: Lake's build
-          # directory (thousands of generated files, measured), an engine's state with its
-          # credentials, and the two files only the code's branch owns. `project.json` stays: it is
-          # the configuration this analysis ran with, and the restore gives it back only where the
-          # branch carries none.
-          #
-          # EVERY COMMAND BELOW IS CHECKED BY HAND. These functions run as the condition of an `if`
-          # and inside command substitutions, and bash ignores `set -e` in both — so a failure
-          # here would otherwise roll on and publish whatever the index happened to hold.
-          stage_analysis() {
-            git read-tree --empty || return 1
-            git add -Af -- .predictable-code || return 1
-            git rm -r -q -f --cached --ignore-unmatch -- \
-              .predictable-code/verification/.lake \
-              .predictable-code/opencode \
-              .predictable-code/findings-acknowledged.json \
-              .predictable-code/.gitignore
-          }
-          # FAIL CLOSED ON THE MODEL KEY, whatever wrote it. The forced add overrides every ignore
-          # rule, so an engine that copied the key this run hands it (`PC_MODEL_KEY`) anywhere
-          # under the state directory would be published with it. So what is staged — in a
-          # private index that holds nothing else — is searched for the key's VALUE, and a hit
-          # publishes NOTHING: a failed run costs a re-run, a leaked key costs the customer a
-          # rotation and whatever was done with it meanwhile. GitHub masks the value in this log;
-          # it is never echoed.
-          #
-          # A credential of an engine's OWN (its login, a refresh token) is kept out by the named
-          # removals in `stage_analysis`, which are the place to add the next engine's state
-          # directory. There is deliberately no rule on file NAMES: a name says nothing about what
-          # a file holds, the state directory mirrors the customer's own paths — a Next.js
-          # `app/(auth)/auth.config.ts` became `.il/app/(auth)/auth.config.il.json` and failed
-          # every sync of that repository while carrying no secret — and refusing a customer's
-          # analysis over what their files are called is not this workflow's decision.
-          refuse_secrets() {
-            if [ -n "${PC_MODEL_KEY:-}" ] && git grep --cached -q -F -e "$PC_MODEL_KEY"; then
-              echo "::error::the analysis about to be published contains this repository's model key — nothing was published" >&2
-              return 1
-            fi
-          }
-          # The state directory as one tree, staged in a private index. Prints its id.
-          state_tree() {
-            (
-              export GIT_INDEX_FILE="$1"
-              rm -f "$GIT_INDEX_FILE"
-              stage_analysis >&2 || exit 1
-              refuse_secrets || exit 1
-              git write-tree --prefix=.predictable-code/
-            )
-          }
-          # THE PAGES THE ANALYSIS INFERRED, and nothing a person wrote: every file under the specs
-          # directory that the analysed commit does not track — ignored ones included, since a
-          # project may ignore its specs directory. Nothing else holds an inferred page once this
-          # runner is gone; a later run that documents or edits one restores it from here, and its
-          # pull request is what puts it in the repository. A page the branch tracks is never
-          # carried, so a page a person deleted or renamed cannot come back from here.
-          specs_tree() {
-            [ -d "$SPECS_DIR" ] || return 0
-            # Listed against the CHECKOUT's index, which is the analysed commit: nothing in this job
-            # stages anything before this step.
-            git ls-files -z --others -- "$SPECS_DIR" > "${RUNNER_TEMP}/pc-inferred.list" || return 1
-            [ -s "${RUNNER_TEMP}/pc-inferred.list" ] || return 0
-            (
-              export GIT_INDEX_FILE="$1"
-              rm -f "$GIT_INDEX_FILE"
-              git read-tree --empty || exit 1
-              git update-index -z --add --stdin < "${RUNNER_TEMP}/pc-inferred.list" || exit 1
-              refuse_secrets || exit 1
-              git write-tree --prefix="${SPECS_DIR}/"
-            )
-          }
-          # The data branch at `$TIP` (empty when there is none yet) with `$BRANCH_DIR`'s analysis
-          # replaced by `$STATE_TREE`, `$SPECS_TREE` and `$META`, in a private index. Prints the
-          # tree's id.
-          data_tree() {
-            (
-              export GIT_INDEX_FILE="$1"
-              rm -f "$GIT_INDEX_FILE"
-              if [ -n "$TIP" ]; then git read-tree "$TIP" || exit 1; else git read-tree --empty || exit 1; fi
-              git rm -r -q -f --cached --ignore-unmatch -- \
-                ":(top,literal)${BRANCH_DIR}/.predictable-code" \
-                ":(top,literal)${BRANCH_DIR}/.specs" \
-                ":(top,literal)${BRANCH_DIR}/.analysis.json" || exit 1
-              # A BRANCH THAT IS GONE FROM ORIGIN LEAVES NO ANALYSIS BEHIND: nobody can choose it
-              # any more, and its directory would be carried for ever. Best effort — an origin that
-              # cannot be listed prunes nothing, and never costs the analysis being published.
-              if git ls-remote --heads origin > "${RUNNER_TEMP}/pc-heads.txt" 2>/dev/null; then
-                cut -f2 "${RUNNER_TEMP}/pc-heads.txt" | sed 's#^refs/heads/##' > "${RUNNER_TEMP}/pc-live.txt"
-                git ls-files -- ':(glob)**/.analysis.json' | sed 's#/\.analysis\.json$##' \
-                  | while IFS= read -r gone; do
-                    [ "$gone" = "$BRANCH_DIR" ] && continue
-                    grep -qxF -- "$gone" "${RUNNER_TEMP}/pc-live.txt" && continue
-                    git rm -r -q -f --cached --ignore-unmatch -- \
-                      ":(top,literal)${gone}/.analysis.json" \
-                      ":(top,literal)${gone}/.predictable-code" \
-                      ":(top,literal)${gone}/.specs"
-                  done
-              fi
-              git read-tree --prefix="${BRANCH_DIR}/.predictable-code/" "$STATE_TREE" || exit 1
-              if [ -n "$SPECS_TREE" ]; then
-                git read-tree --prefix="${BRANCH_DIR}/.specs/" "$SPECS_TREE" || exit 1
-              fi
-              git update-index --add --cacheinfo "100644,${META},${BRANCH_DIR}/.analysis.json" || exit 1
-              git write-tree
-            )
-          }
-          # One attempt: the data branch's tip as origin has it now, this branch's directory
-          # replaced, pushed as a fast-forward. Answers 0 published, 2 unchanged, 3 origin moved
-          # on (another analysis landed first — try again), anything else a failure.
-          publish_analysis() {
-            BRANCH_DIR="${GITHUB_REF_NAME}"
-            STATE_TREE=$(state_tree "${RUNNER_TEMP}/pc-state.index") || return 1
-            if ! git cat-file -e "${STATE_TREE}:viewer-data.json" 2>/dev/null; then
-              echo "::error::the run left no viewer-data.json, so there is no analysis to publish"
-              return 1
-            fi
-            SPECS_TREE=$(specs_tree "${RUNNER_TEMP}/pc-specs.index") || return 1
-            TIP=""
-            if git fetch -q --no-tags origin "+refs/heads/${DATA_BRANCH}:${DATA_REF}" 2>/dev/null; then
-              TIP=$(git rev-parse "$DATA_REF") || return 1
-            fi
-            # UNCHANGED is the same datasets and specs describing the same commit: nothing new to say.
-            if [ -n "$TIP" ] \
-              && [ "$(git rev-parse -q --verify "${TIP}:${BRANCH_DIR}/.predictable-code" || true)" = "$STATE_TREE" ] \
-              && [ "$(git rev-parse -q --verify "${TIP}:${BRANCH_DIR}/.specs" || true)" = "$SPECS_TREE" ] \
-              && [ "$(git show "${TIP}:${BRANCH_DIR}/.analysis.json" 2>/dev/null | jq -r '.analysedCommit // empty' 2>/dev/null || true)" = "$ANALYSED" ]; then
-              return 2
-            fi
-            jq -n \
-              --arg branch "$GITHUB_REF_NAME" \
-              --arg commit "$ANALYSED" \
-              --arg at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-              --arg by "${PC_STARTED_BY:-}" \
-              --arg version "${TAG:-unknown}" \
-              --arg verdict "${VERDICT:-}" \
-              --arg run "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" \
-              '{schema: 1, branch: $branch, analysedCommit: $commit, analysedAt: $at,
-                startedBy: (if $by == "" then null else $by end),
-                origin: (if $by == "" then "automatic" else "control-center" end),
-                machine: null, producer: "github-actions",
-                version: $version, verdict: (if $verdict == "" then null else $verdict end),
-                runUrl: $run}' > "${RUNNER_TEMP}/pc-analysis.json" || return 1
-            META=$(git hash-object -w "${RUNNER_TEMP}/pc-analysis.json") || return 1
-            TREE=$(data_tree "${RUNNER_TEMP}/pc-data.index") || return 1
-            # `-p` only when the branch exists: the first analysis of a repository starts it.
-            COMMIT=$(git commit-tree "$TREE" ${TIP:+-p "$TIP"} \
-              -m "Predictable Code analysis of ${GITHUB_REF_NAME} (${VERDICT:-unknown})" \
-              -m "Analysis of ${ANALYSED}, produced by ${TAG:-unknown} in ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}.") || return 1
-            if git push -q origin "${COMMIT}:refs/heads/${DATA_BRANCH}" 2> "${RUNNER_TEMP}/pc-push.err"; then
-              PUBLISHED="$COMMIT"
-              return 0
-            fi
-            cat "${RUNNER_TEMP}/pc-push.err" >&2
-            if grep -qE 'non-fast-forward|fetch first|stale info|cannot lock ref' "${RUNNER_TEMP}/pc-push.err"; then
-              return 3
-            fi
-            return 1
-          }
-
-          # THE COMMIT THIS RUN ANALYSED, read before anything else can move HEAD: it is what the
-          # Control Center compares the branch's head with to say whether the analysis is current.
+          # WHOSE ANALYSIS THIS IS: the branch the run was dispatched on, or — for an agent fix,
+          # which set it above — the fix branch it committed to (#2240).
+          PC_ANALYSED_BRANCH="${PC_ANALYSED_BRANCH:-${GITHUB_REF_NAME}}"
           ANALYSED=$(git rev-parse HEAD)
-          # The project's OWN specs directory, never a hard-coded `specs`: it is configurable.
-          SPECS_DIR=$(jq -r '.defaultSpecsDir // "specs"' .predictable-code/project.json 2>/dev/null || echo specs)
-          PUBLISHED=""
-          OUTCOME=1
-          for ATTEMPT in 1 2 3 4 5; do
-            if publish_analysis; then OUTCOME=0; else OUTCOME=$?; fi
-            [ "$OUTCOME" -eq 3 ] || break
-            echo "::notice::another analysis reached ${DATA_BRANCH} first (attempt ${ATTEMPT}); building on it"
-            sleep $((ATTEMPT * 2))
-          done
-          case "$OUTCOME" in
-            0)
-              echo "Published the analysis of ${GITHUB_REF_NAME} (${ANALYSED}) to ${DATA_BRANCH} as ${PUBLISHED}."
-              ;;
-            2)
-              echo "::notice::${DATA_BRANCH} already carries this analysis of ${GITHUB_REF_NAME}; nothing to publish"
+          git fetch -q --no-tags origin "+refs/heads/${DATA_BRANCH}:${DATA_REF}" 2>/dev/null || true
+          RECORDED=$(git show "${DATA_REF}:${PC_ANALYSED_BRANCH}/.analysis.json" 2>/dev/null \
+            | jq -r '.analysedCommit // empty' 2>/dev/null || true)
+          if [ "$RECORDED" != "$ANALYSED" ]; then
+            # A RULE ON THE REPOSITORY is the one refusal a re-run will not fix, so it is named:
+            # a ruleset that covers every branch also covers this one.
+            {
+              echo "### The analysis could not be published"
+              echo
+              echo "Origin's \`${DATA_BRANCH}\` does not hold this analysis of \`${PC_ANALYSED_BRANCH}\`; the sync's output above says why. If a ruleset or branch protection covers every branch of this repository, exempt \`${DATA_BRANCH}\`: it carries only Predictable's data and is never merged."
+            } >> "$GITHUB_STEP_SUMMARY"
+            # AN AGENT FIX IS NOT FAILED BY ITS CHECK (#2240): its pull request is already open, so
+            # a failed run would read as a failed fix — the chain's hard stop. Nothing published is
+            # what the Control Center reads, and it says it could not tell.
+            if [ -n "${PC_FIX_JSON:-}" ]; then
+              echo "::warning::the fix is proposed, but its analysis could not be published, so the Control Center cannot tell whether it closed ${PC_TARGET}"
               exit 0
-              ;;
-            *)
-              # A RULE ON THE REPOSITORY is the one refusal a re-run will not fix, so it is named:
-              # a ruleset that covers every branch also covers this one.
-              {
-                echo "### The analysis could not be published"
-                echo
-                echo "It could not be pushed to \`${DATA_BRANCH}\`. If a ruleset or branch protection covers every branch of this repository, exempt \`${DATA_BRANCH}\`: it carries only analyses and is never merged."
-              } >> "$GITHUB_STEP_SUMMARY"
-              exit 1
-              ;;
-          esac
+            fi
+            echo "::error::the analysis of ${PC_ANALYSED_BRANCH} was not published to ${DATA_BRANCH}"
+            exit 1
+          fi
+          echo "Published the analysis of ${PC_ANALYSED_BRANCH} (${ANALYSED}) to ${DATA_BRANCH}."
 
           # THE VERDICT AND WHY, where a reader of this run looks. A `degraded` run analysed part
           # of the project, and saying so beside the result is what keeps it from reading as a
           # full one; the reasons were extracted once, by the analyse step.
           {
-            echo "### Analysis of \`${GITHUB_REF_NAME}\` at \`${ANALYSED}\`"
+            echo "### Analysis of \`${PC_ANALYSED_BRANCH}\` at \`${ANALYSED}\`"
             echo
             echo "**Verdict: \`${VERDICT}\`** — \`degraded\` means only part of the project translated, and \`mechanical\` means the run stopped before the proving tail. Neither is a failure, and neither is a clean bill."
             echo
@@ -2354,5 +2375,16 @@ jobs:
               echo "**Nothing here says your code is wrong.**"
               echo
             fi
-            echo "Published to \`${DATA_BRANCH}\` under \`${GITHUB_REF_NAME}/\`. No branch of your code was changed."
+            # Only a republish that compiled sets this to `compile`.
+            if [ "${PC_REPUBLISH:-}" = "compile" ]; then
+              # SAID, because the verdict above is the earlier analysis's and nothing was analysed.
+              echo "**Nothing was analysed.** Only module summaries changed since this branch's last analysis, so the specs were recompiled over it and its verdict carried; the merged summaries now show."
+              echo
+            fi
+            if [ -n "${PC_FIX_JSON:-}" ]; then
+              # A fix DID change a branch — its own, above — so the sync's sentence would be false here.
+              echo "Published to \`${DATA_BRANCH}\` under \`${PC_ANALYSED_BRANCH}/\`, so the Control Center can tell whether this fix closed \`${PC_TARGET}\`."
+            else
+              echo "Published to \`${DATA_BRANCH}\` under \`${PC_ANALYSED_BRANCH}/\`. No branch of your code was changed."
+            fi
           } >> "$GITHUB_STEP_SUMMARY"

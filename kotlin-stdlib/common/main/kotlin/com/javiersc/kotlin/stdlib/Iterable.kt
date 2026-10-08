@@ -137,7 +137,7 @@ public inline fun <T> Iterable<T>.penultimateOrNull(): T? {
 internal inline fun <T> Iterable<T>.getIndex(index: Int): T {
     return when (this) {
         is List ->
-            if (size >= index - 1) this[index - 1]
+            if (index in 1..size) this[index - 1]
             else throw NoSuchElementException("Collection size is lower than $index.")
         else -> {
             val iterator = iterator()

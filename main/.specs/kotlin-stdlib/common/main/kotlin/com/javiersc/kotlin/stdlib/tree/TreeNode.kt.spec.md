@@ -6,7 +6,7 @@ predictable: spec
 - **Name:** kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt
 
 ### Description
-`TreeNode.kt` — Tree node. This project's call graph records DIRECT calls only, so a function passed to a container, destructured into an exported binding, or reached through a dynamic lookup is not one it can see. Within that limit it records no call to this module. At least one of its operations is exported. `TreeNode` carries `value`, `_parent`, `_children` and `defaultIterator`. `ChildDeclarationInterface` declares `child`. REFUTED: “`TreeNode.path` requires that the `parent` of `node` is not null.” 8 requirements: 1 violated, 7 verified. 1 stated failure.
+`TreeNode.kt` — Tree node. `TreeNode` carries `value`, `_parent`, `_children` and `defaultIterator`. `ChildDeclarationInterface` declares `child`. REFUTED: “`TreeNode.path` requires that the `parent` of `node` is not null.” 8 requirements: 1 violated, 7 verified. 1 stated failure.
 
 ### Notation
 

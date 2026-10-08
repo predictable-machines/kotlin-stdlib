@@ -1,6 +1,6 @@
 [{"vc": "il1.bounds",
   "severity": "warning",
-  "priority": 3,
+  "priority": 5,
   "message":
   "May break a called method's requirement. This code can call a method with arguments that violate what that method requires.",
   "line": 138,

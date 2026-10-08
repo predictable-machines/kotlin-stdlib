@@ -6,7 +6,7 @@ predictable: spec
 - **Name:** kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt
 
 ### Description
-`Graph.kt` — Graph. This project's call graph records DIRECT calls only, so a function passed to a container, destructured into an exported binding, or reached through a dynamic lookup is not one it can see. Within that limit it records no call to this module. At least one of its operations is exported. `Vertex` carries `index` and `value`; `Edge` carries `source` and `destination`; and 1 more shape. `Graph` declares `<get-renderer>`, `<get-circularVertexes>`, `<get-hasCircularVertexes>`, `<get-duplicatedVertexes>`, `<get-hasDuplicatedVertexes>`, `<get-missingVertexes>` and `<get-hasMissingVertexes>`. Checks: “`Graph.deepFirstSearchCircularDependencies` requires that `tmp0_elvis_lhs` is not null.” and 2 more. 3 requirements: 3 verified.
+`Graph.kt` — Graph. `Vertex` carries `index` and `value`; `Edge` carries `source` and `destination`; and 1 more shape. `Graph` declares `<get-renderer>`, `<get-circularVertexes>`, `<get-hasCircularVertexes>`, `<get-duplicatedVertexes>`, `<get-hasDuplicatedVertexes>`, `<get-missingVertexes>` and `<get-hasMissingVertexes>`. Checks: “`Graph.containsCircularVertexes` requires that `tmp0_safe_receiver` is not null.” and 3 more. 4 requirements: 4 verified.
 
 ### Notation
 
@@ -17,6 +17,19 @@ A requirement is a condition an operation needs in order not to fail in the way 
 Tags: `[implemented, verified]` — the operation checks this and refuses when it fails. Ids in the machine-managed sections below are assigned per run and are not stable references; cite the requirement's sentence.
 
 ### Analysis
+
+#### Graph.containsCircularVertexes <!-- predictable:group -->
+
+##### ANL-0020 [implemented, verified]
+`Graph.containsCircularVertexes` requires that `tmp0_safe_receiver` is not null.
+
+<!-- predictable:analysis -->
+
+<!-- predictable:subject=Graph.containsCircularVertexes -->
+
+<!-- predictable:vc=il1.null-dereference -->
+
+- **Code locations:** [code location](../../../../../../../../../../.predictable-code/specs/locations/SPEC-008/ANL-0020.md)
 
 #### Graph.deepFirstSearchCircularDependencies <!-- predictable:group -->
 

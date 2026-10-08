@@ -72,7 +72,7 @@
   "id": "SPEC-004",
   "guidelines": [],
   "description":
-  "`Files.kt` — Files. This project's call graph records DIRECT calls only, so a function passed to a container, destructured into an exported binding, or reached through a dynamic lookup is not one it can see. Within that limit it records no call to this module. At least one of its operations is exported. Checks: “`resource` fails with \"File not found\" unless `tmp0_elvis_lhs` is not null.” 1 requirement: 1 verified. 1 stated failure.",
+  "`Files.kt` — Files. Checks: “`resource` fails with \"File not found\" unless `tmp0_elvis_lhs` is not null.” 1 requirement: 1 verified. 1 stated failure.",
   "declarationDocs": [],
   "created": "",
   "authors": [""],
@@ -82,35 +82,18 @@
   [{"violated": false,
     "verified": false,
     "throwsError": null,
-    "subject": "IterableKt.getIndex",
+    "subject": "IterableKt.penultimate",
     "origin": "inferred",
     "kind": "stated-failure",
     "implemented": true,
     "id": "REQ-0001",
     "enforcedBy": null,
     "display":
-    "Calling `getIndex` can fail with the error `NoSuchElementException`.",
+    "Calling `penultimate` can fail with the error `NoSuchElementException`.",
     "description":
-    "Calling `getIndex` can fail with the error `NoSuchElementException`.",
+    "Calling `penultimate` can fail with the error `NoSuchElementException`.",
     "codeLocationsFile":
     ".predictable-code/specs/locations/SPEC-005/REQ-0001.md",
-    "analysisKey": null,
-    "agentVerified": false},
-   {"violated": false,
-    "verified": false,
-    "throwsError": null,
-    "subject": "IterableKt.penultimate",
-    "origin": "inferred",
-    "kind": "stated-failure",
-    "implemented": true,
-    "id": "REQ-0002",
-    "enforcedBy": null,
-    "display":
-    "Calling `penultimate` can fail with the error `NoSuchElementException`.",
-    "description":
-    "Calling `penultimate` can fail with the error `NoSuchElementException`.",
-    "codeLocationsFile":
-    ".predictable-code/specs/locations/SPEC-005/REQ-0002.md",
     "analysisKey": null,
     "agentVerified": false},
    {"violated": false,
@@ -120,14 +103,14 @@
     "origin": "inferred",
     "kind": "stated-failure",
     "implemented": true,
-    "id": "REQ-0003",
+    "id": "REQ-0002",
     "enforcedBy": null,
     "display":
     "Calling `eighth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "description":
     "Calling `eighth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "codeLocationsFile":
-    ".predictable-code/specs/locations/SPEC-005/REQ-0003.md",
+    ".predictable-code/specs/locations/SPEC-005/REQ-0002.md",
     "analysisKey": null,
     "agentVerified": false},
    {"violated": false,
@@ -137,14 +120,14 @@
     "origin": "inferred",
     "kind": "stated-failure",
     "implemented": true,
-    "id": "REQ-0004",
+    "id": "REQ-0003",
     "enforcedBy": null,
     "display":
     "Calling `fifth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "description":
     "Calling `fifth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "codeLocationsFile":
-    ".predictable-code/specs/locations/SPEC-005/REQ-0004.md",
+    ".predictable-code/specs/locations/SPEC-005/REQ-0003.md",
     "analysisKey": null,
     "agentVerified": false},
    {"violated": false,
@@ -154,14 +137,14 @@
     "origin": "inferred",
     "kind": "stated-failure",
     "implemented": true,
-    "id": "REQ-0005",
+    "id": "REQ-0004",
     "enforcedBy": null,
     "display":
     "Calling `forth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "description":
     "Calling `forth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "codeLocationsFile":
-    ".predictable-code/specs/locations/SPEC-005/REQ-0005.md",
+    ".predictable-code/specs/locations/SPEC-005/REQ-0004.md",
     "analysisKey": null,
     "agentVerified": false},
    {"violated": false,
@@ -171,14 +154,14 @@
     "origin": "inferred",
     "kind": "stated-failure",
     "implemented": true,
-    "id": "REQ-0006",
+    "id": "REQ-0005",
     "enforcedBy": null,
     "display":
     "Calling `ninth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "description":
     "Calling `ninth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "codeLocationsFile":
-    ".predictable-code/specs/locations/SPEC-005/REQ-0006.md",
+    ".predictable-code/specs/locations/SPEC-005/REQ-0005.md",
     "analysisKey": null,
     "agentVerified": false},
    {"violated": false,
@@ -188,14 +171,14 @@
     "origin": "inferred",
     "kind": "stated-failure",
     "implemented": true,
-    "id": "REQ-0007",
+    "id": "REQ-0006",
     "enforcedBy": null,
     "display":
     "Calling `second` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "description":
     "Calling `second` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "codeLocationsFile":
-    ".predictable-code/specs/locations/SPEC-005/REQ-0007.md",
+    ".predictable-code/specs/locations/SPEC-005/REQ-0006.md",
     "analysisKey": null,
     "agentVerified": false},
    {"violated": false,
@@ -205,14 +188,14 @@
     "origin": "inferred",
     "kind": "stated-failure",
     "implemented": true,
-    "id": "REQ-0008",
+    "id": "REQ-0007",
     "enforcedBy": null,
     "display":
     "Calling `seventh` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "description":
     "Calling `seventh` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "codeLocationsFile":
-    ".predictable-code/specs/locations/SPEC-005/REQ-0008.md",
+    ".predictable-code/specs/locations/SPEC-005/REQ-0007.md",
     "analysisKey": null,
     "agentVerified": false},
    {"violated": false,
@@ -222,14 +205,14 @@
     "origin": "inferred",
     "kind": "stated-failure",
     "implemented": true,
-    "id": "REQ-0009",
+    "id": "REQ-0008",
     "enforcedBy": null,
     "display":
     "Calling `sixth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "description":
     "Calling `sixth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "codeLocationsFile":
-    ".predictable-code/specs/locations/SPEC-005/REQ-0009.md",
+    ".predictable-code/specs/locations/SPEC-005/REQ-0008.md",
     "analysisKey": null,
     "agentVerified": false},
    {"violated": false,
@@ -239,14 +222,14 @@
     "origin": "inferred",
     "kind": "stated-failure",
     "implemented": true,
-    "id": "REQ-0010",
+    "id": "REQ-0009",
     "enforcedBy": null,
     "display":
     "Calling `tenth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "description":
     "Calling `tenth` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "codeLocationsFile":
-    ".predictable-code/specs/locations/SPEC-005/REQ-0010.md",
+    ".predictable-code/specs/locations/SPEC-005/REQ-0009.md",
     "analysisKey": null,
     "agentVerified": false},
    {"violated": false,
@@ -256,15 +239,49 @@
     "origin": "inferred",
     "kind": "stated-failure",
     "implemented": true,
-    "id": "REQ-0011",
+    "id": "REQ-0010",
     "enforcedBy": null,
     "display":
     "Calling `third` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "description":
     "Calling `third` can be rejected with the error \"NoSuchElementException\" — it delegates to `getIndex`, which enforces that precondition.",
     "codeLocationsFile":
-    ".predictable-code/specs/locations/SPEC-005/REQ-0011.md",
+    ".predictable-code/specs/locations/SPEC-005/REQ-0010.md",
     "analysisKey": null,
+    "agentVerified": false},
+   {"violated": true,
+    "verified": false,
+    "throwsError": null,
+    "subject": "IterableKt.getIndex",
+    "origin": "analysis",
+    "kind": "requirement",
+    "implemented": true,
+    "id": "ANL-0018",
+    "enforcedBy": null,
+    "display":
+    "`IterableKt.getIndex` requires that 0 is at most `index` minus 1 and `index` minus 1 is less than the `length` of the `IterableKt`.",
+    "description":
+    "`IterableKt.getIndex` requires that 0 is at most `index` minus 1 and `index` minus 1 is less than the `length` of the `IterableKt`.",
+    "codeLocationsFile":
+    ".predictable-code/specs/locations/SPEC-005/ANL-0018.md",
+    "analysisKey": "il1.bounds",
+    "agentVerified": false},
+   {"violated": false,
+    "verified": false,
+    "throwsError": "NoSuchElementException",
+    "subject": "IterableKt.getIndex",
+    "origin": "analysis",
+    "kind": "stated-failure",
+    "implemented": true,
+    "id": "ANL-0019",
+    "enforcedBy": null,
+    "display":
+    "Calling `getIndex` can fail with the error `NoSuchElementException` — one of 3 conditions under which `getIndex` fails, and 2 of them are stated here.",
+    "description":
+    "Calling `getIndex` can fail with the error `NoSuchElementException` — one of 3 conditions under which `getIndex` fails, and 2 of them are stated here.",
+    "codeLocationsFile":
+    ".predictable-code/specs/locations/SPEC-005/ANL-0019.md",
+    "analysisKey": "il2.domain-guard",
     "agentVerified": false},
    {"violated": false,
     "verified": false,
@@ -326,7 +343,7 @@
   "id": "SPEC-005",
   "guidelines": [],
   "description":
-  "`Iterable.kt` — Iterable. This project's call graph records DIRECT calls only, so a function passed to a container, destructured into an exported binding, or reached through a dynamic lookup is not one it can see. Within that limit it records no call to this module. At least one of its operations is exported. REFUTED: “`IterableKt.penultimate` requires that 0 is at most the `size` of the `IterableKt` minus 2 and the `size` of the `IterableKt` minus 2 is less than the `length` of the `IterableKt`.” 1 requirement: 1 violated. 13 stated failures.",
+  "`Iterable.kt` — Iterable. REFUTED: “`IterableKt.getIndex` requires that 0 is at most `index` minus 1 and `index` minus 1 is less than the `length` of the `IterableKt`.” “`IterableKt.penultimate` requires that 0 is at most the `size` of the `IterableKt` minus 2 and the `size` of the `IterableKt` minus 2 is less than the `length` of the `IterableKt`.” 2 requirements: 2 violated. 13 stated failures.",
   "declarationDocs": [],
   "created": "",
   "authors": [""],
@@ -493,7 +510,7 @@
   "id": "SPEC-006",
   "guidelines": [],
   "description":
-  "`TreeNode.kt` — Tree node. This project's call graph records DIRECT calls only, so a function passed to a container, destructured into an exported binding, or reached through a dynamic lookup is not one it can see. Within that limit it records no call to this module. At least one of its operations is exported. `TreeNode` carries `value`, `_parent`, `_children` and `defaultIterator`. `ChildDeclarationInterface` declares `child`. REFUTED: “`TreeNode.path` requires that the `parent` of `node` is not null.” 8 requirements: 1 violated, 7 verified. 1 stated failure.",
+  "`TreeNode.kt` — Tree node. `TreeNode` carries `value`, `_parent`, `_children` and `defaultIterator`. `ChildDeclarationInterface` declares `child`. REFUTED: “`TreeNode.path` requires that the `parent` of `node` is not null.” 8 requirements: 1 violated, 7 verified. 1 stated failure.",
   "declarationDocs": [],
   "created": "",
   "authors": [""],
@@ -543,7 +560,7 @@
   "id": "SPEC-007",
   "guidelines": [],
   "description":
-  "`StringsTransform.kt` — Strings transform. This project's call graph records DIRECT calls only, so a function passed to a container, destructured into an exported binding, or reached through a dynamic lookup is not one it can see. Within that limit it records no call to this module. At least one of its operations is exported. At run time it reaches `StringsKt`. Checks: “`StringsTransformKt.TransformString` requires that `tmp0_safe_receiver` is not null.” and 1 more. 2 requirements: 2 verified.",
+  "`StringsTransform.kt` — Strings transform. Checks: “`StringsTransformKt.TransformString` requires that `tmp0_safe_receiver` is not null.” and 1 more. 2 requirements: 2 verified.",
   "declarationDocs": [],
   "created": "",
   "authors": [""],
@@ -551,6 +568,23 @@
  {"types": [],
   "requirements":
   [{"violated": false,
+    "verified": true,
+    "throwsError": null,
+    "subject": "Graph.containsCircularVertexes",
+    "origin": "analysis",
+    "kind": "requirement",
+    "implemented": true,
+    "id": "ANL-0020",
+    "enforcedBy": null,
+    "display":
+    "`Graph.containsCircularVertexes` requires that `tmp0_safe_receiver` is not null.",
+    "description":
+    "`Graph.containsCircularVertexes` requires that `tmp0_safe_receiver` is not null.",
+    "codeLocationsFile":
+    ".predictable-code/specs/locations/SPEC-008/ANL-0020.md",
+    "analysisKey": "il1.null-dereference",
+    "agentVerified": false},
+   {"violated": false,
     "verified": true,
     "throwsError": null,
     "subject": "Graph.deepFirstSearchCircularDependencies",
@@ -610,7 +644,7 @@
   "id": "SPEC-008",
   "guidelines": [],
   "description":
-  "`Graph.kt` — Graph. This project's call graph records DIRECT calls only, so a function passed to a container, destructured into an exported binding, or reached through a dynamic lookup is not one it can see. Within that limit it records no call to this module. At least one of its operations is exported. `Vertex` carries `index` and `value`; `Edge` carries `source` and `destination`; and 1 more shape. `Graph` declares `<get-renderer>`, `<get-circularVertexes>`, `<get-hasCircularVertexes>`, `<get-duplicatedVertexes>`, `<get-hasDuplicatedVertexes>`, `<get-missingVertexes>` and `<get-hasMissingVertexes>`. Checks: “`Graph.deepFirstSearchCircularDependencies` requires that `tmp0_elvis_lhs` is not null.” and 2 more. 3 requirements: 3 verified.",
+  "`Graph.kt` — Graph. `Vertex` carries `index` and `value`; `Edge` carries `source` and `destination`; and 1 more shape. `Graph` declares `<get-renderer>`, `<get-circularVertexes>`, `<get-hasCircularVertexes>`, `<get-duplicatedVertexes>`, `<get-hasDuplicatedVertexes>`, `<get-missingVertexes>` and `<get-hasMissingVertexes>`. Checks: “`Graph.containsCircularVertexes` requires that `tmp0_safe_receiver` is not null.” and 3 more. 4 requirements: 4 verified.",
   "declarationDocs": [],
   "created": "",
   "authors": [""],
@@ -768,7 +802,7 @@
   "id": "SPEC-018",
   "guidelines": [],
   "description":
-  "`Either.kt` — Either. Called from `Validator.validate`, and possibly from places the call graph cannot see. `Left` carries `value`; `Right` carries `value`. No requirements recorded yet — 45 declarations were examined and no obligation was decided about them.",
+  "`Either.kt` — Either. `Left` carries `value`; `Right` carries `value`. No requirements recorded yet — 45 declarations were examined and no obligation was decided about them.",
   "declarationDocs": [],
   "created": "",
   "authors": [""],
@@ -784,7 +818,7 @@
   "id": "SPEC-019",
   "guidelines": [],
   "description":
-  "`Strings.kt` — Strings. Called from `StringsTransformKt.TransformString` and `StringsTransformKt.transformString`, and possibly from places the call graph cannot see. No requirements recorded yet — 10 declarations were examined and no obligation was decided about them.",
+  "`Strings.kt` — Strings. No requirements recorded yet — 10 declarations were examined and no obligation was decided about them.",
   "declarationDocs": [],
   "created": "",
   "authors": [""],
@@ -800,7 +834,7 @@
   "id": "SPEC-020",
   "guidelines": [],
   "description":
-  "`RulesScope.kt` — Rules scope. Called from `Validator.validate`, and possibly from places the call graph cannot see. `Rule` carries `predicate` and `otherwise`; `RuleScope_66` carries `_rules`. `RulesScope` declares `rule`, `invalid`, `invalidIf`, `valid`, `validIf`, `validator` and `<get-rules>`. No requirements recorded yet — 16 declarations were examined and no obligation was decided about them.",
+  "`RulesScope.kt` — Rules scope. `Rule` carries `predicate` and `otherwise`; `RuleScope_66` carries `_rules`. `RulesScope` declares `rule`, `invalid`, `invalidIf`, `valid`, `validIf`, `validator` and `<get-rules>`. No requirements recorded yet — 16 declarations were examined and no obligation was decided about them.",
   "declarationDocs": [],
   "created": "",
   "authors": [""],
@@ -816,7 +850,7 @@
   "id": "SPEC-021",
   "guidelines": [],
   "description":
-  "`Validator.kt` — Validator. This project's call graph records DIRECT calls only, so a function passed to a container, destructured into an exported binding, or reached through a dynamic lookup is not one it can see. Within that limit it records no call to this module. At least one of its operations is exported. At run time it reaches `EitherKt` and `RulesScopeKt`. `anonymous_25` carries `ruleScopeBlock`. `Validator` declares `<get-ruleScopeBlock>`. No requirements recorded yet — 4 declarations were examined and no obligation was decided about them.",
+  "`Validator.kt` — Validator. `anonymous_25` carries `ruleScopeBlock`. `Validator` declares `<get-ruleScopeBlock>`. No requirements recorded yet — 4 declarations were examined and no obligation was decided about them.",
   "declarationDocs": [],
   "created": "",
   "authors": [""],

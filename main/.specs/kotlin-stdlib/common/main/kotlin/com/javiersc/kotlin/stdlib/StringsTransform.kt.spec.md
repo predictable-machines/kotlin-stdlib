@@ -6,7 +6,7 @@ predictable: spec
 - **Name:** kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt
 
 ### Description
-`StringsTransform.kt` — Strings transform. This project's call graph records DIRECT calls only, so a function passed to a container, destructured into an exported binding, or reached through a dynamic lookup is not one it can see. Within that limit it records no call to this module. At least one of its operations is exported. At run time it reaches `StringsKt`. Checks: “`StringsTransformKt.TransformString` requires that `tmp0_safe_receiver` is not null.” and 1 more. 2 requirements: 2 verified.
+`StringsTransform.kt` — Strings transform. Checks: “`StringsTransformKt.TransformString` requires that `tmp0_safe_receiver` is not null.” and 1 more. 2 requirements: 2 verified.
 
 ### Notation
 

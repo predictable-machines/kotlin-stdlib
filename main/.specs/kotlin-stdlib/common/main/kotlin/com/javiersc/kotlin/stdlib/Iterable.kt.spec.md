@@ -6,7 +6,7 @@ predictable: spec
 - **Name:** kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt
 
 ### Description
-`Iterable.kt` — Iterable. This project's call graph records DIRECT calls only, so a function passed to a container, destructured into an exported binding, or reached through a dynamic lookup is not one it can see. Within that limit it records no call to this module. At least one of its operations is exported. REFUTED: “`IterableKt.penultimate` requires that 0 is at most the `size` of the `IterableKt` minus 2 and the `size` of the `IterableKt` minus 2 is less than the `length` of the `IterableKt`.” 1 requirement: 1 violated. 13 stated failures.
+`Iterable.kt` — Iterable. REFUTED: “`IterableKt.getIndex` requires that 0 is at most `index` minus 1 and `index` minus 1 is less than the `length` of the `IterableKt`.” “`IterableKt.penultimate` requires that 0 is at most the `size` of the `IterableKt` minus 2 and the `size` of the `IterableKt` minus 2 is less than the `length` of the `IterableKt`.” 2 requirements: 2 violated. 13 stated failures.
 
 ### Notation
 
@@ -19,128 +19,143 @@ Tags: `[implemented, violated]` — the analysis found a case where the conditio
 
 ### Requirements
 
-#### IterableKt.getIndex <!-- predictable:group -->
-
-##### REQ-0001 [implemented, stated-failure]
-Calling `getIndex` can fail with the error `NoSuchElementException`.
-
-<!-- predictable:inferred -->
-
-<!-- predictable:subject=IterableKt.getIndex -->
-
-- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0001.md)
-
 #### IterableKt.penultimate <!-- predictable:group -->
 
-##### REQ-0002 [implemented, stated-failure]
+##### REQ-0001 [implemented, stated-failure]
 Calling `penultimate` can fail with the error `NoSuchElementException`.
 
 <!-- predictable:inferred -->
 
 <!-- predictable:subject=IterableKt.penultimate -->
 
-- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0002.md)
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0001.md)
 
 #### IterableKt.eighth <!-- predictable:group -->
 
-##### REQ-0003 [implemented, stated-failure]
+##### REQ-0002 [implemented, stated-failure]
 Calling `eighth` can be rejected with the error "NoSuchElementException" — it delegates to `getIndex`, which enforces that precondition.
 
 <!-- predictable:inferred -->
 
 <!-- predictable:subject=IterableKt.eighth -->
 
-- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0003.md)
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0002.md)
 
 #### IterableKt.fifth <!-- predictable:group -->
 
-##### REQ-0004 [implemented, stated-failure]
+##### REQ-0003 [implemented, stated-failure]
 Calling `fifth` can be rejected with the error "NoSuchElementException" — it delegates to `getIndex`, which enforces that precondition.
 
 <!-- predictable:inferred -->
 
 <!-- predictable:subject=IterableKt.fifth -->
 
-- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0004.md)
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0003.md)
 
 #### IterableKt.forth <!-- predictable:group -->
 
-##### REQ-0005 [implemented, stated-failure]
+##### REQ-0004 [implemented, stated-failure]
 Calling `forth` can be rejected with the error "NoSuchElementException" — it delegates to `getIndex`, which enforces that precondition.
 
 <!-- predictable:inferred -->
 
 <!-- predictable:subject=IterableKt.forth -->
 
-- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0005.md)
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0004.md)
 
 #### IterableKt.ninth <!-- predictable:group -->
 
-##### REQ-0006 [implemented, stated-failure]
+##### REQ-0005 [implemented, stated-failure]
 Calling `ninth` can be rejected with the error "NoSuchElementException" — it delegates to `getIndex`, which enforces that precondition.
 
 <!-- predictable:inferred -->
 
 <!-- predictable:subject=IterableKt.ninth -->
 
-- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0006.md)
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0005.md)
 
 #### IterableKt.second <!-- predictable:group -->
 
-##### REQ-0007 [implemented, stated-failure]
+##### REQ-0006 [implemented, stated-failure]
 Calling `second` can be rejected with the error "NoSuchElementException" — it delegates to `getIndex`, which enforces that precondition.
 
 <!-- predictable:inferred -->
 
 <!-- predictable:subject=IterableKt.second -->
 
-- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0007.md)
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0006.md)
 
 #### IterableKt.seventh <!-- predictable:group -->
 
-##### REQ-0008 [implemented, stated-failure]
+##### REQ-0007 [implemented, stated-failure]
 Calling `seventh` can be rejected with the error "NoSuchElementException" — it delegates to `getIndex`, which enforces that precondition.
 
 <!-- predictable:inferred -->
 
 <!-- predictable:subject=IterableKt.seventh -->
 
-- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0008.md)
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0007.md)
 
 #### IterableKt.sixth <!-- predictable:group -->
 
-##### REQ-0009 [implemented, stated-failure]
+##### REQ-0008 [implemented, stated-failure]
 Calling `sixth` can be rejected with the error "NoSuchElementException" — it delegates to `getIndex`, which enforces that precondition.
 
 <!-- predictable:inferred -->
 
 <!-- predictable:subject=IterableKt.sixth -->
 
-- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0009.md)
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0008.md)
 
 #### IterableKt.tenth <!-- predictable:group -->
 
-##### REQ-0010 [implemented, stated-failure]
+##### REQ-0009 [implemented, stated-failure]
 Calling `tenth` can be rejected with the error "NoSuchElementException" — it delegates to `getIndex`, which enforces that precondition.
 
 <!-- predictable:inferred -->
 
 <!-- predictable:subject=IterableKt.tenth -->
 
-- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0010.md)
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0009.md)
 
 #### IterableKt.third <!-- predictable:group -->
 
-##### REQ-0011 [implemented, stated-failure]
+##### REQ-0010 [implemented, stated-failure]
 Calling `third` can be rejected with the error "NoSuchElementException" — it delegates to `getIndex`, which enforces that precondition.
 
 <!-- predictable:inferred -->
 
 <!-- predictable:subject=IterableKt.third -->
 
-- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0011.md)
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/REQ-0010.md)
 
 ### Analysis
+
+#### IterableKt.getIndex <!-- predictable:group -->
+
+##### ANL-0018 [implemented, violated]
+`IterableKt.getIndex` requires that 0 is at most `index` minus 1 and `index` minus 1 is less than the `length` of the `IterableKt`.
+
+<!-- predictable:analysis -->
+
+<!-- predictable:subject=IterableKt.getIndex -->
+
+<!-- predictable:vc=il1.bounds -->
+
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/ANL-0018.md)
+
+##### ANL-0019 [implemented, stated-failure]
+Calling `getIndex` can fail with the error `NoSuchElementException` — one of 3 conditions under which `getIndex` fails, and 2 of them are stated here.
+
+<!-- predictable:analysis -->
+
+<!-- predictable:subject=IterableKt.getIndex -->
+
+<!-- predictable:vc=il2.domain-guard -->
+
+<!-- predictable:throws=NoSuchElementException -->
+
+- **Code locations:** [code location](../../../../../../../../../.predictable-code/specs/locations/SPEC-005/ANL-0019.md)
 
 #### IterableKt.penultimate <!-- predictable:group -->
 

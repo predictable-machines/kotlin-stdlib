@@ -50,5 +50,14 @@
    "id": "ANL-0016"},
   {"key":
    "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt|TreeNode.<get-root>|il2.null-dereference",
-   "id": "ANL-0017"}],
- "next": 18}
+   "id": "ANL-0017"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt|IterableKt.getIndex|il1.bounds",
+   "id": "ANL-0018"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt|IterableKt.getIndex|il2.domain-guard",
+   "id": "ANL-0019"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt|Graph.containsCircularVertexes|il1.null-dereference",
+   "id": "ANL-0020"}],
+ "next": 21}

@@ -1,9 +1,9 @@
-{"runId": "2646-372414",
+{"runId": "2538-117844",
  "response":
  {"mechanical":
   {"specsChecked": 48,
-   "requirementsViolated": 2,
-   "requirementsVerified": 13,
-   "requirementsInferred": 30,
+   "requirementsViolated": 3,
+   "requirementsVerified": 14,
+   "requirementsInferred": 32,
    "functionsWithIssues": 3,
    "findingsTotal": 4}}}

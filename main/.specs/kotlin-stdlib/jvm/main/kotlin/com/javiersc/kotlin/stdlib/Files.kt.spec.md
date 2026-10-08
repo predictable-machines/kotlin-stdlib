@@ -6,7 +6,7 @@ predictable: spec
 - **Name:** kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt
 
 ### Description
-`Files.kt` — Files. This project's call graph records DIRECT calls only, so a function passed to a container, destructured into an exported binding, or reached through a dynamic lookup is not one it can see. Within that limit it records no call to this module. At least one of its operations is exported. Checks: “`resource` fails with "File not found" unless `tmp0_elvis_lhs` is not null.” 1 requirement: 1 verified. 1 stated failure.
+`Files.kt` — Files. Checks: “`resource` fails with "File not found" unless `tmp0_elvis_lhs` is not null.” 1 requirement: 1 verified. 1 stated failure.
 
 ### Notation
 

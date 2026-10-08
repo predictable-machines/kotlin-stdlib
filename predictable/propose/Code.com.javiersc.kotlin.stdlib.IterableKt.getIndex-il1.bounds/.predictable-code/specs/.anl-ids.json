@@ -1,0 +1,63 @@
+{"version": 1,
+ "rows":
+ [{"key":
+   "kotlin-stdlib/jvm/main/kotlin/com/javiersc/kotlin/stdlib/Files.kt|FilesKt.resource|il1.domain-guard",
+   "id": "ANL-0001"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt|IterableKt.penultimate|il1.domain-guard",
+   "id": "ANL-0002"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt|IterableKt.penultimate|il2.domain-guard",
+   "id": "ANL-0003"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt|IterableKt.penultimate|il3.bounds",
+   "id": "ANL-0004"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt|StringsTransformKt.TransformString|il1.null-dereference",
+   "id": "ANL-0005"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/StringsTransform.kt|StringsTransformKt.transformString|il1.null-dereference",
+   "id": "ANL-0006"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt|Graph.deepFirstSearchCircularDependencies|il1.null-dereference",
+   "id": "ANL-0007"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt|Graph.vertexesFor|il1.null-dereference",
+   "id": "ANL-0008"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt|MutableGraph.addEdge|il1.null-dereference",
+   "id": "ANL-0009"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt|TreeNode.child|il1.null-dereference",
+   "id": "ANL-0010"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt|TreeNode.path|il1.null-dereference",
+   "id": "ANL-0011"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt|TreeNode.removeChild|il1.null-dereference",
+   "id": "ANL-0012"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt|TreeNode.removeChild|il2.null-dereference",
+   "id": "ANL-0013"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt|TreeNode.removeChild|il3.null-dereference",
+   "id": "ANL-0014"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt|TreeNode.<get-depth>|il1.null-dereference",
+   "id": "ANL-0015"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt|TreeNode.<get-root>|il1.null-dereference",
+   "id": "ANL-0016"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/tree/TreeNode.kt|TreeNode.<get-root>|il2.null-dereference",
+   "id": "ANL-0017"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt|IterableKt.getIndex|il1.bounds",
+   "id": "ANL-0018"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/Iterable.kt|IterableKt.getIndex|il2.domain-guard",
+   "id": "ANL-0019"},
+  {"key":
+   "kotlin-stdlib/common/main/kotlin/com/javiersc/kotlin/stdlib/graph/Graph.kt|Graph.containsCircularVertexes|il1.null-dereference",
+   "id": "ANL-0020"}],
+ "next": 21}

@@ -1,0 +1,10 @@
+[{"why": null,
+  "truncated": false,
+  "succeeded": true,
+  "stdout": "",
+  "stderr": "",
+  "label": "kotlin front end (65 source file(s) staged)",
+  "exitCode": 0,
+  "durationMs": 7130,
+  "command":
+  "/home/runner/work/_temp/predictable-pkg/predictable-runtime-0.1.11-cloud-linux-x64/mise/installs/java/temurin-21.0.12+8.0.LTS/bin/java -Xmx2048m -jar /home/runner/work/_temp/predictable-pkg/predictable-runtime-0.1.11-cloud-linux-x64/bin/kotlin-frontend.jar --witness /home/runner/work/kotlin-stdlib/kotlin-stdlib/.predictable-code/predictable/propose/Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex-il1.bounds/.predictable-code/verification/.property-check/contract-stage/kotlin/witness-request-kotlin.json /home/runner/work/kotlin-stdlib/kotlin-stdlib/.predictable-code/predictable/propose/Code.com.javiersc.kotlin.stdlib.IterableKt.getIndex-il1.bounds/.predictable-code/verification/.property-check/contract-stage/kotlin/witness-result-kotlin.json"}]

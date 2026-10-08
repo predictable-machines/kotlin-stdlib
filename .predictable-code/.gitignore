@@ -24,6 +24,9 @@ opencode/
 # Stored fix patches
 fixes/
 
+# Toolchain record for the last run on this machine
+toolchains.json
+
 # Local run logs and session pointer
 logs/
 last-session

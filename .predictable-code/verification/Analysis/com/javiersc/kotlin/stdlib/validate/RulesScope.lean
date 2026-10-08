@@ -1,0 +1,50 @@
+import Code.com.javiersc.kotlin.stdlib.validate.RulesScope
+import PredictableAnalysis.Tactic.AnalyzeDecl
+import PredictableAnalysis.Tactic.VerifyProperty
+
+set_option mvcgen.warning false
+
+open Std.Do
+
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RulesScope.new
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule.new
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.new
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RulesScope.rulesFor
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RulesScope.rulesFor_1
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invoke
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RulesScope.validatorFor
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RulesScope.validatedBy
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule.constructor
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invalidIfIsEmpty
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invalidIfIsBlank
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RulesScopeKt.RuleScope
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.«<get-rules>»
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.invalidIf
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.invalid
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.validIf
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.valid
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.rule
+#analyze_decl Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.validator
+#verify_invariants Code.com.javiersc.kotlin.stdlib.validate.RulesScope
+#verify_invariants Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule
+#verify_invariants Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66
+#verify_invariants Code.com.javiersc.kotlin.stdlib.validate.RulesScopeKt
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RulesScope.new
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule.new
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.new
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RulesScope.rulesFor
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RulesScope.rulesFor_1
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invoke
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RulesScope.validatorFor
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RulesScope.validatedBy
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RulesScope.Rule.constructor
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invalidIfIsEmpty
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RulesScope.invalidIfIsBlank
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RulesScopeKt.RuleScope
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.«<get-rules>»
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.invalidIf
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.invalid
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.validIf
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.valid
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.rule
+#verify_returns Code.com.javiersc.kotlin.stdlib.validate.RuleScope_66.validator
